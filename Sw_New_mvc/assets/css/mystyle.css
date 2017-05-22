@@ -1,0 +1,18 @@
+﻿input.form-control
+{
+    color: #000 !important;
+    font-family: Verdana;
+}
+select.form-control, textarea.form-control
+{
+    color: #000 !important;
+    font-family: Verdana;
+}
+.table tbody>tr>td 
+{
+    color: #000 !important;
+}
+.form-group
+{
+    color: #000 !important;
+}

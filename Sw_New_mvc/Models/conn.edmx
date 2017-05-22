@@ -1,0 +1,1775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ECCEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ECCEModelStoreContainer">
+          <EntitySet Name="AanganwadiMst" EntityType="ECCEModel.Store.AanganwadiMst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DistrictMst" EntityType="ECCEModel.Store.DistrictMst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DivisionMst" EntityType="ECCEModel.Store.DivisionMst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="icdsas_Monthly_ECCE_Day" EntityType="ECCEModel.Store.icdsas_Monthly_ECCE_Day" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="icdsas_WIFS" EntityType="ECCEModel.Store.icdsas_WIFS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProjectMst" EntityType="ECCEModel.Store.ProjectMst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="view_icdsas_ECCEdays" EntityType="ECCEModel.Store.view_icdsas_ECCEdays" store:Type="Views" store:Schema="dbo" store:Name="view_icdsas_ECCEdays">
+            <DefiningQuery>SELECT 
+      [view_icdsas_ECCEdays].[ROW_NUM] AS [ROW_NUM], 
+      [view_icdsas_ECCEdays].[Ang_Name] AS [Ang_Name], 
+      [view_icdsas_ECCEdays].[id] AS [id], 
+      [view_icdsas_ECCEdays].[ReportingMonth] AS [ReportingMonth], 
+      [view_icdsas_ECCEdays].[Reportingyear] AS [Reportingyear], 
+      [view_icdsas_ECCEdays].[Reportingdate] AS [Reportingdate], 
+      [view_icdsas_ECCEdays].[Div_id] AS [Div_id], 
+      [view_icdsas_ECCEdays].[Dist_id] AS [Dist_id], 
+      [view_icdsas_ECCEdays].[proj_id] AS [proj_id], 
+      [view_icdsas_ECCEdays].[awc_id] AS [awc_id], 
+      [view_icdsas_ECCEdays].[Awc_code] AS [Awc_code], 
+      [view_icdsas_ECCEdays].[dateofecc] AS [dateofecc], 
+      [view_icdsas_ECCEdays].[community_was_informed] AS [community_was_informed], 
+      [view_icdsas_ECCEdays].[AWW_present] AS [AWW_present], 
+      [view_icdsas_ECCEdays].[AWH_present] AS [AWH_present], 
+      [view_icdsas_ECCEdays].[total_no_AWC] AS [total_no_AWC], 
+      [view_icdsas_ECCEdays].[total_no_outside] AS [total_no_outside], 
+      [view_icdsas_ECCEdays].[total_no_inside] AS [total_no_inside], 
+      [view_icdsas_ECCEdays].[Participant_children] AS [Participant_children], 
+      [view_icdsas_ECCEdays].[Participant_parents] AS [Participant_parents], 
+      [view_icdsas_ECCEdays].[Participant_PRI] AS [Participant_PRI], 
+      [view_icdsas_ECCEdays].[Participant_AWCMC] AS [Participant_AWCMC], 
+      [view_icdsas_ECCEdays].[Participant_Health] AS [Participant_Health], 
+      [view_icdsas_ECCEdays].[total_SNP] AS [total_SNP], 
+      [view_icdsas_ECCEdays].[Materials_donated] AS [Materials_donated], 
+      [view_icdsas_ECCEdays].[Theme_of_ECCE] AS [Theme_of_ECCE], 
+      [view_icdsas_ECCEdays].[ExplainChild] AS [ExplainChild], 
+      [view_icdsas_ECCEdays].[child_risk] AS [child_risk], 
+      [view_icdsas_ECCEdays].[maintain_profile] AS [maintain_profile], 
+      [view_icdsas_ECCEdays].[maintain_dayrecord] AS [maintain_dayrecord], 
+      [view_icdsas_ECCEdays].[status] AS [status], 
+      [view_icdsas_ECCEdays].[cby] AS [cby], 
+      [view_icdsas_ECCEdays].[con] AS [con], 
+      [view_icdsas_ECCEdays].[mby] AS [mby], 
+      [view_icdsas_ECCEdays].[mon] AS [mon], 
+      [view_icdsas_ECCEdays].[approve_status] AS [approve_status], 
+      [view_icdsas_ECCEdays].[approve_by_cdpo] AS [approve_by_cdpo], 
+      [view_icdsas_ECCEdays].[approve_date_cdpo] AS [approve_date_cdpo], 
+      [view_icdsas_ECCEdays].[approve_by_dpo] AS [approve_by_dpo], 
+      [view_icdsas_ECCEdays].[approve_date_dpo] AS [approve_date_dpo], 
+      [view_icdsas_ECCEdays].[Remarks] AS [Remarks], 
+      [view_icdsas_ECCEdays].[Dis_Code] AS [Dis_Code], 
+      [view_icdsas_ECCEdays].[Dis_Name] AS [Dis_Name], 
+      [view_icdsas_ECCEdays].[Div_Name] AS [Div_Name], 
+      [view_icdsas_ECCEdays].[Div_StateID] AS [Div_StateID], 
+      [view_icdsas_ECCEdays].[Proj_Name] AS [Proj_Name]
+      FROM [dbo].[view_icdsas_ECCEdays] AS [view_icdsas_ECCEdays]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_Aanganwadi" EntityType="ECCEModel.Store.Vw_Aanganwadi" store:Type="Views" store:Schema="dbo" store:Name="Vw_Aanganwadi">
+            <DefiningQuery>SELECT 
+      [Vw_Aanganwadi].[Div_ID] AS [Div_ID], 
+      [Vw_Aanganwadi].[Div_Name] AS [Div_Name], 
+      [Vw_Aanganwadi].[Div_NameHindi] AS [Div_NameHindi], 
+      [Vw_Aanganwadi].[Dis_ID] AS [Dis_ID], 
+      [Vw_Aanganwadi].[Dis_Name] AS [Dis_Name], 
+      [Vw_Aanganwadi].[Dis_NameHindi] AS [Dis_NameHindi], 
+      [Vw_Aanganwadi].[dis_cbr] AS [dis_cbr], 
+      [Vw_Aanganwadi].[Dis_DDOCode] AS [Dis_DDOCode], 
+      [Vw_Aanganwadi].[Proj_ID] AS [Proj_ID], 
+      [Vw_Aanganwadi].[Proj_Name] AS [Proj_Name], 
+      [Vw_Aanganwadi].[Proj_NameHindi] AS [Proj_NameHindi], 
+      [Vw_Aanganwadi].[Sec_ID] AS [Sec_ID], 
+      [Vw_Aanganwadi].[Sec_Name] AS [Sec_Name], 
+      [Vw_Aanganwadi].[Sec_NameHindi] AS [Sec_NameHindi], 
+      [Vw_Aanganwadi].[Ang_ID] AS [Ang_ID], 
+      [Vw_Aanganwadi].[Ang_Name] AS [Ang_Name], 
+      [Vw_Aanganwadi].[Ang_NameHindi] AS [Ang_NameHindi], 
+      [Vw_Aanganwadi].[Ang_Type] AS [Ang_Type], 
+      [Vw_Aanganwadi].[Vil_ID] AS [Vil_ID], 
+      [Vw_Aanganwadi].[Vil_Name] AS [Vil_Name], 
+      [Vw_Aanganwadi].[Vil_NameHindi] AS [Vil_NameHindi], 
+      [Vw_Aanganwadi].[Vil_VillageCode] AS [Vil_VillageCode], 
+      [Vw_Aanganwadi].[Vil_Ward] AS [Vil_Ward], 
+      [Vw_Aanganwadi].[Gp_ID] AS [Gp_ID], 
+      [Vw_Aanganwadi].[Gp_name] AS [Gp_name], 
+      [Vw_Aanganwadi].[Gp_namehindi] AS [Gp_namehindi], 
+      [Vw_Aanganwadi].[Gp_Type] AS [Gp_Type], 
+      [Vw_Aanganwadi].[JDName] AS [JDName], 
+      [Vw_Aanganwadi].[JDNameHindi] AS [JDNameHindi], 
+      [Vw_Aanganwadi].[DPOName] AS [DPOName], 
+      [Vw_Aanganwadi].[DPONameHindi] AS [DPONameHindi], 
+      [Vw_Aanganwadi].[CDPOName] AS [CDPOName], 
+      [Vw_Aanganwadi].[CDPONameHindi] AS [CDPONameHindi], 
+      [Vw_Aanganwadi].[SupName] AS [SupName], 
+      [Vw_Aanganwadi].[SupNameHindi] AS [SupNameHindi], 
+      [Vw_Aanganwadi].[WorkerName] AS [WorkerName], 
+      [Vw_Aanganwadi].[WorkerNameHindi] AS [WorkerNameHindi], 
+      [Vw_Aanganwadi].[HelperName] AS [HelperName], 
+      [Vw_Aanganwadi].[HelperNameHindi] AS [HelperNameHindi], 
+      [Vw_Aanganwadi].[Proj_ProjectType] AS [Proj_ProjectType], 
+      [Vw_Aanganwadi].[Ang_AanganwadiWorkerID] AS [Ang_AanganwadiWorkerID], 
+      [Vw_Aanganwadi].[Ang_AanganwadiHelperID] AS [Ang_AanganwadiHelperID], 
+      [Vw_Aanganwadi].[Ang_Address] AS [Ang_Address], 
+      [Vw_Aanganwadi].[Ang_addressHindi] AS [Ang_addressHindi], 
+      [Vw_Aanganwadi].[Ang_Code] AS [Ang_Code]
+      FROM [dbo].[Vw_Aanganwadi] AS [Vw_Aanganwadi]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ANG" Association="ECCEModel.Store.FK_ANG">
+            <End Role="AanganwadiMst" EntitySet="AanganwadiMst" />
+            <End Role="icdsas_WIFS" EntitySet="icdsas_WIFS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dist_Wifs" Association="ECCEModel.Store.FK_Dist_Wifs">
+            <End Role="DistrictMst" EntitySet="DistrictMst" />
+            <End Role="icdsas_WIFS" EntitySet="icdsas_WIFS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proj" Association="ECCEModel.Store.FK_Proj">
+            <End Role="ProjectMst" EntitySet="ProjectMst" />
+            <End Role="icdsas_WIFS" EntitySet="icdsas_WIFS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AanganwadiMst">
+          <Key>
+            <PropertyRef Name="Ang_ID" />
+          </Key>
+          <Property Name="Ang_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ang_SecID" Type="bigint" Nullable="false" />
+          <Property Name="Ang_Type" Type="int" Nullable="false" />
+          <Property Name="Ang_MiniAanganwadiParentID" Type="int" />
+          <Property Name="Ang_WardNo" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_CensusCode" Type="varchar" MaxLength="20" />
+          <Property Name="Ang_UnderAwc" Type="int" />
+          <Property Name="Ang_NagarNigamID" Type="int" />
+          <Property Name="Ang_VillageName" Type="int" />
+          <Property Name="Ang_GramPanchayat" Type="int" />
+          <Property Name="Ang_ViID" Type="int" />
+          <Property Name="Ang_PSchool1" Type="int" />
+          <Property Name="Ang_PSchool2" Type="int" />
+          <Property Name="Ang_PrivatePSchool" Type="int" />
+          <Property Name="Ang_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_NameHindi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ang_SlNo" Type="int" />
+          <Property Name="Ang_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_PreviousCode" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_HealthSubCentre" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_HealthSubCentreHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ang_WorkerPostStatus" Type="int" />
+          <Property Name="Ang_AanganwadiWorkerID" Type="int" />
+          <Property Name="Ang_WorkerUsername" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_AanganwadiHelperPostStatus" Type="int" />
+          <Property Name="Ang_AanganwadiHelperID" Type="int" />
+          <Property Name="Ang_HelperUsername" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_MPWPostPosition" Type="int" />
+          <Property Name="Ang_ANMName" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_ANMNameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ang_AashaWorkerName" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_AashaWorkerNameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ang_AashaWorkerPostStatus" Type="int" />
+          <Property Name="Ang_NoOfAttachedMiniAnganwadi" Type="int" />
+          <Property Name="Ang_AnmPostPosition" Type="int" />
+          <Property Name="Ang_AanganwadiPosition" Type="int" />
+          <Property Name="Ang_AanganwadiManagement" Type="int" />
+          <Property Name="Ang_WorkersLiveInVillage" Type="int" />
+          <Property Name="Ang_WorkerHomeAndAanganwadiDistance" Type="int" />
+          <Property Name="Ang_Address" Type="varchar" MaxLength="300" />
+          <Property Name="Ang_AddressHindi" Type="nvarchar" MaxLength="300" />
+          <Property Name="Ang_ApprovedYear" Type="int" />
+          <Property Name="Ang_AanganwadiBuilding" Type="int" />
+          <Property Name="Ang_AanganwadiBuildingPosition" Type="int" />
+          <Property Name="Ang_VillageHealthCenter" Type="int" />
+          <Property Name="Ang_NearestHealthCenter" Type="int" />
+          <Property Name="Ang_NearestHealthCenterVillageName" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_NearestHealthCenterAndAnganwadiDistance" Type="int" />
+          <Property Name="Ang_ImmunizationDay" Type="int" />
+          <Property Name="Ang_ImmunizationNo" Type="int" />
+          <Property Name="Ang_ImmunizationPlace" Type="int" />
+          <Property Name="Ang_MotherSahyoginiCommittee" Type="int" />
+          <Property Name="Ang_PowerAvailable" Type="int" />
+          <Property Name="Ang_PowerRunning" Type="int" />
+          <Property Name="Ang_FanAvailable" Type="int" />
+          <Property Name="Ang_FanRunning" Type="int" />
+          <Property Name="Ang_BulbAvailable" Type="int" />
+          <Property Name="Ang_BulbRunning" Type="int" />
+          <Property Name="Ang_ToiletAvailable" Type="int" />
+          <Property Name="Ang_ToiletRunning" Type="int" />
+          <Property Name="Ang_DrinkingWaterAvailable" Type="int" />
+          <Property Name="Ang_AdultVeigMachineAvailable" Type="int" />
+          <Property Name="Ang_AdultVeigMachineRunning" Type="int" />
+          <Property Name="Ang_SalterVeigMachineAvailable" Type="int" />
+          <Property Name="Ang_SalterVeigMachineRunning" Type="int" />
+          <Property Name="Ang_NewbornWeightMachinAvailable" Type="int" />
+          <Property Name="Ang_NewbornWeightMachinRunning" Type="int" />
+          <Property Name="Ang_MaternalAndChildProtectionCardAvailable" Type="int" />
+          <Property Name="Ang_MUACAvailable" Type="int" />
+          <Property Name="Ang_MUACUsable" Type="int" />
+          <Property Name="Ang_AidKitAvailable" Type="int" />
+          <Property Name="Ang_AidKitUsable" Type="int" />
+          <Property Name="Ang_PreSchoolEducationKitAvailable" Type="int" />
+          <Property Name="Ang_PreSchoolEducationKitUsable" Type="int" />
+          <Property Name="Ang_FamilyDetailsRegisterAvailable" Type="int" />
+          <Property Name="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" Type="int" />
+          <Property Name="Ang_SupplementaryFoodDistributionRegisterAvailable" Type="int" />
+          <Property Name="Ang_PreSchoolEducationRegisterAvailable" Type="int" />
+          <Property Name="Ang_PregnancyDeliveryRegisterAvailable" Type="int" />
+          <Property Name="Ang_ImmunizationVHNDRegisterAvailable" Type="int" />
+          <Property Name="Ang_VitaminARegisterAvailable" Type="int" />
+          <Property Name="Ang_HomeVisitRegisterAvailable" Type="int" />
+          <Property Name="Ang_ReferralsRegisterAvailable" Type="int" />
+          <Property Name="Ang_SummaryRegisterAvailable" Type="int" />
+          <Property Name="Ang_WeightRecordsRegisterAvailable" Type="int" />
+          <Property Name="Ang_WHOGrowthChartsAvailable" Type="int" />
+          <Property Name="Ang_StockRegisterAvailable" Type="int" />
+          <Property Name="Ang_VisitorsRegisterAvailable" Type="int" />
+          <Property Name="Ang_KitchenShedGroupName" Type="int" />
+          <Property Name="Ang_KitchenShedAndAanganwadiDistance" Type="int" />
+          <Property Name="Ang_FoodSupply" Type="int" />
+          <Property Name="Ang_IsActive" Type="bit" />
+          <Property Name="Ang_InsertedBy" Type="int" />
+          <Property Name="Ang_InsertedDate" Type="smalldatetime" />
+          <Property Name="Ang_UpdatedBy" Type="int" />
+          <Property Name="Ang_UpdatedDate" Type="smalldatetime" />
+          <Property Name="Ang_VHNDWDay" Type="int" />
+          <Property Name="Ang_VHNDNo" Type="int" />
+          <Property Name="Ang_VHNDDay" Type="int" />
+          <Property Name="Ang_CoHealthCenter" Type="int" />
+          <Property Name="Ang_MotherSupportCommitee" Type="int" />
+          <Property Name="Ang_SelfHelpGroup" Type="int" />
+          <Property Name="Ang_AdolecentGirlGrp" Type="int" />
+          <Property Name="Ang_Creche" Type="int" />
+          <Property Name="Ang_LearningMaterial" Type="int" />
+          <Property Name="Ang_InfoWindow" Type="int" />
+          <Property Name="Ang_Boundriwal" Type="int" />
+          <Property Name="Ang_ChildToilet" Type="int" />
+          <Property Name="Ang_FoodStorage" Type="int" />
+          <Property Name="Ang_WallPainting" Type="int" />
+          <Property Name="Ang_PlaySpace" Type="int" />
+          <Property Name="Ang_PrimaryHealthCenter" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_PrimaryHealthCenterHindi" Type="nvarchar" MaxLength="150" />
+          <Property Name="Ang_SubHealthCenter" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_SubHealthCenterHindi" Type="nvarchar" MaxLength="150" />
+          <Property Name="Ang_CommunityHealthCenter" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_CommunityHealthCenterHindi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ang_DistrictHealthCenter" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_DistrictHealthCenterHindi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ang_OtherHealthCenter" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_OtherHealthCenterHindi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ang_NoOneHealthCenter" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_NoOneHealthCenterHindi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ang_PrimaryHealthCenterDist" Type="int" />
+          <Property Name="Ang_SubHealthCenterDist" Type="int" />
+          <Property Name="Ang_CommunityHealthCenterDist" Type="int" />
+          <Property Name="Ang_DistrictHealthCenterDist" Type="int" />
+          <Property Name="Ang_OtherHealthCenterDist" Type="int" />
+          <Property Name="Ang_NoOneHealthCenterDist" Type="int" />
+          <Property Name="Ang_BuildingProvided" Type="int" />
+          <Property Name="Ang_AwcHoused" Type="int" />
+          <Property Name="Ang_BarrierPhysicallyChallenged" Type="int" />
+          <Property Name="Ang_TypeOfToilet" Type="int" />
+          <Property Name="Ang_CookingSupplementaryFood" Type="int" />
+          <Property Name="Ang_AdequateSpaceForPSE" Type="int" />
+          <Property Name="Ang_CookingUtensils" Type="int" />
+          <Property Name="Ang_CookingUtensilsUsable" Type="int" />
+          <Property Name="Ang_IECBCCMaterials" Type="int" />
+          <Property Name="Ang_IECBCCMaterialsUsable" Type="int" />
+          <Property Name="Ang_NHEDKit" Type="int" />
+          <Property Name="Ang_NHEDKitUsable" Type="int" />
+          <Property Name="Ang_ReferralSlip" Type="int" />
+          <Property Name="Ang_ReferralSlipUsable" Type="int" />
+          <Property Name="Ang_Plates" Type="int" />
+          <Property Name="Ang_PlatesUsable" Type="int" />
+          <Property Name="Ang_Tumblers" Type="int" />
+          <Property Name="Ang_TumblersUsable" Type="int" />
+          <Property Name="Ang_MeasuringCups" Type="int" />
+          <Property Name="Ang_MeasuringCupsUsable" Type="int" />
+          <Property Name="Ang_FoodStorageBins" Type="int" />
+          <Property Name="Ang_FoodStorageBinsUsable" Type="int" />
+          <Property Name="Ang_WaterStorageContainer" Type="int" />
+          <Property Name="Ang_WaterStorageContainerUsable" Type="int" />
+          <Property Name="Ang_Chair" Type="int" />
+          <Property Name="Ang_ChairUsable" Type="int" />
+          <Property Name="Ang_Table" Type="int" />
+          <Property Name="Ang_TableUsable" Type="int" />
+          <Property Name="Ang_DariMats" Type="int" />
+          <Property Name="Ang_DariMatsUsable" Type="int" />
+          <Property Name="Ang_Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_Longitude" Type="varchar" MaxLength="50" />
+          <Property Name="Ang_PowerPollDistance" Type="decimal" />
+          <Property Name="Ang_EfiTheater" Type="int" />
+          <Property Name="Ang_ElectronicVeigMachineAvailable" Type="int" />
+          <Property Name="Ang_ElectronicVeigMachineRunning" Type="int" />
+          <Property Name="Ang_IDCAvailable" Type="int" />
+          <Property Name="Ang_IDCRunning" Type="int" />
+          <Property Name="Ang_InfantActivityBookAvailable" Type="int" />
+          <Property Name="Ang_InfantActivityBookRunning" Type="int" />
+          <Property Name="Ang_CupboardAvailable" Type="int" />
+          <Property Name="Ang_CupboardRunning" Type="int" />
+          <Property Name="Ang_HealthTestTableAvailable" Type="int" />
+          <Property Name="Ang_HealthTestTableRunning" Type="int" />
+          <Property Name="Ang_GlassAvailable" Type="int" />
+          <Property Name="Ang_GlassRunning" Type="int" />
+          <Property Name="Ang_HandwashkitAvailable" Type="int" />
+          <Property Name="Ang_HandwashkitRunning" Type="int" />
+          <Property Name="Ang_BellAvailable" Type="int" />
+          <Property Name="Ang_BellRunning" Type="int" />
+          <Property Name="Ang_SABLAKitAvailable" Type="int" />
+          <Property Name="Ang_SABLAKitRunning" Type="int" />
+          <Property Name="Ang_HEalthCenterMediKitAvailable" Type="int" />
+          <Property Name="Ang_HEalthCenterMediKitRunning" Type="int" />
+          <Property Name="Ang_RadioAvailable" Type="int" />
+          <Property Name="Ang_RadioRunning" Type="int" />
+          <Property Name="Ang_AccountRegisterAvailable" Type="int" />
+          <Property Name="Ang_AccountRegisterRunning" Type="int" />
+          <Property Name="Ang_ChokiAvailable" Type="int" />
+          <Property Name="Ang_ChokiRunning" Type="int" />
+          <Property Name="Ang_VHCID" Type="int" />
+        </EntityType>
+        <EntityType Name="DistrictMst">
+          <Key>
+            <PropertyRef Name="Dis_ID" />
+          </Key>
+          <Property Name="Dis_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Dis_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Dis_DivID" Type="int" Nullable="false" />
+          <Property Name="Dis_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Dis_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dis_PostPosition" Type="int" />
+          <Property Name="Dis_DistrictOfficerID" Type="int" />
+          <Property Name="Dis_Username" Type="varchar" MaxLength="50" />
+          <Property Name="Dis_IsActive" Type="bit" />
+          <Property Name="Dis_InsertedBy" Type="int" />
+          <Property Name="Dis_InsertedDate" Type="smalldatetime" />
+          <Property Name="Dis_UpdatedBy" Type="int" />
+          <Property Name="Dis_UpdatedDate" Type="smalldatetime" />
+          <Property Name="Dis_MappedCode" Type="int" />
+          <Property Name="Dis_Cbr" Type="decimal" Scale="2" />
+          <Property Name="Dis_DDOCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dis_Address" Type="nvarchar(max)" />
+          <Property Name="Dis_AddressHindi" Type="nvarchar(max)" />
+          <Property Name="Dis_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dis_Phone" Type="bigint" />
+          <Property Name="Dis_TargetedShivir" Type="int" />
+          <Property Name="Dis_AadharEnrolment" Type="int" />
+        </EntityType>
+        <EntityType Name="DivisionMst">
+          <Key>
+            <PropertyRef Name="Div_ID" />
+          </Key>
+          <Property Name="Div_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Div_StateID" Type="int" Nullable="false" />
+          <Property Name="Div_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Div_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Div_PostPosition" Type="int" />
+          <Property Name="Div_OfficerID" Type="int" />
+          <Property Name="Div_Username" Type="varchar" MaxLength="50" />
+          <Property Name="Div_IsActive" Type="bit" />
+          <Property Name="Div_InsertedBy" Type="int" />
+          <Property Name="Div_InsertedDate" Type="smalldatetime" />
+          <Property Name="Div_UpdatedBy" Type="int" />
+          <Property Name="Div_UpdatedDate" Type="smalldatetime" />
+          <Property Name="Div_DDOCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Div_Address" Type="nvarchar(max)" />
+          <Property Name="Div_AddressHindi" Type="nvarchar(max)" />
+          <Property Name="Div_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Div_Phone" Type="bigint" />
+          <Property Name="Div_DRG" Type="int" />
+        </EntityType>
+        <EntityType Name="icdsas_Monthly_ECCE_Day">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportingMonth" Type="int" />
+          <Property Name="Reportingyear" Type="int" />
+          <Property Name="Reportingdate" Type="datetime" />
+          <Property Name="Div_id" Type="int" />
+          <Property Name="Dist_id" Type="int" />
+          <Property Name="proj_id" Type="int" />
+          <Property Name="awc_id" Type="int" />
+          <Property Name="Awc_code" Type="nvarchar" MaxLength="20" />
+          <Property Name="dateofecc" Type="datetime" />
+          <Property Name="community_was_informed" Type="int" />
+          <Property Name="AWW_present" Type="int" />
+          <Property Name="AWH_present" Type="int" />
+          <Property Name="total_no_AWC" Type="int" />
+          <Property Name="total_no_outside" Type="int" />
+          <Property Name="total_no_inside" Type="int" />
+          <Property Name="Participant_children" Type="int" />
+          <Property Name="Participant_parents" Type="int" />
+          <Property Name="Participant_PRI" Type="int" />
+          <Property Name="Participant_AWCMC" Type="int" />
+          <Property Name="Participant_Health" Type="int" />
+          <Property Name="total_SNP" Type="int" />
+          <Property Name="Materials_donated" Type="int" />
+          <Property Name="Theme_of_ECCE" Type="nvarchar" MaxLength="450" />
+          <Property Name="ExplainChild" Type="int" />
+          <Property Name="child_risk" Type="int" />
+          <Property Name="maintain_profile" Type="int" />
+          <Property Name="maintain_dayrecord" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="cby" Type="int" />
+          <Property Name="con" Type="datetime" />
+          <Property Name="mby" Type="int" />
+          <Property Name="mon" Type="datetime" />
+          <Property Name="approve_status" Type="int" />
+          <Property Name="approve_by_cdpo" Type="int" />
+          <Property Name="approve_date_cdpo" Type="datetime" />
+          <Property Name="approve_by_dpo" Type="int" />
+          <Property Name="approve_date_dpo" Type="datetime" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="450" />
+        </EntityType>
+        <EntityType Name="icdsas_WIFS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dist_id" Type="int" />
+          <Property Name="proj_id" Type="bigint" />
+          <Property Name="AWC_id" Type="bigint" />
+          <Property Name="ReportingMonth" Type="int" />
+          <Property Name="Reportingyear" Type="int" />
+          <Property Name="Reportingdate" Type="date" />
+          <Property Name="a" Type="int" />
+          <Property Name="b" Type="int" />
+          <Property Name="c" Type="decimal" Scale="2" />
+          <Property Name="d" Type="int" />
+          <Property Name="e" Type="int" />
+          <Property Name="f" Type="int" />
+          <Property Name="g" Type="decimal" Scale="2" />
+          <Property Name="h" Type="int" />
+          <Property Name="i" Type="int" />
+          <Property Name="j" Type="int" />
+          <Property Name="k" Type="int" />
+          <Property Name="l" Type="int" />
+          <Property Name="m" Type="int" />
+          <Property Name="n_opening" Type="int" />
+          <Property Name="n_received" Type="int" />
+          <Property Name="n_utilized" Type="int" />
+          <Property Name="n_balance" Type="int" />
+          <Property Name="o_opening" Type="int" />
+          <Property Name="o_received" Type="int" />
+          <Property Name="o_utilized" Type="int" />
+          <Property Name="o_balance" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="cby" Type="int" />
+          <Property Name="con" Type="datetime" />
+          <Property Name="mby" Type="int" />
+          <Property Name="mon" Type="datetime" />
+          <Property Name="approve_status" Type="int" />
+          <Property Name="approve_by_DPO" Type="int" />
+          <Property Name="approve_date_DPO" Type="datetime" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="450" />
+          <Property Name="approve_by_CDPO" Type="int" />
+          <Property Name="approve_date_CDPO" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProjectMst">
+          <Key>
+            <PropertyRef Name="Proj_ID" />
+          </Key>
+          <Property Name="Proj_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Proj_DisID" Type="int" Nullable="false" />
+          <Property Name="Proj_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Proj_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Proj_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proj_OfficerID" Type="int" />
+          <Property Name="Proj_Username" Type="varchar" MaxLength="50" />
+          <Property Name="Proj_ProjectType" Type="int" Nullable="false" />
+          <Property Name="Proj_ApprovedYear" Type="int" />
+          <Property Name="Proj_TotalSector" Type="bigint" />
+          <Property Name="Proj_TotalAnganwadi" Type="bigint" />
+          <Property Name="Proj_TotalMiniAnganwadi" Type="bigint" />
+          <Property Name="Proj_OffeiceType" Type="int" />
+          <Property Name="Proj_Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="Proj_AddressHindi" Type="nvarchar" MaxLength="300" />
+          <Property Name="Proj_Phone" Type="varchar" MaxLength="12" />
+          <Property Name="Proj_Mobile" Type="varchar" MaxLength="10" />
+          <Property Name="Proj_Email" Type="varchar" MaxLength="50" />
+          <Property Name="Proj_Vehicle" Type="int" Nullable="false" />
+          <Property Name="Proj_VehicleOrderNo" Type="varchar" MaxLength="20" />
+          <Property Name="Proj_OrderDate" Type="smalldatetime" />
+          <Property Name="Proj_ComputerAvalibility" Type="int" />
+          <Property Name="Proj_ACDPOSanction" Type="int" />
+          <Property Name="Proj_ACDPOInPosition" Type="int" />
+          <Property Name="Proj_StatisticalSanction" Type="int" />
+          <Property Name="Proj_StatisticalInPosition" Type="int" />
+          <Property Name="Proj_BlockLevelStaffSanction" Type="int" />
+          <Property Name="Proj_BlockLevelStaffInPosition" Type="int" />
+          <Property Name="Proj_DriverSanction" Type="int" />
+          <Property Name="Proj_DriverInPosition" Type="int" />
+          <Property Name="Proj_DDOCode" Type="bigint" />
+          <Property Name="Proj_IsActive" Type="bit" Nullable="false" />
+          <Property Name="Proj_InsertedBy" Type="int" />
+          <Property Name="Proj_InsertedDate" Type="smalldatetime" />
+          <Property Name="Proj_UpdatedBy" Type="int" />
+          <Property Name="Proj_UpdatedDate" Type="smalldatetime" />
+          <Property Name="Proj_PostPosition" Type="int" />
+          <Property Name="Proj_BlockCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Proj_PHCLinked" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proj_ACDPOName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proj_ACDPONameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proj_ModelAWC" Type="int" />
+          <Property Name="Proj_SubDisCode" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'icdsdbassam.dbo.view_icdsas_ECCEdays' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="view_icdsas_ECCEdays">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Dis_Name" />
+            <PropertyRef Name="Div_Name" />
+            <PropertyRef Name="Div_StateID" />
+            <PropertyRef Name="Proj_Name" />
+          </Key>
+          <Property Name="ROW_NUM" Type="bigint" />
+          <Property Name="Ang_Name" Type="varchar" MaxLength="100" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ReportingMonth" Type="int" />
+          <Property Name="Reportingyear" Type="int" />
+          <Property Name="Reportingdate" Type="datetime" />
+          <Property Name="Div_id" Type="int" />
+          <Property Name="Dist_id" Type="int" />
+          <Property Name="proj_id" Type="int" />
+          <Property Name="awc_id" Type="int" />
+          <Property Name="Awc_code" Type="nvarchar" MaxLength="20" />
+          <Property Name="dateofecc" Type="datetime" />
+          <Property Name="community_was_informed" Type="int" />
+          <Property Name="AWW_present" Type="int" />
+          <Property Name="AWH_present" Type="int" />
+          <Property Name="total_no_AWC" Type="int" />
+          <Property Name="total_no_outside" Type="int" />
+          <Property Name="total_no_inside" Type="int" />
+          <Property Name="Participant_children" Type="int" />
+          <Property Name="Participant_parents" Type="int" />
+          <Property Name="Participant_PRI" Type="int" />
+          <Property Name="Participant_AWCMC" Type="int" />
+          <Property Name="Participant_Health" Type="int" />
+          <Property Name="total_SNP" Type="int" />
+          <Property Name="Materials_donated" Type="int" />
+          <Property Name="Theme_of_ECCE" Type="nvarchar" MaxLength="450" />
+          <Property Name="ExplainChild" Type="int" />
+          <Property Name="child_risk" Type="int" />
+          <Property Name="maintain_profile" Type="int" />
+          <Property Name="maintain_dayrecord" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="cby" Type="int" />
+          <Property Name="con" Type="datetime" />
+          <Property Name="mby" Type="int" />
+          <Property Name="mon" Type="datetime" />
+          <Property Name="approve_status" Type="int" />
+          <Property Name="approve_by_cdpo" Type="int" />
+          <Property Name="approve_date_cdpo" Type="datetime" />
+          <Property Name="approve_by_dpo" Type="int" />
+          <Property Name="approve_date_dpo" Type="datetime" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="450" />
+          <Property Name="Dis_Code" Type="varchar" MaxLength="20" />
+          <Property Name="Dis_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Div_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Div_StateID" Type="int" Nullable="false" />
+          <Property Name="Proj_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'icdsdbassam.dbo.Vw_Aanganwadi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Vw_Aanganwadi">
+          <Key>
+            <PropertyRef Name="Div_ID" />
+            <PropertyRef Name="Div_Name" />
+            <PropertyRef Name="Dis_ID" />
+            <PropertyRef Name="Dis_Name" />
+            <PropertyRef Name="Proj_ID" />
+            <PropertyRef Name="Proj_Name" />
+            <PropertyRef Name="Sec_ID" />
+            <PropertyRef Name="Sec_Name" />
+            <PropertyRef Name="Ang_ID" />
+            <PropertyRef Name="Ang_Type" />
+            <PropertyRef Name="Proj_ProjectType" />
+          </Key>
+          <Property Name="Div_ID" Type="int" Nullable="false" />
+          <Property Name="Div_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Div_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dis_ID" Type="int" Nullable="false" />
+          <Property Name="Dis_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Dis_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="dis_cbr" Type="decimal" Scale="2" />
+          <Property Name="Dis_DDOCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proj_ID" Type="bigint" Nullable="false" />
+          <Property Name="Proj_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Proj_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sec_ID" Type="bigint" Nullable="false" />
+          <Property Name="Sec_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sec_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ang_ID" Type="bigint" Nullable="false" />
+          <Property Name="Ang_Name" Type="varchar" MaxLength="100" />
+          <Property Name="Ang_NameHindi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ang_Type" Type="int" Nullable="false" />
+          <Property Name="Vil_ID" Type="int" />
+          <Property Name="Vil_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vil_NameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vil_VillageCode" Type="int" />
+          <Property Name="Vil_Ward" Type="int" />
+          <Property Name="Gp_ID" Type="int" />
+          <Property Name="Gp_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gp_namehindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gp_Type" Type="nchar" MaxLength="10" />
+          <Property Name="JDName" Type="varchar" MaxLength="50" />
+          <Property Name="JDNameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DPOName" Type="varchar" MaxLength="50" />
+          <Property Name="DPONameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDPOName" Type="varchar" MaxLength="50" />
+          <Property Name="CDPONameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupName" Type="varchar" MaxLength="50" />
+          <Property Name="SupNameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkerName" Type="varchar" MaxLength="50" />
+          <Property Name="WorkerNameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="HelperName" Type="varchar" MaxLength="50" />
+          <Property Name="HelperNameHindi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proj_ProjectType" Type="int" Nullable="false" />
+          <Property Name="Ang_AanganwadiWorkerID" Type="int" />
+          <Property Name="Ang_AanganwadiHelperID" Type="int" />
+          <Property Name="Ang_Address" Type="varchar" MaxLength="300" />
+          <Property Name="Ang_addressHindi" Type="nvarchar" MaxLength="300" />
+          <Property Name="Ang_Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ANG">
+          <End Role="AanganwadiMst" Type="ECCEModel.Store.AanganwadiMst" Multiplicity="0..1" />
+          <End Role="icdsas_WIFS" Type="ECCEModel.Store.icdsas_WIFS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AanganwadiMst">
+              <PropertyRef Name="Ang_ID" />
+            </Principal>
+            <Dependent Role="icdsas_WIFS">
+              <PropertyRef Name="AWC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dist_Wifs">
+          <End Role="DistrictMst" Type="ECCEModel.Store.DistrictMst" Multiplicity="0..1" />
+          <End Role="icdsas_WIFS" Type="ECCEModel.Store.icdsas_WIFS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistrictMst">
+              <PropertyRef Name="Dis_ID" />
+            </Principal>
+            <Dependent Role="icdsas_WIFS">
+              <PropertyRef Name="dist_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proj">
+          <End Role="ProjectMst" Type="ECCEModel.Store.ProjectMst" Multiplicity="0..1" />
+          <End Role="icdsas_WIFS" Type="ECCEModel.Store.icdsas_WIFS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectMst">
+              <PropertyRef Name="Proj_ID" />
+            </Principal>
+            <Dependent Role="icdsas_WIFS">
+              <PropertyRef Name="proj_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ECCEModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Con" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="icdsasMonthlyECCEDays" EntityType="ECCEModel.icdsasMonthlyECCEDay" />
+          <EntitySet Name="AanganwadiMsts" EntityType="ECCEModel.AanganwadiMst" />
+          <EntitySet Name="DistrictMsts" EntityType="ECCEModel.DistrictMst" />
+          <EntitySet Name="DivisionMsts" EntityType="ECCEModel.DivisionMst" />
+          <EntitySet Name="ProjectMsts" EntityType="ECCEModel.ProjectMst" />
+          <EntitySet Name="AWCMsts" EntityType="ECCEModel.AWCMst" />
+          <EntitySet Name="EcceDays" EntityType="ECCEModel.EcceDays" />
+          <EntitySet Name="WIFS" EntityType="ECCEModel.WIFS" />
+          <AssociationSet Name="FK_ANG" Association="ECCEModel.FK_ANG">
+            <End Role="AanganwadiMst" EntitySet="AanganwadiMsts" />
+            <End Role="icdsas_WIFS" EntitySet="WIFS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dist_Wifs" Association="ECCEModel.FK_Dist_Wifs">
+            <End Role="DistrictMst" EntitySet="DistrictMsts" />
+            <End Role="icdsas_WIFS" EntitySet="WIFS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proj" Association="ECCEModel.FK_Proj">
+            <End Role="ProjectMst" EntitySet="ProjectMsts" />
+            <End Role="icdsas_WIFS" EntitySet="WIFS" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="icdsasMonthlyECCEDay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReportingMonth" Type="Int32" />
+          <Property Name="Reportingyear" Type="Int32" />
+          <Property Name="Reportingdate" Type="DateTime" />
+          <Property Name="Dist_id" Type="Int32" />
+          <Property Name="proj_id" Type="Int32" />
+          <Property Name="awc_id" Type="Int32" />
+          <Property Name="Awc_code" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="dateofecc" Type="DateTime" />
+          <Property Name="community_was_informed" Type="Int32" />
+          <Property Name="AWW_present" Type="Int32" />
+          <Property Name="AWH_present" Type="Int32" />
+          <Property Name="total_no_AWC" Type="Int32" />
+          <Property Name="total_no_outside" Type="Int32" />
+          <Property Name="total_no_inside" Type="Int32" />
+          <Property Name="Participant_children" Type="Int32" />
+          <Property Name="Participant_parents" Type="Int32" />
+          <Property Name="Participant_PRI" Type="Int32" />
+          <Property Name="Participant_AWCMC" Type="Int32" />
+          <Property Name="Participant_Health" Type="Int32" />
+          <Property Name="total_SNP" Type="Int32" />
+          <Property Name="Materials_donated" Type="Int32" />
+          <Property Name="Theme_of_ECCE" Type="String" MaxLength="450" Unicode="true" FixedLength="false" />
+          <Property Name="ExplainChild" Type="Int32" />
+          <Property Name="child_risk" Type="Int32" />
+          <Property Name="maintain_profile" Type="Int32" />
+          <Property Name="maintain_dayrecord" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="cby" Type="Int32" />
+          <Property Name="con" Type="DateTime" />
+          <Property Name="mby" Type="Int32" />
+          <Property Name="mon" Type="DateTime" />
+          <Property Type="Int32" Name="Div_id" />
+          <Property Type="Int32" Name="approve_status" />
+          <Property Type="Int32" Name="approve_by_cdpo" />
+          <Property Type="DateTime" Name="approve_date_cdpo" />
+          <Property Type="Int32" Name="approve_by_dpo" />
+          <Property Type="String" Name="Remarks" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="approve_date_dpo" />
+        </EntityType>
+        <EntityType Name="AanganwadiMst">
+          <Key>
+            <PropertyRef Name="Ang_ID" />
+          </Key>
+          <Property Type="Int64" Name="Ang_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="Ang_SecID" Nullable="false" />
+          <Property Type="Int32" Name="Ang_Type" Nullable="false" />
+          <Property Type="Int32" Name="Ang_MiniAanganwadiParentID" />
+          <Property Type="String" Name="Ang_WardNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_CensusCode" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ang_UnderAwc" />
+          <Property Type="Int32" Name="Ang_NagarNigamID" />
+          <Property Type="Int32" Name="Ang_VillageName" />
+          <Property Type="Int32" Name="Ang_GramPanchayat" />
+          <Property Type="Int32" Name="Ang_ViID" />
+          <Property Type="Int32" Name="Ang_PSchool1" />
+          <Property Type="Int32" Name="Ang_PSchool2" />
+          <Property Type="Int32" Name="Ang_PrivatePSchool" />
+          <Property Type="String" Name="Ang_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_NameHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ang_SlNo" />
+          <Property Type="String" Name="Ang_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_PreviousCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_HealthSubCentre" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_HealthSubCentreHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ang_WorkerPostStatus" />
+          <Property Type="Int32" Name="Ang_AanganwadiWorkerID" />
+          <Property Type="String" Name="Ang_WorkerUsername" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ang_AanganwadiHelperPostStatus" />
+          <Property Type="Int32" Name="Ang_AanganwadiHelperID" />
+          <Property Type="String" Name="Ang_HelperUsername" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ang_MPWPostPosition" />
+          <Property Type="String" Name="Ang_ANMName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_ANMNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_AashaWorkerName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_AashaWorkerNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ang_AashaWorkerPostStatus" />
+          <Property Type="Int32" Name="Ang_NoOfAttachedMiniAnganwadi" />
+          <Property Type="Int32" Name="Ang_AnmPostPosition" />
+          <Property Type="Int32" Name="Ang_AanganwadiPosition" />
+          <Property Type="Int32" Name="Ang_AanganwadiManagement" />
+          <Property Type="Int32" Name="Ang_WorkersLiveInVillage" />
+          <Property Type="Int32" Name="Ang_WorkerHomeAndAanganwadiDistance" />
+          <Property Type="String" Name="Ang_Address" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_AddressHindi" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ang_ApprovedYear" />
+          <Property Type="Int32" Name="Ang_AanganwadiBuilding" />
+          <Property Type="Int32" Name="Ang_AanganwadiBuildingPosition" />
+          <Property Type="Int32" Name="Ang_VillageHealthCenter" />
+          <Property Type="Int32" Name="Ang_NearestHealthCenter" />
+          <Property Type="String" Name="Ang_NearestHealthCenterVillageName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ang_NearestHealthCenterAndAnganwadiDistance" />
+          <Property Type="Int32" Name="Ang_ImmunizationDay" />
+          <Property Type="Int32" Name="Ang_ImmunizationNo" />
+          <Property Type="Int32" Name="Ang_ImmunizationPlace" />
+          <Property Type="Int32" Name="Ang_MotherSahyoginiCommittee" />
+          <Property Type="Int32" Name="Ang_PowerAvailable" />
+          <Property Type="Int32" Name="Ang_PowerRunning" />
+          <Property Type="Int32" Name="Ang_FanAvailable" />
+          <Property Type="Int32" Name="Ang_FanRunning" />
+          <Property Type="Int32" Name="Ang_BulbAvailable" />
+          <Property Type="Int32" Name="Ang_BulbRunning" />
+          <Property Type="Int32" Name="Ang_ToiletAvailable" />
+          <Property Type="Int32" Name="Ang_ToiletRunning" />
+          <Property Type="Int32" Name="Ang_DrinkingWaterAvailable" />
+          <Property Type="Int32" Name="Ang_AdultVeigMachineAvailable" />
+          <Property Type="Int32" Name="Ang_AdultVeigMachineRunning" />
+          <Property Type="Int32" Name="Ang_SalterVeigMachineAvailable" />
+          <Property Type="Int32" Name="Ang_SalterVeigMachineRunning" />
+          <Property Type="Int32" Name="Ang_NewbornWeightMachinAvailable" />
+          <Property Type="Int32" Name="Ang_NewbornWeightMachinRunning" />
+          <Property Type="Int32" Name="Ang_MaternalAndChildProtectionCardAvailable" />
+          <Property Type="Int32" Name="Ang_MUACAvailable" />
+          <Property Type="Int32" Name="Ang_MUACUsable" />
+          <Property Type="Int32" Name="Ang_AidKitAvailable" />
+          <Property Type="Int32" Name="Ang_AidKitUsable" />
+          <Property Type="Int32" Name="Ang_PreSchoolEducationKitAvailable" />
+          <Property Type="Int32" Name="Ang_PreSchoolEducationKitUsable" />
+          <Property Type="Int32" Name="Ang_FamilyDetailsRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_SupplementaryFoodDistributionRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_PreSchoolEducationRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_PregnancyDeliveryRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_ImmunizationVHNDRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_VitaminARegisterAvailable" />
+          <Property Type="Int32" Name="Ang_HomeVisitRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_ReferralsRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_SummaryRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_WeightRecordsRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_WHOGrowthChartsAvailable" />
+          <Property Type="Int32" Name="Ang_StockRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_VisitorsRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_KitchenShedGroupName" />
+          <Property Type="Int32" Name="Ang_KitchenShedAndAanganwadiDistance" />
+          <Property Type="Int32" Name="Ang_FoodSupply" />
+          <Property Type="Boolean" Name="Ang_IsActive" />
+          <Property Type="Int32" Name="Ang_InsertedBy" />
+          <Property Type="DateTime" Name="Ang_InsertedDate" />
+          <Property Type="Int32" Name="Ang_UpdatedBy" />
+          <Property Type="DateTime" Name="Ang_UpdatedDate" />
+          <Property Type="Int32" Name="Ang_VHNDWDay" />
+          <Property Type="Int32" Name="Ang_VHNDNo" />
+          <Property Type="Int32" Name="Ang_VHNDDay" />
+          <Property Type="Int32" Name="Ang_CoHealthCenter" />
+          <Property Type="Int32" Name="Ang_MotherSupportCommitee" />
+          <Property Type="Int32" Name="Ang_SelfHelpGroup" />
+          <Property Type="Int32" Name="Ang_AdolecentGirlGrp" />
+          <Property Type="Int32" Name="Ang_Creche" />
+          <Property Type="Int32" Name="Ang_LearningMaterial" />
+          <Property Type="Int32" Name="Ang_InfoWindow" />
+          <Property Type="Int32" Name="Ang_Boundriwal" />
+          <Property Type="Int32" Name="Ang_ChildToilet" />
+          <Property Type="Int32" Name="Ang_FoodStorage" />
+          <Property Type="Int32" Name="Ang_WallPainting" />
+          <Property Type="Int32" Name="Ang_PlaySpace" />
+          <Property Type="String" Name="Ang_PrimaryHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_PrimaryHealthCenterHindi" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_SubHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_SubHealthCenterHindi" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_CommunityHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_CommunityHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_DistrictHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_DistrictHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_OtherHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_OtherHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_NoOneHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_NoOneHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ang_PrimaryHealthCenterDist" />
+          <Property Type="Int32" Name="Ang_SubHealthCenterDist" />
+          <Property Type="Int32" Name="Ang_CommunityHealthCenterDist" />
+          <Property Type="Int32" Name="Ang_DistrictHealthCenterDist" />
+          <Property Type="Int32" Name="Ang_OtherHealthCenterDist" />
+          <Property Type="Int32" Name="Ang_NoOneHealthCenterDist" />
+          <Property Type="Int32" Name="Ang_BuildingProvided" />
+          <Property Type="Int32" Name="Ang_AwcHoused" />
+          <Property Type="Int32" Name="Ang_BarrierPhysicallyChallenged" />
+          <Property Type="Int32" Name="Ang_TypeOfToilet" />
+          <Property Type="Int32" Name="Ang_CookingSupplementaryFood" />
+          <Property Type="Int32" Name="Ang_AdequateSpaceForPSE" />
+          <Property Type="Int32" Name="Ang_CookingUtensils" />
+          <Property Type="Int32" Name="Ang_CookingUtensilsUsable" />
+          <Property Type="Int32" Name="Ang_IECBCCMaterials" />
+          <Property Type="Int32" Name="Ang_IECBCCMaterialsUsable" />
+          <Property Type="Int32" Name="Ang_NHEDKit" />
+          <Property Type="Int32" Name="Ang_NHEDKitUsable" />
+          <Property Type="Int32" Name="Ang_ReferralSlip" />
+          <Property Type="Int32" Name="Ang_ReferralSlipUsable" />
+          <Property Type="Int32" Name="Ang_Plates" />
+          <Property Type="Int32" Name="Ang_PlatesUsable" />
+          <Property Type="Int32" Name="Ang_Tumblers" />
+          <Property Type="Int32" Name="Ang_TumblersUsable" />
+          <Property Type="Int32" Name="Ang_MeasuringCups" />
+          <Property Type="Int32" Name="Ang_MeasuringCupsUsable" />
+          <Property Type="Int32" Name="Ang_FoodStorageBins" />
+          <Property Type="Int32" Name="Ang_FoodStorageBinsUsable" />
+          <Property Type="Int32" Name="Ang_WaterStorageContainer" />
+          <Property Type="Int32" Name="Ang_WaterStorageContainerUsable" />
+          <Property Type="Int32" Name="Ang_Chair" />
+          <Property Type="Int32" Name="Ang_ChairUsable" />
+          <Property Type="Int32" Name="Ang_Table" />
+          <Property Type="Int32" Name="Ang_TableUsable" />
+          <Property Type="Int32" Name="Ang_DariMats" />
+          <Property Type="Int32" Name="Ang_DariMatsUsable" />
+          <Property Type="String" Name="Ang_Latitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_Longitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Ang_PowerPollDistance" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="Ang_EfiTheater" />
+          <Property Type="Int32" Name="Ang_ElectronicVeigMachineAvailable" />
+          <Property Type="Int32" Name="Ang_ElectronicVeigMachineRunning" />
+          <Property Type="Int32" Name="Ang_IDCAvailable" />
+          <Property Type="Int32" Name="Ang_IDCRunning" />
+          <Property Type="Int32" Name="Ang_InfantActivityBookAvailable" />
+          <Property Type="Int32" Name="Ang_InfantActivityBookRunning" />
+          <Property Type="Int32" Name="Ang_CupboardAvailable" />
+          <Property Type="Int32" Name="Ang_CupboardRunning" />
+          <Property Type="Int32" Name="Ang_HealthTestTableAvailable" />
+          <Property Type="Int32" Name="Ang_HealthTestTableRunning" />
+          <Property Type="Int32" Name="Ang_GlassAvailable" />
+          <Property Type="Int32" Name="Ang_GlassRunning" />
+          <Property Type="Int32" Name="Ang_HandwashkitAvailable" />
+          <Property Type="Int32" Name="Ang_HandwashkitRunning" />
+          <Property Type="Int32" Name="Ang_BellAvailable" />
+          <Property Type="Int32" Name="Ang_BellRunning" />
+          <Property Type="Int32" Name="Ang_SABLAKitAvailable" />
+          <Property Type="Int32" Name="Ang_SABLAKitRunning" />
+          <Property Type="Int32" Name="Ang_HEalthCenterMediKitAvailable" />
+          <Property Type="Int32" Name="Ang_HEalthCenterMediKitRunning" />
+          <Property Type="Int32" Name="Ang_RadioAvailable" />
+          <Property Type="Int32" Name="Ang_RadioRunning" />
+          <Property Type="Int32" Name="Ang_AccountRegisterAvailable" />
+          <Property Type="Int32" Name="Ang_AccountRegisterRunning" />
+          <Property Type="Int32" Name="Ang_ChokiAvailable" />
+          <Property Type="Int32" Name="Ang_ChokiRunning" />
+          <Property Type="Int32" Name="Ang_VHCID" />
+          <NavigationProperty Name="icdsas_WIFS" Relationship="ECCEModel.FK_ANG" FromRole="AanganwadiMst" ToRole="icdsas_WIFS" />
+        </EntityType>
+        <EntityType Name="DistrictMst">
+          <Key>
+            <PropertyRef Name="Dis_ID" />
+          </Key>
+          <Property Type="Int32" Name="Dis_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Dis_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Dis_DivID" Nullable="false" />
+          <Property Type="String" Name="Dis_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dis_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Dis_PostPosition" />
+          <Property Type="Int32" Name="Dis_DistrictOfficerID" />
+          <Property Type="String" Name="Dis_Username" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Dis_IsActive" />
+          <Property Type="Int32" Name="Dis_InsertedBy" />
+          <Property Type="DateTime" Name="Dis_InsertedDate" />
+          <Property Type="Int32" Name="Dis_UpdatedBy" />
+          <Property Type="DateTime" Name="Dis_UpdatedDate" />
+          <Property Type="Int32" Name="Dis_MappedCode" />
+          <Property Type="Decimal" Name="Dis_Cbr" Precision="18" Scale="2" />
+          <Property Type="String" Name="Dis_DDOCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dis_Address" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dis_AddressHindi" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dis_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Dis_Phone" />
+          <Property Type="Int32" Name="Dis_TargetedShivir" />
+          <Property Type="Int32" Name="Dis_AadharEnrolment" />
+          <NavigationProperty Name="icdsas_WIFS" Relationship="ECCEModel.FK_Dist_Wifs" FromRole="DistrictMst" ToRole="icdsas_WIFS" />
+        </EntityType>
+        <EntityType Name="DivisionMst">
+          <Key>
+            <PropertyRef Name="Div_ID" />
+          </Key>
+          <Property Type="Int32" Name="Div_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Div_StateID" Nullable="false" />
+          <Property Type="String" Name="Div_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Div_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Div_PostPosition" />
+          <Property Type="Int32" Name="Div_OfficerID" />
+          <Property Type="String" Name="Div_Username" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Div_IsActive" />
+          <Property Type="Int32" Name="Div_InsertedBy" />
+          <Property Type="DateTime" Name="Div_InsertedDate" />
+          <Property Type="Int32" Name="Div_UpdatedBy" />
+          <Property Type="DateTime" Name="Div_UpdatedDate" />
+          <Property Type="String" Name="Div_DDOCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Div_Address" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Div_AddressHindi" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Div_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Div_Phone" />
+          <Property Type="Int32" Name="Div_DRG" />
+        </EntityType>
+        <EntityType Name="ProjectMst">
+          <Key>
+            <PropertyRef Name="Proj_ID" />
+          </Key>
+          <Property Type="Int64" Name="Proj_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Proj_DisID" Nullable="false" />
+          <Property Type="String" Name="Proj_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Proj_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Proj_OfficerID" />
+          <Property Type="String" Name="Proj_Username" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Proj_ProjectType" Nullable="false" />
+          <Property Type="Int32" Name="Proj_ApprovedYear" />
+          <Property Type="Int64" Name="Proj_TotalSector" />
+          <Property Type="Int64" Name="Proj_TotalAnganwadi" />
+          <Property Type="Int64" Name="Proj_TotalMiniAnganwadi" />
+          <Property Type="Int32" Name="Proj_OffeiceType" />
+          <Property Type="String" Name="Proj_Address" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_AddressHindi" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_Phone" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Proj_Mobile" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Proj_Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Proj_Vehicle" Nullable="false" />
+          <Property Type="String" Name="Proj_VehicleOrderNo" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Proj_OrderDate" />
+          <Property Type="Int32" Name="Proj_ComputerAvalibility" />
+          <Property Type="Int32" Name="Proj_ACDPOSanction" />
+          <Property Type="Int32" Name="Proj_ACDPOInPosition" />
+          <Property Type="Int32" Name="Proj_StatisticalSanction" />
+          <Property Type="Int32" Name="Proj_StatisticalInPosition" />
+          <Property Type="Int32" Name="Proj_BlockLevelStaffSanction" />
+          <Property Type="Int32" Name="Proj_BlockLevelStaffInPosition" />
+          <Property Type="Int32" Name="Proj_DriverSanction" />
+          <Property Type="Int32" Name="Proj_DriverInPosition" />
+          <Property Type="Int64" Name="Proj_DDOCode" />
+          <Property Type="Boolean" Name="Proj_IsActive" Nullable="false" />
+          <Property Type="Int32" Name="Proj_InsertedBy" />
+          <Property Type="DateTime" Name="Proj_InsertedDate" />
+          <Property Type="Int32" Name="Proj_UpdatedBy" />
+          <Property Type="DateTime" Name="Proj_UpdatedDate" />
+          <Property Type="Int32" Name="Proj_PostPosition" />
+          <Property Type="String" Name="Proj_BlockCode" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_PHCLinked" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_ACDPOName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_ACDPONameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Proj_ModelAWC" />
+          <Property Type="Int32" Name="Proj_SubDisCode" />
+          <NavigationProperty Name="icdsas_WIFS" Relationship="ECCEModel.FK_Proj" FromRole="ProjectMst" ToRole="icdsas_WIFS" />
+        </EntityType>
+        <EntityType Name="AWCMst">
+          <Key>
+            <PropertyRef Name="Div_ID" />
+            <PropertyRef Name="Div_Name" />
+            <PropertyRef Name="Dis_ID" />
+            <PropertyRef Name="Dis_Name" />
+            <PropertyRef Name="Proj_ID" />
+            <PropertyRef Name="Proj_Name" />
+            <PropertyRef Name="Sec_ID" />
+            <PropertyRef Name="Sec_Name" />
+            <PropertyRef Name="Ang_ID" />
+            <PropertyRef Name="Ang_Type" />
+            <PropertyRef Name="Proj_ProjectType" />
+          </Key>
+          <Property Type="Int32" Name="Div_ID" Nullable="false" />
+          <Property Type="String" Name="Div_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Div_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Dis_ID" Nullable="false" />
+          <Property Type="String" Name="Dis_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dis_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="dis_cbr" Precision="18" Scale="2" />
+          <Property Type="String" Name="Dis_DDOCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Proj_ID" Nullable="false" />
+          <Property Type="String" Name="Proj_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proj_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Sec_ID" Nullable="false" />
+          <Property Type="String" Name="Sec_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sec_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Ang_ID" Nullable="false" />
+          <Property Type="String" Name="Ang_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_NameHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Ang_Type" Nullable="false" />
+          <Property Type="Int32" Name="Vil_ID" />
+          <Property Type="String" Name="Vil_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Vil_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Vil_VillageCode" />
+          <Property Type="Int32" Name="Vil_Ward" />
+          <Property Type="Int32" Name="Gp_ID" />
+          <Property Type="String" Name="Gp_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gp_namehindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gp_Type" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="JDName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="JDNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DPOName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DPONameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CDPOName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CDPONameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SupNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkerName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="WorkerNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HelperName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HelperNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Proj_ProjectType" Nullable="false" />
+          <Property Type="Int32" Name="Ang_AanganwadiWorkerID" />
+          <Property Type="Int32" Name="Ang_AanganwadiHelperID" />
+          <Property Type="String" Name="Ang_Address" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ang_addressHindi" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Ang_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EcceDays">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Dis_Name" />
+            <PropertyRef Name="Div_Name" />
+            <PropertyRef Name="Div_StateID" />
+            <PropertyRef Name="Proj_Name" />
+          </Key>
+          <Property Type="String" Name="Ang_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="ReportingMonth" />
+          <Property Type="Int32" Name="Reportingyear" />
+          <Property Type="DateTime" Name="Reportingdate" />
+          <Property Type="Int32" Name="Div_id" />
+          <Property Type="Int32" Name="Dist_id" />
+          <Property Type="Int32" Name="proj_id" />
+          <Property Type="Int32" Name="awc_id" />
+          <Property Type="String" Name="Awc_code" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dateofecc" />
+          <Property Type="Int32" Name="community_was_informed" />
+          <Property Type="Int32" Name="AWW_present" />
+          <Property Type="Int32" Name="AWH_present" />
+          <Property Type="Int32" Name="total_no_AWC" />
+          <Property Type="Int32" Name="total_no_outside" />
+          <Property Type="Int32" Name="total_no_inside" />
+          <Property Type="Int32" Name="Participant_children" />
+          <Property Type="Int32" Name="Participant_parents" />
+          <Property Type="Int32" Name="Participant_PRI" />
+          <Property Type="Int32" Name="Participant_AWCMC" />
+          <Property Type="Int32" Name="Participant_Health" />
+          <Property Type="Int32" Name="total_SNP" />
+          <Property Type="Int32" Name="Materials_donated" />
+          <Property Type="String" Name="Theme_of_ECCE" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ExplainChild" />
+          <Property Type="Int32" Name="child_risk" />
+          <Property Type="Int32" Name="maintain_profile" />
+          <Property Type="Int32" Name="maintain_dayrecord" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="Int32" Name="cby" />
+          <Property Type="DateTime" Name="con" />
+          <Property Type="Int32" Name="mby" />
+          <Property Type="DateTime" Name="mon" />
+          <Property Type="Int32" Name="approve_status" />
+          <Property Type="Int32" Name="approve_by_cdpo" />
+          <Property Type="DateTime" Name="approve_date_cdpo" />
+          <Property Type="Int32" Name="approve_by_dpo" />
+          <Property Type="String" Name="Remarks" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dis_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Dis_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Div_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Div_StateID" Nullable="false" />
+          <Property Type="String" Name="Proj_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ROW_NUM" />
+          <Property Type="DateTime" Name="approve_date_dpo" />
+        </EntityType>
+        <EntityType Name="WIFS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="dist_id" />
+          <Property Type="Int64" Name="proj_id" />
+          <Property Type="Int64" Name="AWC_id" />
+          <Property Type="Int32" Name="ReportingMonth" />
+          <Property Type="Int32" Name="Reportingyear" />
+          <Property Type="DateTime" Name="Reportingdate" />
+          <Property Type="Int32" Name="a" />
+          <Property Type="Int32" Name="b" />
+          <Property Type="Decimal" Name="c" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="d" />
+          <Property Type="Int32" Name="e" />
+          <Property Type="Int32" Name="f" />
+          <Property Type="Decimal" Name="g" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="h" />
+          <Property Type="Int32" Name="i" />
+          <Property Type="Int32" Name="j" />
+          <Property Type="Int32" Name="k" />
+          <Property Type="Int32" Name="l" />
+          <Property Type="Int32" Name="m" />
+          <Property Type="Int32" Name="n_opening" />
+          <Property Type="Int32" Name="n_received" />
+          <Property Type="Int32" Name="n_utilized" />
+          <Property Type="Int32" Name="n_balance" />
+          <Property Type="Int32" Name="o_opening" />
+          <Property Type="Int32" Name="o_received" />
+          <Property Type="Int32" Name="o_utilized" />
+          <Property Type="Int32" Name="o_balance" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="Int32" Name="cby" />
+          <Property Type="DateTime" Name="con" />
+          <Property Type="Int32" Name="mby" />
+          <Property Type="DateTime" Name="mon" />
+          <Property Type="Int32" Name="approve_status" />
+          <Property Type="Int32" Name="approve_by_DPO" />
+          <Property Type="DateTime" Name="approve_date_DPO" />
+          <Property Type="String" Name="remarks" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="approve_by_CDPO" />
+          <Property Type="DateTime" Name="approve_date_CDPO" />
+          <NavigationProperty Name="AanganwadiMst" Relationship="ECCEModel.FK_ANG" FromRole="icdsas_WIFS" ToRole="AanganwadiMst" />
+          <NavigationProperty Name="DistrictMst" Relationship="ECCEModel.FK_Dist_Wifs" FromRole="icdsas_WIFS" ToRole="DistrictMst" />
+          <NavigationProperty Name="ProjectMst" Relationship="ECCEModel.FK_Proj" FromRole="icdsas_WIFS" ToRole="ProjectMst" />
+        </EntityType>
+        <Association Name="FK_ANG">
+          <End Type="ECCEModel.AanganwadiMst" Role="AanganwadiMst" Multiplicity="0..1" />
+          <End Type="ECCEModel.WIFS" Role="icdsas_WIFS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AanganwadiMst">
+              <PropertyRef Name="Ang_ID" />
+            </Principal>
+            <Dependent Role="icdsas_WIFS">
+              <PropertyRef Name="AWC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dist_Wifs">
+          <End Type="ECCEModel.DistrictMst" Role="DistrictMst" Multiplicity="0..1" />
+          <End Type="ECCEModel.WIFS" Role="icdsas_WIFS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistrictMst">
+              <PropertyRef Name="Dis_ID" />
+            </Principal>
+            <Dependent Role="icdsas_WIFS">
+              <PropertyRef Name="dist_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proj">
+          <End Type="ECCEModel.ProjectMst" Role="ProjectMst" Multiplicity="0..1" />
+          <End Type="ECCEModel.WIFS" Role="icdsas_WIFS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectMst">
+              <PropertyRef Name="Proj_ID" />
+            </Principal>
+            <Dependent Role="icdsas_WIFS">
+              <PropertyRef Name="proj_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ECCEModelStoreContainer" CdmEntityContainer="Con">
+          <EntitySetMapping Name="icdsasMonthlyECCEDays">
+            <EntityTypeMapping TypeName="ECCEModel.icdsasMonthlyECCEDay">
+              <MappingFragment StoreEntitySet="icdsas_Monthly_ECCE_Day">
+                <ScalarProperty Name="approve_date_dpo" ColumnName="approve_date_dpo" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="approve_by_dpo" ColumnName="approve_by_dpo" />
+                <ScalarProperty Name="approve_date_cdpo" ColumnName="approve_date_cdpo" />
+                <ScalarProperty Name="approve_by_cdpo" ColumnName="approve_by_cdpo" />
+                <ScalarProperty Name="approve_status" ColumnName="approve_status" />
+                <ScalarProperty Name="Div_id" ColumnName="Div_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ReportingMonth" ColumnName="ReportingMonth" />
+                <ScalarProperty Name="Reportingyear" ColumnName="Reportingyear" />
+                <ScalarProperty Name="Reportingdate" ColumnName="Reportingdate" />
+                <ScalarProperty Name="Dist_id" ColumnName="Dist_id" />
+                <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+                <ScalarProperty Name="awc_id" ColumnName="awc_id" />
+                <ScalarProperty Name="Awc_code" ColumnName="Awc_code" />
+                <ScalarProperty Name="dateofecc" ColumnName="dateofecc" />
+                <ScalarProperty Name="community_was_informed" ColumnName="community_was_informed" />
+                <ScalarProperty Name="AWW_present" ColumnName="AWW_present" />
+                <ScalarProperty Name="AWH_present" ColumnName="AWH_present" />
+                <ScalarProperty Name="total_no_AWC" ColumnName="total_no_AWC" />
+                <ScalarProperty Name="total_no_outside" ColumnName="total_no_outside" />
+                <ScalarProperty Name="total_no_inside" ColumnName="total_no_inside" />
+                <ScalarProperty Name="Participant_children" ColumnName="Participant_children" />
+                <ScalarProperty Name="Participant_parents" ColumnName="Participant_parents" />
+                <ScalarProperty Name="Participant_PRI" ColumnName="Participant_PRI" />
+                <ScalarProperty Name="Participant_AWCMC" ColumnName="Participant_AWCMC" />
+                <ScalarProperty Name="Participant_Health" ColumnName="Participant_Health" />
+                <ScalarProperty Name="total_SNP" ColumnName="total_SNP" />
+                <ScalarProperty Name="Materials_donated" ColumnName="Materials_donated" />
+                <ScalarProperty Name="Theme_of_ECCE" ColumnName="Theme_of_ECCE" />
+                <ScalarProperty Name="ExplainChild" ColumnName="ExplainChild" />
+                <ScalarProperty Name="child_risk" ColumnName="child_risk" />
+                <ScalarProperty Name="maintain_profile" ColumnName="maintain_profile" />
+                <ScalarProperty Name="maintain_dayrecord" ColumnName="maintain_dayrecord" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="cby" ColumnName="cby" />
+                <ScalarProperty Name="con" ColumnName="con" />
+                <ScalarProperty Name="mby" ColumnName="mby" />
+                <ScalarProperty Name="mon" ColumnName="mon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AanganwadiMsts">
+            <EntityTypeMapping TypeName="ECCEModel.AanganwadiMst">
+              <MappingFragment StoreEntitySet="AanganwadiMst">
+                <ScalarProperty Name="Ang_VHCID" ColumnName="Ang_VHCID" />
+                <ScalarProperty Name="Ang_ChokiRunning" ColumnName="Ang_ChokiRunning" />
+                <ScalarProperty Name="Ang_ChokiAvailable" ColumnName="Ang_ChokiAvailable" />
+                <ScalarProperty Name="Ang_AccountRegisterRunning" ColumnName="Ang_AccountRegisterRunning" />
+                <ScalarProperty Name="Ang_AccountRegisterAvailable" ColumnName="Ang_AccountRegisterAvailable" />
+                <ScalarProperty Name="Ang_RadioRunning" ColumnName="Ang_RadioRunning" />
+                <ScalarProperty Name="Ang_RadioAvailable" ColumnName="Ang_RadioAvailable" />
+                <ScalarProperty Name="Ang_HEalthCenterMediKitRunning" ColumnName="Ang_HEalthCenterMediKitRunning" />
+                <ScalarProperty Name="Ang_HEalthCenterMediKitAvailable" ColumnName="Ang_HEalthCenterMediKitAvailable" />
+                <ScalarProperty Name="Ang_SABLAKitRunning" ColumnName="Ang_SABLAKitRunning" />
+                <ScalarProperty Name="Ang_SABLAKitAvailable" ColumnName="Ang_SABLAKitAvailable" />
+                <ScalarProperty Name="Ang_BellRunning" ColumnName="Ang_BellRunning" />
+                <ScalarProperty Name="Ang_BellAvailable" ColumnName="Ang_BellAvailable" />
+                <ScalarProperty Name="Ang_HandwashkitRunning" ColumnName="Ang_HandwashkitRunning" />
+                <ScalarProperty Name="Ang_HandwashkitAvailable" ColumnName="Ang_HandwashkitAvailable" />
+                <ScalarProperty Name="Ang_GlassRunning" ColumnName="Ang_GlassRunning" />
+                <ScalarProperty Name="Ang_GlassAvailable" ColumnName="Ang_GlassAvailable" />
+                <ScalarProperty Name="Ang_HealthTestTableRunning" ColumnName="Ang_HealthTestTableRunning" />
+                <ScalarProperty Name="Ang_HealthTestTableAvailable" ColumnName="Ang_HealthTestTableAvailable" />
+                <ScalarProperty Name="Ang_CupboardRunning" ColumnName="Ang_CupboardRunning" />
+                <ScalarProperty Name="Ang_CupboardAvailable" ColumnName="Ang_CupboardAvailable" />
+                <ScalarProperty Name="Ang_InfantActivityBookRunning" ColumnName="Ang_InfantActivityBookRunning" />
+                <ScalarProperty Name="Ang_InfantActivityBookAvailable" ColumnName="Ang_InfantActivityBookAvailable" />
+                <ScalarProperty Name="Ang_IDCRunning" ColumnName="Ang_IDCRunning" />
+                <ScalarProperty Name="Ang_IDCAvailable" ColumnName="Ang_IDCAvailable" />
+                <ScalarProperty Name="Ang_ElectronicVeigMachineRunning" ColumnName="Ang_ElectronicVeigMachineRunning" />
+                <ScalarProperty Name="Ang_ElectronicVeigMachineAvailable" ColumnName="Ang_ElectronicVeigMachineAvailable" />
+                <ScalarProperty Name="Ang_EfiTheater" ColumnName="Ang_EfiTheater" />
+                <ScalarProperty Name="Ang_PowerPollDistance" ColumnName="Ang_PowerPollDistance" />
+                <ScalarProperty Name="Ang_Longitude" ColumnName="Ang_Longitude" />
+                <ScalarProperty Name="Ang_Latitude" ColumnName="Ang_Latitude" />
+                <ScalarProperty Name="Ang_DariMatsUsable" ColumnName="Ang_DariMatsUsable" />
+                <ScalarProperty Name="Ang_DariMats" ColumnName="Ang_DariMats" />
+                <ScalarProperty Name="Ang_TableUsable" ColumnName="Ang_TableUsable" />
+                <ScalarProperty Name="Ang_Table" ColumnName="Ang_Table" />
+                <ScalarProperty Name="Ang_ChairUsable" ColumnName="Ang_ChairUsable" />
+                <ScalarProperty Name="Ang_Chair" ColumnName="Ang_Chair" />
+                <ScalarProperty Name="Ang_WaterStorageContainerUsable" ColumnName="Ang_WaterStorageContainerUsable" />
+                <ScalarProperty Name="Ang_WaterStorageContainer" ColumnName="Ang_WaterStorageContainer" />
+                <ScalarProperty Name="Ang_FoodStorageBinsUsable" ColumnName="Ang_FoodStorageBinsUsable" />
+                <ScalarProperty Name="Ang_FoodStorageBins" ColumnName="Ang_FoodStorageBins" />
+                <ScalarProperty Name="Ang_MeasuringCupsUsable" ColumnName="Ang_MeasuringCupsUsable" />
+                <ScalarProperty Name="Ang_MeasuringCups" ColumnName="Ang_MeasuringCups" />
+                <ScalarProperty Name="Ang_TumblersUsable" ColumnName="Ang_TumblersUsable" />
+                <ScalarProperty Name="Ang_Tumblers" ColumnName="Ang_Tumblers" />
+                <ScalarProperty Name="Ang_PlatesUsable" ColumnName="Ang_PlatesUsable" />
+                <ScalarProperty Name="Ang_Plates" ColumnName="Ang_Plates" />
+                <ScalarProperty Name="Ang_ReferralSlipUsable" ColumnName="Ang_ReferralSlipUsable" />
+                <ScalarProperty Name="Ang_ReferralSlip" ColumnName="Ang_ReferralSlip" />
+                <ScalarProperty Name="Ang_NHEDKitUsable" ColumnName="Ang_NHEDKitUsable" />
+                <ScalarProperty Name="Ang_NHEDKit" ColumnName="Ang_NHEDKit" />
+                <ScalarProperty Name="Ang_IECBCCMaterialsUsable" ColumnName="Ang_IECBCCMaterialsUsable" />
+                <ScalarProperty Name="Ang_IECBCCMaterials" ColumnName="Ang_IECBCCMaterials" />
+                <ScalarProperty Name="Ang_CookingUtensilsUsable" ColumnName="Ang_CookingUtensilsUsable" />
+                <ScalarProperty Name="Ang_CookingUtensils" ColumnName="Ang_CookingUtensils" />
+                <ScalarProperty Name="Ang_AdequateSpaceForPSE" ColumnName="Ang_AdequateSpaceForPSE" />
+                <ScalarProperty Name="Ang_CookingSupplementaryFood" ColumnName="Ang_CookingSupplementaryFood" />
+                <ScalarProperty Name="Ang_TypeOfToilet" ColumnName="Ang_TypeOfToilet" />
+                <ScalarProperty Name="Ang_BarrierPhysicallyChallenged" ColumnName="Ang_BarrierPhysicallyChallenged" />
+                <ScalarProperty Name="Ang_AwcHoused" ColumnName="Ang_AwcHoused" />
+                <ScalarProperty Name="Ang_BuildingProvided" ColumnName="Ang_BuildingProvided" />
+                <ScalarProperty Name="Ang_NoOneHealthCenterDist" ColumnName="Ang_NoOneHealthCenterDist" />
+                <ScalarProperty Name="Ang_OtherHealthCenterDist" ColumnName="Ang_OtherHealthCenterDist" />
+                <ScalarProperty Name="Ang_DistrictHealthCenterDist" ColumnName="Ang_DistrictHealthCenterDist" />
+                <ScalarProperty Name="Ang_CommunityHealthCenterDist" ColumnName="Ang_CommunityHealthCenterDist" />
+                <ScalarProperty Name="Ang_SubHealthCenterDist" ColumnName="Ang_SubHealthCenterDist" />
+                <ScalarProperty Name="Ang_PrimaryHealthCenterDist" ColumnName="Ang_PrimaryHealthCenterDist" />
+                <ScalarProperty Name="Ang_NoOneHealthCenterHindi" ColumnName="Ang_NoOneHealthCenterHindi" />
+                <ScalarProperty Name="Ang_NoOneHealthCenter" ColumnName="Ang_NoOneHealthCenter" />
+                <ScalarProperty Name="Ang_OtherHealthCenterHindi" ColumnName="Ang_OtherHealthCenterHindi" />
+                <ScalarProperty Name="Ang_OtherHealthCenter" ColumnName="Ang_OtherHealthCenter" />
+                <ScalarProperty Name="Ang_DistrictHealthCenterHindi" ColumnName="Ang_DistrictHealthCenterHindi" />
+                <ScalarProperty Name="Ang_DistrictHealthCenter" ColumnName="Ang_DistrictHealthCenter" />
+                <ScalarProperty Name="Ang_CommunityHealthCenterHindi" ColumnName="Ang_CommunityHealthCenterHindi" />
+                <ScalarProperty Name="Ang_CommunityHealthCenter" ColumnName="Ang_CommunityHealthCenter" />
+                <ScalarProperty Name="Ang_SubHealthCenterHindi" ColumnName="Ang_SubHealthCenterHindi" />
+                <ScalarProperty Name="Ang_SubHealthCenter" ColumnName="Ang_SubHealthCenter" />
+                <ScalarProperty Name="Ang_PrimaryHealthCenterHindi" ColumnName="Ang_PrimaryHealthCenterHindi" />
+                <ScalarProperty Name="Ang_PrimaryHealthCenter" ColumnName="Ang_PrimaryHealthCenter" />
+                <ScalarProperty Name="Ang_PlaySpace" ColumnName="Ang_PlaySpace" />
+                <ScalarProperty Name="Ang_WallPainting" ColumnName="Ang_WallPainting" />
+                <ScalarProperty Name="Ang_FoodStorage" ColumnName="Ang_FoodStorage" />
+                <ScalarProperty Name="Ang_ChildToilet" ColumnName="Ang_ChildToilet" />
+                <ScalarProperty Name="Ang_Boundriwal" ColumnName="Ang_Boundriwal" />
+                <ScalarProperty Name="Ang_InfoWindow" ColumnName="Ang_InfoWindow" />
+                <ScalarProperty Name="Ang_LearningMaterial" ColumnName="Ang_LearningMaterial" />
+                <ScalarProperty Name="Ang_Creche" ColumnName="Ang_Creche" />
+                <ScalarProperty Name="Ang_AdolecentGirlGrp" ColumnName="Ang_AdolecentGirlGrp" />
+                <ScalarProperty Name="Ang_SelfHelpGroup" ColumnName="Ang_SelfHelpGroup" />
+                <ScalarProperty Name="Ang_MotherSupportCommitee" ColumnName="Ang_MotherSupportCommitee" />
+                <ScalarProperty Name="Ang_CoHealthCenter" ColumnName="Ang_CoHealthCenter" />
+                <ScalarProperty Name="Ang_VHNDDay" ColumnName="Ang_VHNDDay" />
+                <ScalarProperty Name="Ang_VHNDNo" ColumnName="Ang_VHNDNo" />
+                <ScalarProperty Name="Ang_VHNDWDay" ColumnName="Ang_VHNDWDay" />
+                <ScalarProperty Name="Ang_UpdatedDate" ColumnName="Ang_UpdatedDate" />
+                <ScalarProperty Name="Ang_UpdatedBy" ColumnName="Ang_UpdatedBy" />
+                <ScalarProperty Name="Ang_InsertedDate" ColumnName="Ang_InsertedDate" />
+                <ScalarProperty Name="Ang_InsertedBy" ColumnName="Ang_InsertedBy" />
+                <ScalarProperty Name="Ang_IsActive" ColumnName="Ang_IsActive" />
+                <ScalarProperty Name="Ang_FoodSupply" ColumnName="Ang_FoodSupply" />
+                <ScalarProperty Name="Ang_KitchenShedAndAanganwadiDistance" ColumnName="Ang_KitchenShedAndAanganwadiDistance" />
+                <ScalarProperty Name="Ang_KitchenShedGroupName" ColumnName="Ang_KitchenShedGroupName" />
+                <ScalarProperty Name="Ang_VisitorsRegisterAvailable" ColumnName="Ang_VisitorsRegisterAvailable" />
+                <ScalarProperty Name="Ang_StockRegisterAvailable" ColumnName="Ang_StockRegisterAvailable" />
+                <ScalarProperty Name="Ang_WHOGrowthChartsAvailable" ColumnName="Ang_WHOGrowthChartsAvailable" />
+                <ScalarProperty Name="Ang_WeightRecordsRegisterAvailable" ColumnName="Ang_WeightRecordsRegisterAvailable" />
+                <ScalarProperty Name="Ang_SummaryRegisterAvailable" ColumnName="Ang_SummaryRegisterAvailable" />
+                <ScalarProperty Name="Ang_ReferralsRegisterAvailable" ColumnName="Ang_ReferralsRegisterAvailable" />
+                <ScalarProperty Name="Ang_HomeVisitRegisterAvailable" ColumnName="Ang_HomeVisitRegisterAvailable" />
+                <ScalarProperty Name="Ang_VitaminARegisterAvailable" ColumnName="Ang_VitaminARegisterAvailable" />
+                <ScalarProperty Name="Ang_ImmunizationVHNDRegisterAvailable" ColumnName="Ang_ImmunizationVHNDRegisterAvailable" />
+                <ScalarProperty Name="Ang_PregnancyDeliveryRegisterAvailable" ColumnName="Ang_PregnancyDeliveryRegisterAvailable" />
+                <ScalarProperty Name="Ang_PreSchoolEducationRegisterAvailable" ColumnName="Ang_PreSchoolEducationRegisterAvailable" />
+                <ScalarProperty Name="Ang_SupplementaryFoodDistributionRegisterAvailable" ColumnName="Ang_SupplementaryFoodDistributionRegisterAvailable" />
+                <ScalarProperty Name="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" ColumnName="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" />
+                <ScalarProperty Name="Ang_FamilyDetailsRegisterAvailable" ColumnName="Ang_FamilyDetailsRegisterAvailable" />
+                <ScalarProperty Name="Ang_PreSchoolEducationKitUsable" ColumnName="Ang_PreSchoolEducationKitUsable" />
+                <ScalarProperty Name="Ang_PreSchoolEducationKitAvailable" ColumnName="Ang_PreSchoolEducationKitAvailable" />
+                <ScalarProperty Name="Ang_AidKitUsable" ColumnName="Ang_AidKitUsable" />
+                <ScalarProperty Name="Ang_AidKitAvailable" ColumnName="Ang_AidKitAvailable" />
+                <ScalarProperty Name="Ang_MUACUsable" ColumnName="Ang_MUACUsable" />
+                <ScalarProperty Name="Ang_MUACAvailable" ColumnName="Ang_MUACAvailable" />
+                <ScalarProperty Name="Ang_MaternalAndChildProtectionCardAvailable" ColumnName="Ang_MaternalAndChildProtectionCardAvailable" />
+                <ScalarProperty Name="Ang_NewbornWeightMachinRunning" ColumnName="Ang_NewbornWeightMachinRunning" />
+                <ScalarProperty Name="Ang_NewbornWeightMachinAvailable" ColumnName="Ang_NewbornWeightMachinAvailable" />
+                <ScalarProperty Name="Ang_SalterVeigMachineRunning" ColumnName="Ang_SalterVeigMachineRunning" />
+                <ScalarProperty Name="Ang_SalterVeigMachineAvailable" ColumnName="Ang_SalterVeigMachineAvailable" />
+                <ScalarProperty Name="Ang_AdultVeigMachineRunning" ColumnName="Ang_AdultVeigMachineRunning" />
+                <ScalarProperty Name="Ang_AdultVeigMachineAvailable" ColumnName="Ang_AdultVeigMachineAvailable" />
+                <ScalarProperty Name="Ang_DrinkingWaterAvailable" ColumnName="Ang_DrinkingWaterAvailable" />
+                <ScalarProperty Name="Ang_ToiletRunning" ColumnName="Ang_ToiletRunning" />
+                <ScalarProperty Name="Ang_ToiletAvailable" ColumnName="Ang_ToiletAvailable" />
+                <ScalarProperty Name="Ang_BulbRunning" ColumnName="Ang_BulbRunning" />
+                <ScalarProperty Name="Ang_BulbAvailable" ColumnName="Ang_BulbAvailable" />
+                <ScalarProperty Name="Ang_FanRunning" ColumnName="Ang_FanRunning" />
+                <ScalarProperty Name="Ang_FanAvailable" ColumnName="Ang_FanAvailable" />
+                <ScalarProperty Name="Ang_PowerRunning" ColumnName="Ang_PowerRunning" />
+                <ScalarProperty Name="Ang_PowerAvailable" ColumnName="Ang_PowerAvailable" />
+                <ScalarProperty Name="Ang_MotherSahyoginiCommittee" ColumnName="Ang_MotherSahyoginiCommittee" />
+                <ScalarProperty Name="Ang_ImmunizationPlace" ColumnName="Ang_ImmunizationPlace" />
+                <ScalarProperty Name="Ang_ImmunizationNo" ColumnName="Ang_ImmunizationNo" />
+                <ScalarProperty Name="Ang_ImmunizationDay" ColumnName="Ang_ImmunizationDay" />
+                <ScalarProperty Name="Ang_NearestHealthCenterAndAnganwadiDistance" ColumnName="Ang_NearestHealthCenterAndAnganwadiDistance" />
+                <ScalarProperty Name="Ang_NearestHealthCenterVillageName" ColumnName="Ang_NearestHealthCenterVillageName" />
+                <ScalarProperty Name="Ang_NearestHealthCenter" ColumnName="Ang_NearestHealthCenter" />
+                <ScalarProperty Name="Ang_VillageHealthCenter" ColumnName="Ang_VillageHealthCenter" />
+                <ScalarProperty Name="Ang_AanganwadiBuildingPosition" ColumnName="Ang_AanganwadiBuildingPosition" />
+                <ScalarProperty Name="Ang_AanganwadiBuilding" ColumnName="Ang_AanganwadiBuilding" />
+                <ScalarProperty Name="Ang_ApprovedYear" ColumnName="Ang_ApprovedYear" />
+                <ScalarProperty Name="Ang_AddressHindi" ColumnName="Ang_AddressHindi" />
+                <ScalarProperty Name="Ang_Address" ColumnName="Ang_Address" />
+                <ScalarProperty Name="Ang_WorkerHomeAndAanganwadiDistance" ColumnName="Ang_WorkerHomeAndAanganwadiDistance" />
+                <ScalarProperty Name="Ang_WorkersLiveInVillage" ColumnName="Ang_WorkersLiveInVillage" />
+                <ScalarProperty Name="Ang_AanganwadiManagement" ColumnName="Ang_AanganwadiManagement" />
+                <ScalarProperty Name="Ang_AanganwadiPosition" ColumnName="Ang_AanganwadiPosition" />
+                <ScalarProperty Name="Ang_AnmPostPosition" ColumnName="Ang_AnmPostPosition" />
+                <ScalarProperty Name="Ang_NoOfAttachedMiniAnganwadi" ColumnName="Ang_NoOfAttachedMiniAnganwadi" />
+                <ScalarProperty Name="Ang_AashaWorkerPostStatus" ColumnName="Ang_AashaWorkerPostStatus" />
+                <ScalarProperty Name="Ang_AashaWorkerNameHindi" ColumnName="Ang_AashaWorkerNameHindi" />
+                <ScalarProperty Name="Ang_AashaWorkerName" ColumnName="Ang_AashaWorkerName" />
+                <ScalarProperty Name="Ang_ANMNameHindi" ColumnName="Ang_ANMNameHindi" />
+                <ScalarProperty Name="Ang_ANMName" ColumnName="Ang_ANMName" />
+                <ScalarProperty Name="Ang_MPWPostPosition" ColumnName="Ang_MPWPostPosition" />
+                <ScalarProperty Name="Ang_HelperUsername" ColumnName="Ang_HelperUsername" />
+                <ScalarProperty Name="Ang_AanganwadiHelperID" ColumnName="Ang_AanganwadiHelperID" />
+                <ScalarProperty Name="Ang_AanganwadiHelperPostStatus" ColumnName="Ang_AanganwadiHelperPostStatus" />
+                <ScalarProperty Name="Ang_WorkerUsername" ColumnName="Ang_WorkerUsername" />
+                <ScalarProperty Name="Ang_AanganwadiWorkerID" ColumnName="Ang_AanganwadiWorkerID" />
+                <ScalarProperty Name="Ang_WorkerPostStatus" ColumnName="Ang_WorkerPostStatus" />
+                <ScalarProperty Name="Ang_HealthSubCentreHindi" ColumnName="Ang_HealthSubCentreHindi" />
+                <ScalarProperty Name="Ang_HealthSubCentre" ColumnName="Ang_HealthSubCentre" />
+                <ScalarProperty Name="Ang_PreviousCode" ColumnName="Ang_PreviousCode" />
+                <ScalarProperty Name="Ang_Code" ColumnName="Ang_Code" />
+                <ScalarProperty Name="Ang_SlNo" ColumnName="Ang_SlNo" />
+                <ScalarProperty Name="Ang_NameHindi" ColumnName="Ang_NameHindi" />
+                <ScalarProperty Name="Ang_Name" ColumnName="Ang_Name" />
+                <ScalarProperty Name="Ang_PrivatePSchool" ColumnName="Ang_PrivatePSchool" />
+                <ScalarProperty Name="Ang_PSchool2" ColumnName="Ang_PSchool2" />
+                <ScalarProperty Name="Ang_PSchool1" ColumnName="Ang_PSchool1" />
+                <ScalarProperty Name="Ang_ViID" ColumnName="Ang_ViID" />
+                <ScalarProperty Name="Ang_GramPanchayat" ColumnName="Ang_GramPanchayat" />
+                <ScalarProperty Name="Ang_VillageName" ColumnName="Ang_VillageName" />
+                <ScalarProperty Name="Ang_NagarNigamID" ColumnName="Ang_NagarNigamID" />
+                <ScalarProperty Name="Ang_UnderAwc" ColumnName="Ang_UnderAwc" />
+                <ScalarProperty Name="Ang_CensusCode" ColumnName="Ang_CensusCode" />
+                <ScalarProperty Name="Ang_WardNo" ColumnName="Ang_WardNo" />
+                <ScalarProperty Name="Ang_MiniAanganwadiParentID" ColumnName="Ang_MiniAanganwadiParentID" />
+                <ScalarProperty Name="Ang_Type" ColumnName="Ang_Type" />
+                <ScalarProperty Name="Ang_SecID" ColumnName="Ang_SecID" />
+                <ScalarProperty Name="Ang_ID" ColumnName="Ang_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DistrictMsts">
+            <EntityTypeMapping TypeName="ECCEModel.DistrictMst">
+              <MappingFragment StoreEntitySet="DistrictMst">
+                <ScalarProperty Name="Dis_AadharEnrolment" ColumnName="Dis_AadharEnrolment" />
+                <ScalarProperty Name="Dis_TargetedShivir" ColumnName="Dis_TargetedShivir" />
+                <ScalarProperty Name="Dis_Phone" ColumnName="Dis_Phone" />
+                <ScalarProperty Name="Dis_Email" ColumnName="Dis_Email" />
+                <ScalarProperty Name="Dis_AddressHindi" ColumnName="Dis_AddressHindi" />
+                <ScalarProperty Name="Dis_Address" ColumnName="Dis_Address" />
+                <ScalarProperty Name="Dis_DDOCode" ColumnName="Dis_DDOCode" />
+                <ScalarProperty Name="Dis_Cbr" ColumnName="Dis_Cbr" />
+                <ScalarProperty Name="Dis_MappedCode" ColumnName="Dis_MappedCode" />
+                <ScalarProperty Name="Dis_UpdatedDate" ColumnName="Dis_UpdatedDate" />
+                <ScalarProperty Name="Dis_UpdatedBy" ColumnName="Dis_UpdatedBy" />
+                <ScalarProperty Name="Dis_InsertedDate" ColumnName="Dis_InsertedDate" />
+                <ScalarProperty Name="Dis_InsertedBy" ColumnName="Dis_InsertedBy" />
+                <ScalarProperty Name="Dis_IsActive" ColumnName="Dis_IsActive" />
+                <ScalarProperty Name="Dis_Username" ColumnName="Dis_Username" />
+                <ScalarProperty Name="Dis_DistrictOfficerID" ColumnName="Dis_DistrictOfficerID" />
+                <ScalarProperty Name="Dis_PostPosition" ColumnName="Dis_PostPosition" />
+                <ScalarProperty Name="Dis_NameHindi" ColumnName="Dis_NameHindi" />
+                <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+                <ScalarProperty Name="Dis_DivID" ColumnName="Dis_DivID" />
+                <ScalarProperty Name="Dis_Code" ColumnName="Dis_Code" />
+                <ScalarProperty Name="Dis_ID" ColumnName="Dis_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DivisionMsts">
+            <EntityTypeMapping TypeName="ECCEModel.DivisionMst">
+              <MappingFragment StoreEntitySet="DivisionMst">
+                <ScalarProperty Name="Div_DRG" ColumnName="Div_DRG" />
+                <ScalarProperty Name="Div_Phone" ColumnName="Div_Phone" />
+                <ScalarProperty Name="Div_Email" ColumnName="Div_Email" />
+                <ScalarProperty Name="Div_AddressHindi" ColumnName="Div_AddressHindi" />
+                <ScalarProperty Name="Div_Address" ColumnName="Div_Address" />
+                <ScalarProperty Name="Div_DDOCode" ColumnName="Div_DDOCode" />
+                <ScalarProperty Name="Div_UpdatedDate" ColumnName="Div_UpdatedDate" />
+                <ScalarProperty Name="Div_UpdatedBy" ColumnName="Div_UpdatedBy" />
+                <ScalarProperty Name="Div_InsertedDate" ColumnName="Div_InsertedDate" />
+                <ScalarProperty Name="Div_InsertedBy" ColumnName="Div_InsertedBy" />
+                <ScalarProperty Name="Div_IsActive" ColumnName="Div_IsActive" />
+                <ScalarProperty Name="Div_Username" ColumnName="Div_Username" />
+                <ScalarProperty Name="Div_OfficerID" ColumnName="Div_OfficerID" />
+                <ScalarProperty Name="Div_PostPosition" ColumnName="Div_PostPosition" />
+                <ScalarProperty Name="Div_NameHindi" ColumnName="Div_NameHindi" />
+                <ScalarProperty Name="Div_Name" ColumnName="Div_Name" />
+                <ScalarProperty Name="Div_StateID" ColumnName="Div_StateID" />
+                <ScalarProperty Name="Div_ID" ColumnName="Div_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectMsts">
+            <EntityTypeMapping TypeName="ECCEModel.ProjectMst">
+              <MappingFragment StoreEntitySet="ProjectMst">
+                <ScalarProperty Name="Proj_SubDisCode" ColumnName="Proj_SubDisCode" />
+                <ScalarProperty Name="Proj_ModelAWC" ColumnName="Proj_ModelAWC" />
+                <ScalarProperty Name="Proj_ACDPONameHindi" ColumnName="Proj_ACDPONameHindi" />
+                <ScalarProperty Name="Proj_ACDPOName" ColumnName="Proj_ACDPOName" />
+                <ScalarProperty Name="Proj_PHCLinked" ColumnName="Proj_PHCLinked" />
+                <ScalarProperty Name="Proj_BlockCode" ColumnName="Proj_BlockCode" />
+                <ScalarProperty Name="Proj_PostPosition" ColumnName="Proj_PostPosition" />
+                <ScalarProperty Name="Proj_UpdatedDate" ColumnName="Proj_UpdatedDate" />
+                <ScalarProperty Name="Proj_UpdatedBy" ColumnName="Proj_UpdatedBy" />
+                <ScalarProperty Name="Proj_InsertedDate" ColumnName="Proj_InsertedDate" />
+                <ScalarProperty Name="Proj_InsertedBy" ColumnName="Proj_InsertedBy" />
+                <ScalarProperty Name="Proj_IsActive" ColumnName="Proj_IsActive" />
+                <ScalarProperty Name="Proj_DDOCode" ColumnName="Proj_DDOCode" />
+                <ScalarProperty Name="Proj_DriverInPosition" ColumnName="Proj_DriverInPosition" />
+                <ScalarProperty Name="Proj_DriverSanction" ColumnName="Proj_DriverSanction" />
+                <ScalarProperty Name="Proj_BlockLevelStaffInPosition" ColumnName="Proj_BlockLevelStaffInPosition" />
+                <ScalarProperty Name="Proj_BlockLevelStaffSanction" ColumnName="Proj_BlockLevelStaffSanction" />
+                <ScalarProperty Name="Proj_StatisticalInPosition" ColumnName="Proj_StatisticalInPosition" />
+                <ScalarProperty Name="Proj_StatisticalSanction" ColumnName="Proj_StatisticalSanction" />
+                <ScalarProperty Name="Proj_ACDPOInPosition" ColumnName="Proj_ACDPOInPosition" />
+                <ScalarProperty Name="Proj_ACDPOSanction" ColumnName="Proj_ACDPOSanction" />
+                <ScalarProperty Name="Proj_ComputerAvalibility" ColumnName="Proj_ComputerAvalibility" />
+                <ScalarProperty Name="Proj_OrderDate" ColumnName="Proj_OrderDate" />
+                <ScalarProperty Name="Proj_VehicleOrderNo" ColumnName="Proj_VehicleOrderNo" />
+                <ScalarProperty Name="Proj_Vehicle" ColumnName="Proj_Vehicle" />
+                <ScalarProperty Name="Proj_Email" ColumnName="Proj_Email" />
+                <ScalarProperty Name="Proj_Mobile" ColumnName="Proj_Mobile" />
+                <ScalarProperty Name="Proj_Phone" ColumnName="Proj_Phone" />
+                <ScalarProperty Name="Proj_AddressHindi" ColumnName="Proj_AddressHindi" />
+                <ScalarProperty Name="Proj_Address" ColumnName="Proj_Address" />
+                <ScalarProperty Name="Proj_OffeiceType" ColumnName="Proj_OffeiceType" />
+                <ScalarProperty Name="Proj_TotalMiniAnganwadi" ColumnName="Proj_TotalMiniAnganwadi" />
+                <ScalarProperty Name="Proj_TotalAnganwadi" ColumnName="Proj_TotalAnganwadi" />
+                <ScalarProperty Name="Proj_TotalSector" ColumnName="Proj_TotalSector" />
+                <ScalarProperty Name="Proj_ApprovedYear" ColumnName="Proj_ApprovedYear" />
+                <ScalarProperty Name="Proj_ProjectType" ColumnName="Proj_ProjectType" />
+                <ScalarProperty Name="Proj_Username" ColumnName="Proj_Username" />
+                <ScalarProperty Name="Proj_OfficerID" ColumnName="Proj_OfficerID" />
+                <ScalarProperty Name="Proj_NameHindi" ColumnName="Proj_NameHindi" />
+                <ScalarProperty Name="Proj_Name" ColumnName="Proj_Name" />
+                <ScalarProperty Name="Proj_Code" ColumnName="Proj_Code" />
+                <ScalarProperty Name="Proj_DisID" ColumnName="Proj_DisID" />
+                <ScalarProperty Name="Proj_ID" ColumnName="Proj_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AWCMsts">
+            <EntityTypeMapping TypeName="ECCEModel.AWCMst">
+              <MappingFragment StoreEntitySet="Vw_Aanganwadi">
+                <ScalarProperty Name="Ang_Code" ColumnName="Ang_Code" />
+                <ScalarProperty Name="Ang_addressHindi" ColumnName="Ang_addressHindi" />
+                <ScalarProperty Name="Ang_Address" ColumnName="Ang_Address" />
+                <ScalarProperty Name="Ang_AanganwadiHelperID" ColumnName="Ang_AanganwadiHelperID" />
+                <ScalarProperty Name="Ang_AanganwadiWorkerID" ColumnName="Ang_AanganwadiWorkerID" />
+                <ScalarProperty Name="Proj_ProjectType" ColumnName="Proj_ProjectType" />
+                <ScalarProperty Name="HelperNameHindi" ColumnName="HelperNameHindi" />
+                <ScalarProperty Name="HelperName" ColumnName="HelperName" />
+                <ScalarProperty Name="WorkerNameHindi" ColumnName="WorkerNameHindi" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+                <ScalarProperty Name="SupNameHindi" ColumnName="SupNameHindi" />
+                <ScalarProperty Name="SupName" ColumnName="SupName" />
+                <ScalarProperty Name="CDPONameHindi" ColumnName="CDPONameHindi" />
+                <ScalarProperty Name="CDPOName" ColumnName="CDPOName" />
+                <ScalarProperty Name="DPONameHindi" ColumnName="DPONameHindi" />
+                <ScalarProperty Name="DPOName" ColumnName="DPOName" />
+                <ScalarProperty Name="JDNameHindi" ColumnName="JDNameHindi" />
+                <ScalarProperty Name="JDName" ColumnName="JDName" />
+                <ScalarProperty Name="Gp_Type" ColumnName="Gp_Type" />
+                <ScalarProperty Name="Gp_namehindi" ColumnName="Gp_namehindi" />
+                <ScalarProperty Name="Gp_name" ColumnName="Gp_name" />
+                <ScalarProperty Name="Gp_ID" ColumnName="Gp_ID" />
+                <ScalarProperty Name="Vil_Ward" ColumnName="Vil_Ward" />
+                <ScalarProperty Name="Vil_VillageCode" ColumnName="Vil_VillageCode" />
+                <ScalarProperty Name="Vil_NameHindi" ColumnName="Vil_NameHindi" />
+                <ScalarProperty Name="Vil_Name" ColumnName="Vil_Name" />
+                <ScalarProperty Name="Vil_ID" ColumnName="Vil_ID" />
+                <ScalarProperty Name="Ang_Type" ColumnName="Ang_Type" />
+                <ScalarProperty Name="Ang_NameHindi" ColumnName="Ang_NameHindi" />
+                <ScalarProperty Name="Ang_Name" ColumnName="Ang_Name" />
+                <ScalarProperty Name="Ang_ID" ColumnName="Ang_ID" />
+                <ScalarProperty Name="Sec_NameHindi" ColumnName="Sec_NameHindi" />
+                <ScalarProperty Name="Sec_Name" ColumnName="Sec_Name" />
+                <ScalarProperty Name="Sec_ID" ColumnName="Sec_ID" />
+                <ScalarProperty Name="Proj_NameHindi" ColumnName="Proj_NameHindi" />
+                <ScalarProperty Name="Proj_Name" ColumnName="Proj_Name" />
+                <ScalarProperty Name="Proj_ID" ColumnName="Proj_ID" />
+                <ScalarProperty Name="Dis_DDOCode" ColumnName="Dis_DDOCode" />
+                <ScalarProperty Name="dis_cbr" ColumnName="dis_cbr" />
+                <ScalarProperty Name="Dis_NameHindi" ColumnName="Dis_NameHindi" />
+                <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+                <ScalarProperty Name="Dis_ID" ColumnName="Dis_ID" />
+                <ScalarProperty Name="Div_NameHindi" ColumnName="Div_NameHindi" />
+                <ScalarProperty Name="Div_Name" ColumnName="Div_Name" />
+                <ScalarProperty Name="Div_ID" ColumnName="Div_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EcceDays">
+            <EntityTypeMapping TypeName="ECCEModel.EcceDays">
+              <MappingFragment StoreEntitySet="view_icdsas_ECCEdays">
+                <ScalarProperty Name="approve_date_dpo" ColumnName="approve_date_dpo" />
+                <ScalarProperty Name="ROW_NUM" ColumnName="ROW_NUM" />
+                <ScalarProperty Name="Proj_Name" ColumnName="Proj_Name" />
+                <ScalarProperty Name="Div_StateID" ColumnName="Div_StateID" />
+                <ScalarProperty Name="Div_Name" ColumnName="Div_Name" />
+                <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+                <ScalarProperty Name="Dis_Code" ColumnName="Dis_Code" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="approve_by_dpo" ColumnName="approve_by_dpo" />
+                <ScalarProperty Name="approve_date_cdpo" ColumnName="approve_date_cdpo" />
+                <ScalarProperty Name="approve_by_cdpo" ColumnName="approve_by_cdpo" />
+                <ScalarProperty Name="approve_status" ColumnName="approve_status" />
+                <ScalarProperty Name="mon" ColumnName="mon" />
+                <ScalarProperty Name="mby" ColumnName="mby" />
+                <ScalarProperty Name="con" ColumnName="con" />
+                <ScalarProperty Name="cby" ColumnName="cby" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="maintain_dayrecord" ColumnName="maintain_dayrecord" />
+                <ScalarProperty Name="maintain_profile" ColumnName="maintain_profile" />
+                <ScalarProperty Name="child_risk" ColumnName="child_risk" />
+                <ScalarProperty Name="ExplainChild" ColumnName="ExplainChild" />
+                <ScalarProperty Name="Theme_of_ECCE" ColumnName="Theme_of_ECCE" />
+                <ScalarProperty Name="Materials_donated" ColumnName="Materials_donated" />
+                <ScalarProperty Name="total_SNP" ColumnName="total_SNP" />
+                <ScalarProperty Name="Participant_Health" ColumnName="Participant_Health" />
+                <ScalarProperty Name="Participant_AWCMC" ColumnName="Participant_AWCMC" />
+                <ScalarProperty Name="Participant_PRI" ColumnName="Participant_PRI" />
+                <ScalarProperty Name="Participant_parents" ColumnName="Participant_parents" />
+                <ScalarProperty Name="Participant_children" ColumnName="Participant_children" />
+                <ScalarProperty Name="total_no_inside" ColumnName="total_no_inside" />
+                <ScalarProperty Name="total_no_outside" ColumnName="total_no_outside" />
+                <ScalarProperty Name="total_no_AWC" ColumnName="total_no_AWC" />
+                <ScalarProperty Name="AWH_present" ColumnName="AWH_present" />
+                <ScalarProperty Name="AWW_present" ColumnName="AWW_present" />
+                <ScalarProperty Name="community_was_informed" ColumnName="community_was_informed" />
+                <ScalarProperty Name="dateofecc" ColumnName="dateofecc" />
+                <ScalarProperty Name="Awc_code" ColumnName="Awc_code" />
+                <ScalarProperty Name="awc_id" ColumnName="awc_id" />
+                <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+                <ScalarProperty Name="Dist_id" ColumnName="Dist_id" />
+                <ScalarProperty Name="Div_id" ColumnName="Div_id" />
+                <ScalarProperty Name="Reportingdate" ColumnName="Reportingdate" />
+                <ScalarProperty Name="Reportingyear" ColumnName="Reportingyear" />
+                <ScalarProperty Name="ReportingMonth" ColumnName="ReportingMonth" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Ang_Name" ColumnName="Ang_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WIFS">
+            <EntityTypeMapping TypeName="ECCEModel.WIFS">
+              <MappingFragment StoreEntitySet="icdsas_WIFS">
+                <ScalarProperty Name="approve_date_CDPO" ColumnName="approve_date_CDPO" />
+                <ScalarProperty Name="approve_by_CDPO" ColumnName="approve_by_CDPO" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="approve_date_DPO" ColumnName="approve_date_DPO" />
+                <ScalarProperty Name="approve_by_DPO" ColumnName="approve_by_DPO" />
+                <ScalarProperty Name="approve_status" ColumnName="approve_status" />
+                <ScalarProperty Name="mon" ColumnName="mon" />
+                <ScalarProperty Name="mby" ColumnName="mby" />
+                <ScalarProperty Name="con" ColumnName="con" />
+                <ScalarProperty Name="cby" ColumnName="cby" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="o_balance" ColumnName="o_balance" />
+                <ScalarProperty Name="o_utilized" ColumnName="o_utilized" />
+                <ScalarProperty Name="o_received" ColumnName="o_received" />
+                <ScalarProperty Name="o_opening" ColumnName="o_opening" />
+                <ScalarProperty Name="n_balance" ColumnName="n_balance" />
+                <ScalarProperty Name="n_utilized" ColumnName="n_utilized" />
+                <ScalarProperty Name="n_received" ColumnName="n_received" />
+                <ScalarProperty Name="n_opening" ColumnName="n_opening" />
+                <ScalarProperty Name="m" ColumnName="m" />
+                <ScalarProperty Name="l" ColumnName="l" />
+                <ScalarProperty Name="k" ColumnName="k" />
+                <ScalarProperty Name="j" ColumnName="j" />
+                <ScalarProperty Name="i" ColumnName="i" />
+                <ScalarProperty Name="h" ColumnName="h" />
+                <ScalarProperty Name="g" ColumnName="g" />
+                <ScalarProperty Name="f" ColumnName="f" />
+                <ScalarProperty Name="e" ColumnName="e" />
+                <ScalarProperty Name="d" ColumnName="d" />
+                <ScalarProperty Name="c" ColumnName="c" />
+                <ScalarProperty Name="b" ColumnName="b" />
+                <ScalarProperty Name="a" ColumnName="a" />
+                <ScalarProperty Name="Reportingdate" ColumnName="Reportingdate" />
+                <ScalarProperty Name="Reportingyear" ColumnName="Reportingyear" />
+                <ScalarProperty Name="ReportingMonth" ColumnName="ReportingMonth" />
+                <ScalarProperty Name="AWC_id" ColumnName="AWC_id" />
+                <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+                <ScalarProperty Name="dist_id" ColumnName="dist_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="conn" ZoomLevel="59">
+        <EntityTypeShape EntityType="ECCEModel.icdsasMonthlyECCEDay" Width="3.5" PointX="0.5" PointY="0.5" Height="8.51853515625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ECCEModel.AanganwadiMst" Width="1.75" PointX="4.25" PointY="0.5" Height="37.55605143229166" />
+        <EntityTypeShape EntityType="ECCEModel.DistrictMst" Width="1.5" PointX="6.25" PointY="0.5" Height="5.2494108072916656" />
+        <EntityTypeShape EntityType="ECCEModel.DivisionMst" Width="1.5" PointX="6.25" PointY="6" Height="4.480205078125" />
+        <EntityTypeShape EntityType="ECCEModel.ProjectMst" Width="1.5" PointX="8.125" PointY="0.5" Height="9.2877408854166674" />
+        <EntityTypeShape EntityType="ECCEModel.AWCMst" Width="1.5" PointX="0.5" PointY="9.25" Height="9.6723437500000031" />
+        <EntityTypeShape EntityType="ECCEModel.EcceDays" Width="1.5" PointX="9.75" PointY="0.5" Height="9.8646451822916656" />
+        <EntityTypeShape EntityType="ECCEModel.WIFS" Width="1.5" PointX="10.375" PointY="14.875" Height="9.0954394531250031" />
+        <AssociationConnector Association="ECCEModel.FK_ANG" >
+          <ConnectorPoint PointX="6" PointY="19.4227197265625" />
+          <ConnectorPoint PointX="10.375" PointY="19.4227197265625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ECCEModel.FK_Dist_Wifs" >
+          <ConnectorPoint PointX="7.75" PointY="3.2208561197916667" />
+          <ConnectorPoint PointX="8.0625" PointY="3.2208561197916667" />
+          <ConnectorPoint PointX="8.0625" PointY="10.427145182291667" />
+          <ConnectorPoint PointX="8.7916666666666661" PointY="10.427145182291667" />
+          <ConnectorPoint PointX="8.9583333333333339" PointY="10.427145182291667" />
+          <ConnectorPoint PointX="11.125" PointY="10.427145182291667" />
+          <ConnectorPoint PointX="11.125" PointY="14.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ECCEModel.FK_Proj" >
+          <ConnectorPoint PointX="8.875" PointY="9.9800423177083317" />
+          <ConnectorPoint PointX="8.875" PointY="17.117607363281259" />
+          <ConnectorPoint PointX="10.375" PointY="17.117607363281259" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ECCEModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Con" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="icdsasMonthlyECCEDays" EntityType="ECCEModel.icdsasMonthlyECCEDay" />
+    <EntitySet Name="AanganwadiMsts" EntityType="ECCEModel.AanganwadiMst" />
+    <EntitySet Name="DistrictMsts" EntityType="ECCEModel.DistrictMst" />
+    <EntitySet Name="DivisionMsts" EntityType="ECCEModel.DivisionMst" />
+    <EntitySet Name="ProjectMsts" EntityType="ECCEModel.ProjectMst" />
+    <EntitySet Name="AWCMsts" EntityType="ECCEModel.AWCMst" />
+    <EntitySet Name="EcceDays" EntityType="ECCEModel.EcceDays" />
+    <EntitySet Name="WIFS" EntityType="ECCEModel.WIFS" />
+    <AssociationSet Name="FK_ANG" Association="ECCEModel.FK_ANG">
+      <End Role="AanganwadiMst" EntitySet="AanganwadiMsts" />
+      <End Role="icdsas_WIFS" EntitySet="WIFS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dist_Wifs" Association="ECCEModel.FK_Dist_Wifs">
+      <End Role="DistrictMst" EntitySet="DistrictMsts" />
+      <End Role="icdsas_WIFS" EntitySet="WIFS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proj" Association="ECCEModel.FK_Proj">
+      <End Role="ProjectMst" EntitySet="ProjectMsts" />
+      <End Role="icdsas_WIFS" EntitySet="WIFS" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="icdsasMonthlyECCEDay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportingMonth" Type="Int32" />
+    <Property Name="Reportingyear" Type="Int32" />
+    <Property Name="Reportingdate" Type="DateTime" />
+    <Property Name="Dist_id" Type="Int32" />
+    <Property Name="proj_id" Type="Int32" />
+    <Property Name="awc_id" Type="Int32" />
+    <Property Name="Awc_code" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="dateofecc" Type="DateTime" />
+    <Property Name="community_was_informed" Type="Int32" />
+    <Property Name="AWW_present" Type="Int32" />
+    <Property Name="AWH_present" Type="Int32" />
+    <Property Name="total_no_AWC" Type="Int32" />
+    <Property Name="total_no_outside" Type="Int32" />
+    <Property Name="total_no_inside" Type="Int32" />
+    <Property Name="Participant_children" Type="Int32" />
+    <Property Name="Participant_parents" Type="Int32" />
+    <Property Name="Participant_PRI" Type="Int32" />
+    <Property Name="Participant_AWCMC" Type="Int32" />
+    <Property Name="Participant_Health" Type="Int32" />
+    <Property Name="total_SNP" Type="Int32" />
+    <Property Name="Materials_donated" Type="Int32" />
+    <Property Name="Theme_of_ECCE" Type="String" MaxLength="450" Unicode="true" FixedLength="false" />
+    <Property Name="ExplainChild" Type="Int32" />
+    <Property Name="child_risk" Type="Int32" />
+    <Property Name="maintain_profile" Type="Int32" />
+    <Property Name="maintain_dayrecord" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="cby" Type="Int32" />
+    <Property Name="con" Type="DateTime" />
+    <Property Name="mby" Type="Int32" />
+    <Property Name="mon" Type="DateTime" />
+    <Property Type="Int32" Name="Div_id" />
+    <Property Type="Int32" Name="approve_status" />
+    <Property Type="Int32" Name="approve_by_cdpo" />
+    <Property Type="DateTime" Name="approve_date_cdpo" />
+    <Property Type="Int32" Name="approve_by_dpo" />
+    <Property Type="String" Name="Remarks" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="approve_date_dpo" />
+  </EntityType>
+  <EntityType Name="AanganwadiMst">
+    <Key>
+      <PropertyRef Name="Ang_ID" />
+    </Key>
+    <Property Type="Int64" Name="Ang_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="Ang_SecID" Nullable="false" />
+    <Property Type="Int32" Name="Ang_Type" Nullable="false" />
+    <Property Type="Int32" Name="Ang_MiniAanganwadiParentID" />
+    <Property Type="String" Name="Ang_WardNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_CensusCode" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Ang_UnderAwc" />
+    <Property Type="Int32" Name="Ang_NagarNigamID" />
+    <Property Type="Int32" Name="Ang_VillageName" />
+    <Property Type="Int32" Name="Ang_GramPanchayat" />
+    <Property Type="Int32" Name="Ang_ViID" />
+    <Property Type="Int32" Name="Ang_PSchool1" />
+    <Property Type="Int32" Name="Ang_PSchool2" />
+    <Property Type="Int32" Name="Ang_PrivatePSchool" />
+    <Property Type="String" Name="Ang_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_NameHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Ang_SlNo" />
+    <Property Type="String" Name="Ang_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_PreviousCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_HealthSubCentre" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_HealthSubCentreHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Ang_WorkerPostStatus" />
+    <Property Type="Int32" Name="Ang_AanganwadiWorkerID" />
+    <Property Type="String" Name="Ang_WorkerUsername" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Ang_AanganwadiHelperPostStatus" />
+    <Property Type="Int32" Name="Ang_AanganwadiHelperID" />
+    <Property Type="String" Name="Ang_HelperUsername" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Ang_MPWPostPosition" />
+    <Property Type="String" Name="Ang_ANMName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_ANMNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_AashaWorkerName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_AashaWorkerNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Ang_AashaWorkerPostStatus" />
+    <Property Type="Int32" Name="Ang_NoOfAttachedMiniAnganwadi" />
+    <Property Type="Int32" Name="Ang_AnmPostPosition" />
+    <Property Type="Int32" Name="Ang_AanganwadiPosition" />
+    <Property Type="Int32" Name="Ang_AanganwadiManagement" />
+    <Property Type="Int32" Name="Ang_WorkersLiveInVillage" />
+    <Property Type="Int32" Name="Ang_WorkerHomeAndAanganwadiDistance" />
+    <Property Type="String" Name="Ang_Address" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_AddressHindi" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Ang_ApprovedYear" />
+    <Property Type="Int32" Name="Ang_AanganwadiBuilding" />
+    <Property Type="Int32" Name="Ang_AanganwadiBuildingPosition" />
+    <Property Type="Int32" Name="Ang_VillageHealthCenter" />
+    <Property Type="Int32" Name="Ang_NearestHealthCenter" />
+    <Property Type="String" Name="Ang_NearestHealthCenterVillageName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Ang_NearestHealthCenterAndAnganwadiDistance" />
+    <Property Type="Int32" Name="Ang_ImmunizationDay" />
+    <Property Type="Int32" Name="Ang_ImmunizationNo" />
+    <Property Type="Int32" Name="Ang_ImmunizationPlace" />
+    <Property Type="Int32" Name="Ang_MotherSahyoginiCommittee" />
+    <Property Type="Int32" Name="Ang_PowerAvailable" />
+    <Property Type="Int32" Name="Ang_PowerRunning" />
+    <Property Type="Int32" Name="Ang_FanAvailable" />
+    <Property Type="Int32" Name="Ang_FanRunning" />
+    <Property Type="Int32" Name="Ang_BulbAvailable" />
+    <Property Type="Int32" Name="Ang_BulbRunning" />
+    <Property Type="Int32" Name="Ang_ToiletAvailable" />
+    <Property Type="Int32" Name="Ang_ToiletRunning" />
+    <Property Type="Int32" Name="Ang_DrinkingWaterAvailable" />
+    <Property Type="Int32" Name="Ang_AdultVeigMachineAvailable" />
+    <Property Type="Int32" Name="Ang_AdultVeigMachineRunning" />
+    <Property Type="Int32" Name="Ang_SalterVeigMachineAvailable" />
+    <Property Type="Int32" Name="Ang_SalterVeigMachineRunning" />
+    <Property Type="Int32" Name="Ang_NewbornWeightMachinAvailable" />
+    <Property Type="Int32" Name="Ang_NewbornWeightMachinRunning" />
+    <Property Type="Int32" Name="Ang_MaternalAndChildProtectionCardAvailable" />
+    <Property Type="Int32" Name="Ang_MUACAvailable" />
+    <Property Type="Int32" Name="Ang_MUACUsable" />
+    <Property Type="Int32" Name="Ang_AidKitAvailable" />
+    <Property Type="Int32" Name="Ang_AidKitUsable" />
+    <Property Type="Int32" Name="Ang_PreSchoolEducationKitAvailable" />
+    <Property Type="Int32" Name="Ang_PreSchoolEducationKitUsable" />
+    <Property Type="Int32" Name="Ang_FamilyDetailsRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_SupplementaryFoodDistributionRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_PreSchoolEducationRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_PregnancyDeliveryRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_ImmunizationVHNDRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_VitaminARegisterAvailable" />
+    <Property Type="Int32" Name="Ang_HomeVisitRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_ReferralsRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_SummaryRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_WeightRecordsRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_WHOGrowthChartsAvailable" />
+    <Property Type="Int32" Name="Ang_StockRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_VisitorsRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_KitchenShedGroupName" />
+    <Property Type="Int32" Name="Ang_KitchenShedAndAanganwadiDistance" />
+    <Property Type="Int32" Name="Ang_FoodSupply" />
+    <Property Type="Boolean" Name="Ang_IsActive" />
+    <Property Type="Int32" Name="Ang_InsertedBy" />
+    <Property Type="DateTime" Name="Ang_InsertedDate" />
+    <Property Type="Int32" Name="Ang_UpdatedBy" />
+    <Property Type="DateTime" Name="Ang_UpdatedDate" />
+    <Property Type="Int32" Name="Ang_VHNDWDay" />
+    <Property Type="Int32" Name="Ang_VHNDNo" />
+    <Property Type="Int32" Name="Ang_VHNDDay" />
+    <Property Type="Int32" Name="Ang_CoHealthCenter" />
+    <Property Type="Int32" Name="Ang_MotherSupportCommitee" />
+    <Property Type="Int32" Name="Ang_SelfHelpGroup" />
+    <Property Type="Int32" Name="Ang_AdolecentGirlGrp" />
+    <Property Type="Int32" Name="Ang_Creche" />
+    <Property Type="Int32" Name="Ang_LearningMaterial" />
+    <Property Type="Int32" Name="Ang_InfoWindow" />
+    <Property Type="Int32" Name="Ang_Boundriwal" />
+    <Property Type="Int32" Name="Ang_ChildToilet" />
+    <Property Type="Int32" Name="Ang_FoodStorage" />
+    <Property Type="Int32" Name="Ang_WallPainting" />
+    <Property Type="Int32" Name="Ang_PlaySpace" />
+    <Property Type="String" Name="Ang_PrimaryHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_PrimaryHealthCenterHindi" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_SubHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_SubHealthCenterHindi" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_CommunityHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_CommunityHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_DistrictHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_DistrictHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_OtherHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_OtherHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_NoOneHealthCenter" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_NoOneHealthCenterHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Ang_PrimaryHealthCenterDist" />
+    <Property Type="Int32" Name="Ang_SubHealthCenterDist" />
+    <Property Type="Int32" Name="Ang_CommunityHealthCenterDist" />
+    <Property Type="Int32" Name="Ang_DistrictHealthCenterDist" />
+    <Property Type="Int32" Name="Ang_OtherHealthCenterDist" />
+    <Property Type="Int32" Name="Ang_NoOneHealthCenterDist" />
+    <Property Type="Int32" Name="Ang_BuildingProvided" />
+    <Property Type="Int32" Name="Ang_AwcHoused" />
+    <Property Type="Int32" Name="Ang_BarrierPhysicallyChallenged" />
+    <Property Type="Int32" Name="Ang_TypeOfToilet" />
+    <Property Type="Int32" Name="Ang_CookingSupplementaryFood" />
+    <Property Type="Int32" Name="Ang_AdequateSpaceForPSE" />
+    <Property Type="Int32" Name="Ang_CookingUtensils" />
+    <Property Type="Int32" Name="Ang_CookingUtensilsUsable" />
+    <Property Type="Int32" Name="Ang_IECBCCMaterials" />
+    <Property Type="Int32" Name="Ang_IECBCCMaterialsUsable" />
+    <Property Type="Int32" Name="Ang_NHEDKit" />
+    <Property Type="Int32" Name="Ang_NHEDKitUsable" />
+    <Property Type="Int32" Name="Ang_ReferralSlip" />
+    <Property Type="Int32" Name="Ang_ReferralSlipUsable" />
+    <Property Type="Int32" Name="Ang_Plates" />
+    <Property Type="Int32" Name="Ang_PlatesUsable" />
+    <Property Type="Int32" Name="Ang_Tumblers" />
+    <Property Type="Int32" Name="Ang_TumblersUsable" />
+    <Property Type="Int32" Name="Ang_MeasuringCups" />
+    <Property Type="Int32" Name="Ang_MeasuringCupsUsable" />
+    <Property Type="Int32" Name="Ang_FoodStorageBins" />
+    <Property Type="Int32" Name="Ang_FoodStorageBinsUsable" />
+    <Property Type="Int32" Name="Ang_WaterStorageContainer" />
+    <Property Type="Int32" Name="Ang_WaterStorageContainerUsable" />
+    <Property Type="Int32" Name="Ang_Chair" />
+    <Property Type="Int32" Name="Ang_ChairUsable" />
+    <Property Type="Int32" Name="Ang_Table" />
+    <Property Type="Int32" Name="Ang_TableUsable" />
+    <Property Type="Int32" Name="Ang_DariMats" />
+    <Property Type="Int32" Name="Ang_DariMatsUsable" />
+    <Property Type="String" Name="Ang_Latitude" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_Longitude" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Ang_PowerPollDistance" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="Ang_EfiTheater" />
+    <Property Type="Int32" Name="Ang_ElectronicVeigMachineAvailable" />
+    <Property Type="Int32" Name="Ang_ElectronicVeigMachineRunning" />
+    <Property Type="Int32" Name="Ang_IDCAvailable" />
+    <Property Type="Int32" Name="Ang_IDCRunning" />
+    <Property Type="Int32" Name="Ang_InfantActivityBookAvailable" />
+    <Property Type="Int32" Name="Ang_InfantActivityBookRunning" />
+    <Property Type="Int32" Name="Ang_CupboardAvailable" />
+    <Property Type="Int32" Name="Ang_CupboardRunning" />
+    <Property Type="Int32" Name="Ang_HealthTestTableAvailable" />
+    <Property Type="Int32" Name="Ang_HealthTestTableRunning" />
+    <Property Type="Int32" Name="Ang_GlassAvailable" />
+    <Property Type="Int32" Name="Ang_GlassRunning" />
+    <Property Type="Int32" Name="Ang_HandwashkitAvailable" />
+    <Property Type="Int32" Name="Ang_HandwashkitRunning" />
+    <Property Type="Int32" Name="Ang_BellAvailable" />
+    <Property Type="Int32" Name="Ang_BellRunning" />
+    <Property Type="Int32" Name="Ang_SABLAKitAvailable" />
+    <Property Type="Int32" Name="Ang_SABLAKitRunning" />
+    <Property Type="Int32" Name="Ang_HEalthCenterMediKitAvailable" />
+    <Property Type="Int32" Name="Ang_HEalthCenterMediKitRunning" />
+    <Property Type="Int32" Name="Ang_RadioAvailable" />
+    <Property Type="Int32" Name="Ang_RadioRunning" />
+    <Property Type="Int32" Name="Ang_AccountRegisterAvailable" />
+    <Property Type="Int32" Name="Ang_AccountRegisterRunning" />
+    <Property Type="Int32" Name="Ang_ChokiAvailable" />
+    <Property Type="Int32" Name="Ang_ChokiRunning" />
+    <Property Type="Int32" Name="Ang_VHCID" />
+    <NavigationProperty Name="icdsas_WIFS" Relationship="ECCEModel.FK_ANG" FromRole="AanganwadiMst" ToRole="icdsas_WIFS" />
+  </EntityType>
+  <EntityType Name="DistrictMst">
+    <Key>
+      <PropertyRef Name="Dis_ID" />
+    </Key>
+    <Property Type="Int32" Name="Dis_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Dis_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Dis_DivID" Nullable="false" />
+    <Property Type="String" Name="Dis_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dis_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Dis_PostPosition" />
+    <Property Type="Int32" Name="Dis_DistrictOfficerID" />
+    <Property Type="String" Name="Dis_Username" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Dis_IsActive" />
+    <Property Type="Int32" Name="Dis_InsertedBy" />
+    <Property Type="DateTime" Name="Dis_InsertedDate" />
+    <Property Type="Int32" Name="Dis_UpdatedBy" />
+    <Property Type="DateTime" Name="Dis_UpdatedDate" />
+    <Property Type="Int32" Name="Dis_MappedCode" />
+    <Property Type="Decimal" Name="Dis_Cbr" Precision="18" Scale="2" />
+    <Property Type="String" Name="Dis_DDOCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dis_Address" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dis_AddressHindi" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dis_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Dis_Phone" />
+    <Property Type="Int32" Name="Dis_TargetedShivir" />
+    <Property Type="Int32" Name="Dis_AadharEnrolment" />
+    <NavigationProperty Name="icdsas_WIFS" Relationship="ECCEModel.FK_Dist_Wifs" FromRole="DistrictMst" ToRole="icdsas_WIFS" />
+  </EntityType>
+  <EntityType Name="DivisionMst">
+    <Key>
+      <PropertyRef Name="Div_ID" />
+    </Key>
+    <Property Type="Int32" Name="Div_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Div_StateID" Nullable="false" />
+    <Property Type="String" Name="Div_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Div_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Div_PostPosition" />
+    <Property Type="Int32" Name="Div_OfficerID" />
+    <Property Type="String" Name="Div_Username" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Div_IsActive" />
+    <Property Type="Int32" Name="Div_InsertedBy" />
+    <Property Type="DateTime" Name="Div_InsertedDate" />
+    <Property Type="Int32" Name="Div_UpdatedBy" />
+    <Property Type="DateTime" Name="Div_UpdatedDate" />
+    <Property Type="String" Name="Div_DDOCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Div_Address" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Div_AddressHindi" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Div_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Div_Phone" />
+    <Property Type="Int32" Name="Div_DRG" />
+  </EntityType>
+  <EntityType Name="ProjectMst">
+    <Key>
+      <PropertyRef Name="Proj_ID" />
+    </Key>
+    <Property Type="Int64" Name="Proj_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Proj_DisID" Nullable="false" />
+    <Property Type="String" Name="Proj_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Proj_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Proj_OfficerID" />
+    <Property Type="String" Name="Proj_Username" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Proj_ProjectType" Nullable="false" />
+    <Property Type="Int32" Name="Proj_ApprovedYear" />
+    <Property Type="Int64" Name="Proj_TotalSector" />
+    <Property Type="Int64" Name="Proj_TotalAnganwadi" />
+    <Property Type="Int64" Name="Proj_TotalMiniAnganwadi" />
+    <Property Type="Int32" Name="Proj_OffeiceType" />
+    <Property Type="String" Name="Proj_Address" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_AddressHindi" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_Phone" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Proj_Mobile" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Proj_Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Proj_Vehicle" Nullable="false" />
+    <Property Type="String" Name="Proj_VehicleOrderNo" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Proj_OrderDate" />
+    <Property Type="Int32" Name="Proj_ComputerAvalibility" />
+    <Property Type="Int32" Name="Proj_ACDPOSanction" />
+    <Property Type="Int32" Name="Proj_ACDPOInPosition" />
+    <Property Type="Int32" Name="Proj_StatisticalSanction" />
+    <Property Type="Int32" Name="Proj_StatisticalInPosition" />
+    <Property Type="Int32" Name="Proj_BlockLevelStaffSanction" />
+    <Property Type="Int32" Name="Proj_BlockLevelStaffInPosition" />
+    <Property Type="Int32" Name="Proj_DriverSanction" />
+    <Property Type="Int32" Name="Proj_DriverInPosition" />
+    <Property Type="Int64" Name="Proj_DDOCode" />
+    <Property Type="Boolean" Name="Proj_IsActive" Nullable="false" />
+    <Property Type="Int32" Name="Proj_InsertedBy" />
+    <Property Type="DateTime" Name="Proj_InsertedDate" />
+    <Property Type="Int32" Name="Proj_UpdatedBy" />
+    <Property Type="DateTime" Name="Proj_UpdatedDate" />
+    <Property Type="Int32" Name="Proj_PostPosition" />
+    <Property Type="String" Name="Proj_BlockCode" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_PHCLinked" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_ACDPOName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_ACDPONameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Proj_ModelAWC" />
+    <Property Type="Int32" Name="Proj_SubDisCode" />
+    <NavigationProperty Name="icdsas_WIFS" Relationship="ECCEModel.FK_Proj" FromRole="ProjectMst" ToRole="icdsas_WIFS" />
+  </EntityType>
+  <EntityType Name="AWCMst">
+    <Key>
+      <PropertyRef Name="Div_ID" />
+      <PropertyRef Name="Div_Name" />
+      <PropertyRef Name="Dis_ID" />
+      <PropertyRef Name="Dis_Name" />
+      <PropertyRef Name="Proj_ID" />
+      <PropertyRef Name="Proj_Name" />
+      <PropertyRef Name="Sec_ID" />
+      <PropertyRef Name="Sec_Name" />
+      <PropertyRef Name="Ang_ID" />
+      <PropertyRef Name="Ang_Type" />
+      <PropertyRef Name="Proj_ProjectType" />
+    </Key>
+    <Property Type="Int32" Name="Div_ID" Nullable="false" />
+    <Property Type="String" Name="Div_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Div_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Dis_ID" Nullable="false" />
+    <Property Type="String" Name="Dis_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dis_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="dis_cbr" Precision="18" Scale="2" />
+    <Property Type="String" Name="Dis_DDOCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Proj_ID" Nullable="false" />
+    <Property Type="String" Name="Proj_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Proj_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Sec_ID" Nullable="false" />
+    <Property Type="String" Name="Sec_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sec_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="Ang_ID" Nullable="false" />
+    <Property Type="String" Name="Ang_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_NameHindi" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Ang_Type" Nullable="false" />
+    <Property Type="Int32" Name="Vil_ID" />
+    <Property Type="String" Name="Vil_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Vil_NameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Vil_VillageCode" />
+    <Property Type="Int32" Name="Vil_Ward" />
+    <Property Type="Int32" Name="Gp_ID" />
+    <Property Type="String" Name="Gp_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gp_namehindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gp_Type" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="JDName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JDNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DPOName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DPONameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CDPOName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CDPONameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SupName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SupNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WorkerName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkerNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HelperName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="HelperNameHindi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Proj_ProjectType" Nullable="false" />
+    <Property Type="Int32" Name="Ang_AanganwadiWorkerID" />
+    <Property Type="Int32" Name="Ang_AanganwadiHelperID" />
+    <Property Type="String" Name="Ang_Address" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ang_addressHindi" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ang_Code" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EcceDays">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Dis_Name" />
+      <PropertyRef Name="Div_Name" />
+      <PropertyRef Name="Div_StateID" />
+      <PropertyRef Name="Proj_Name" />
+    </Key>
+    <Property Type="String" Name="Ang_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="ReportingMonth" />
+    <Property Type="Int32" Name="Reportingyear" />
+    <Property Type="DateTime" Name="Reportingdate" />
+    <Property Type="Int32" Name="Div_id" />
+    <Property Type="Int32" Name="Dist_id" />
+    <Property Type="Int32" Name="proj_id" />
+    <Property Type="Int32" Name="awc_id" />
+    <Property Type="String" Name="Awc_code" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="dateofecc" />
+    <Property Type="Int32" Name="community_was_informed" />
+    <Property Type="Int32" Name="AWW_present" />
+    <Property Type="Int32" Name="AWH_present" />
+    <Property Type="Int32" Name="total_no_AWC" />
+    <Property Type="Int32" Name="total_no_outside" />
+    <Property Type="Int32" Name="total_no_inside" />
+    <Property Type="Int32" Name="Participant_children" />
+    <Property Type="Int32" Name="Participant_parents" />
+    <Property Type="Int32" Name="Participant_PRI" />
+    <Property Type="Int32" Name="Participant_AWCMC" />
+    <Property Type="Int32" Name="Participant_Health" />
+    <Property Type="Int32" Name="total_SNP" />
+    <Property Type="Int32" Name="Materials_donated" />
+    <Property Type="String" Name="Theme_of_ECCE" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ExplainChild" />
+    <Property Type="Int32" Name="child_risk" />
+    <Property Type="Int32" Name="maintain_profile" />
+    <Property Type="Int32" Name="maintain_dayrecord" />
+    <Property Type="Int32" Name="status" />
+    <Property Type="Int32" Name="cby" />
+    <Property Type="DateTime" Name="con" />
+    <Property Type="Int32" Name="mby" />
+    <Property Type="DateTime" Name="mon" />
+    <Property Type="Int32" Name="approve_status" />
+    <Property Type="Int32" Name="approve_by_cdpo" />
+    <Property Type="DateTime" Name="approve_date_cdpo" />
+    <Property Type="Int32" Name="approve_by_dpo" />
+    <Property Type="String" Name="Remarks" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dis_Code" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Dis_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Div_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Div_StateID" Nullable="false" />
+    <Property Type="String" Name="Proj_Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ROW_NUM" />
+    <Property Type="DateTime" Name="approve_date_dpo" />
+  </EntityType>
+  <EntityType Name="WIFS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="dist_id" />
+    <Property Type="Int64" Name="proj_id" />
+    <Property Type="Int64" Name="AWC_id" />
+    <Property Type="Int32" Name="ReportingMonth" />
+    <Property Type="Int32" Name="Reportingyear" />
+    <Property Type="DateTime" Name="Reportingdate" />
+    <Property Type="Int32" Name="a" />
+    <Property Type="Int32" Name="b" />
+    <Property Type="Decimal" Name="c" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="d" />
+    <Property Type="Int32" Name="e" />
+    <Property Type="Int32" Name="f" />
+    <Property Type="Decimal" Name="g" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="h" />
+    <Property Type="Int32" Name="i" />
+    <Property Type="Int32" Name="j" />
+    <Property Type="Int32" Name="k" />
+    <Property Type="Int32" Name="l" />
+    <Property Type="Int32" Name="m" />
+    <Property Type="Int32" Name="n_opening" />
+    <Property Type="Int32" Name="n_received" />
+    <Property Type="Int32" Name="n_utilized" />
+    <Property Type="Int32" Name="n_balance" />
+    <Property Type="Int32" Name="o_opening" />
+    <Property Type="Int32" Name="o_received" />
+    <Property Type="Int32" Name="o_utilized" />
+    <Property Type="Int32" Name="o_balance" />
+    <Property Type="Int32" Name="status" />
+    <Property Type="Int32" Name="cby" />
+    <Property Type="DateTime" Name="con" />
+    <Property Type="Int32" Name="mby" />
+    <Property Type="DateTime" Name="mon" />
+    <Property Type="Int32" Name="approve_status" />
+    <Property Type="Int32" Name="approve_by_DPO" />
+    <Property Type="DateTime" Name="approve_date_DPO" />
+    <Property Type="String" Name="remarks" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="approve_by_CDPO" />
+    <Property Type="DateTime" Name="approve_date_CDPO" />
+    <NavigationProperty Name="AanganwadiMst" Relationship="ECCEModel.FK_ANG" FromRole="icdsas_WIFS" ToRole="AanganwadiMst" />
+    <NavigationProperty Name="DistrictMst" Relationship="ECCEModel.FK_Dist_Wifs" FromRole="icdsas_WIFS" ToRole="DistrictMst" />
+    <NavigationProperty Name="ProjectMst" Relationship="ECCEModel.FK_Proj" FromRole="icdsas_WIFS" ToRole="ProjectMst" />
+  </EntityType>
+  <Association Name="FK_ANG">
+    <End Type="ECCEModel.AanganwadiMst" Role="AanganwadiMst" Multiplicity="0..1" />
+    <End Type="ECCEModel.WIFS" Role="icdsas_WIFS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AanganwadiMst">
+        <PropertyRef Name="Ang_ID" />
+      </Principal>
+      <Dependent Role="icdsas_WIFS">
+        <PropertyRef Name="AWC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dist_Wifs">
+    <End Type="ECCEModel.DistrictMst" Role="DistrictMst" Multiplicity="0..1" />
+    <End Type="ECCEModel.WIFS" Role="icdsas_WIFS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMst">
+        <PropertyRef Name="Dis_ID" />
+      </Principal>
+      <Dependent Role="icdsas_WIFS">
+        <PropertyRef Name="dist_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proj">
+    <End Type="ECCEModel.ProjectMst" Role="ProjectMst" Multiplicity="0..1" />
+    <End Type="ECCEModel.WIFS" Role="icdsas_WIFS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectMst">
+        <PropertyRef Name="Proj_ID" />
+      </Principal>
+      <Dependent Role="icdsas_WIFS">
+        <PropertyRef Name="proj_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

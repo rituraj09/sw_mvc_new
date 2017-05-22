@@ -1,0 +1,324 @@
+﻿@model Sw_New_mvc.Models.WIFS
+@{
+    ViewBag.Title = "ICDS | Monthly ECCE Day Report";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+    ViewBag.active = "e4";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<style type="text/css">
+    .new-form label
+    {
+        width: 70%;
+    }
+    #nf .form-group, #nf1 .form-group, #nf2 .form-group, #nf3 .form-group, #nf4 .form-group, #nf5 .form-group, #nf6 .form-group
+    {
+        padding-left: 20px;
+    }
+    #nf6 .form-group label
+    {
+        width: 34% !important;
+    }
+    #div_n .col-md-1,  #div_o .col-md-1
+    {
+    text-align:center;
+    }
+</style>
+<div class="row" style="color: #444444 !important;">
+    <div class="col-sm-12 col-md-12">
+        <div class="block-flat">
+            <div class="header">
+                <h3 style="font-weight: bold;">
+                    <b>Monthly ECCE Day Report</b> <span style="float: right;">@* <a  href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-danger">Back</a>*@
+                        @* @if (ViewBag.admintype != "1")*@
+                        @{
+                            if ((Model.approve_status == 0 || Model.approve_status == 3) || Model.approve_status == 6)
+                            {
+                            <a  href="@Url.Action("Edit", "WIFS", new { id = Model.id })"  class="btn btn-info">
+                                Edit</a>
+                            }
+                        }
+                        <a  href="@Url.Action("Index", "WIFS")"  class="btn btn-danger">Back</a> </span>
+                </h3>
+            </div>
+            <div class="new-form">
+                <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>
+                                Reporting Month & Year:
+                            </label>
+                            @if (Model.ReportingMonth == 1)
+                            {
+                                <span>Jan</span> 
+                            }
+                            else if (Model.ReportingMonth == 2)
+                            {
+                                <span>Feb</span> 
+                            }
+                            else if (Model.ReportingMonth == 3)
+                            {
+                                <span>Mar</span> 
+                            }
+                            else if (Model.ReportingMonth == 4)
+                            {
+                                <span>Apr</span> 
+                            }
+                            else if (Model.ReportingMonth == 5)
+                            {
+                                <span>May</span> 
+                            }
+                            else if (Model.ReportingMonth == 6)
+                            {
+                                <span>Jun</span> 
+                            }
+                            else if (Model.ReportingMonth == 7)
+                            {
+                                <span>Jul</span> 
+                            }
+                            else if (Model.ReportingMonth == 8)
+                            {
+                                <span>Aug</span> 
+                            }
+                            else if (Model.ReportingMonth == 9)
+                            {
+                                <span>Sep</span> 
+                            }
+                            else if (Model.ReportingMonth == 10)
+                            {
+                                <span>Oct</span> 
+                            }
+                            else if (Model.ReportingMonth == 11)
+                            {
+                                <span>Nov</span> 
+                            }
+                            else if (Model.ReportingMonth == 12)
+                            {
+                                <span>Dec</span> 
+                            }
+                            -
+                            @Html.DisplayFor(c => c.Reportingyear)
+                        </div>
+                   
+                        <div class="form-group">
+                            <label>
+                                District:</label>
+                            @Html.DisplayFor(c => c.DistrictMst.Dis_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Project:</label>
+                            @Html.DisplayFor(c => c.ProjectMst.Proj_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Name of the AWC:</label>
+                            @Html.DisplayFor(c => c.AanganwadiMst.Ang_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Unique Code of AWC:</label>
+                            @Html.DisplayFor(c => c.AanganwadiMst.Ang_Code)
+                        </div>
+                       
+                    </div>
+          
+                </div>
+            </div>
+            <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf1" class="row">
+                            <strong>I. IFA Consumption :</strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    a. No. of out of school adolescent girls (10-19 years)enrolled under WIFS Programme
+                                    in the AWC:
+                                </label>
+                            @Model.a
+                               </div>
+                            <div class="form-group">
+                                <label>
+                                    b. No. of out of school adolescent girls (10-19 years)consuming at least 4 IFA tablets
+                                    in this month:</label>
+                                @Model.b
+                                 </div>
+                            <div class="form-group">
+                                <label>
+                                    c. COVERAGE % (b/a*100):</label>
+                               @Model.c
+                                  </div>
+                            <div class="form-group">
+                                <label>
+                                    d. Did the AWW consumed at least 4 IFA tablets in this month:</label>
+                             @Model.d
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    e. Did the AWH consumed at least 4 IFA tablets in this month:</label>
+                               @Model.e
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf2" class="row">
+                            <strong>II. Albendazole Consumption(In February /August ) </strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    f. No. of out of school adolescent Girls (10-19 years) consuming Albendazole in
+                                    this month: 
+                                </label>
+                                    @Model.f
+                               </div>
+                            <div class="form-group">
+                                <label>
+                                    g. COVERAGE % (f/a*100):</label>
+                                    @Model.g
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                   <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf3" class="row">
+                            <strong>III. Adolescents with moderate/severe anemia </strong><i>(Based on physical
+                                checkuponly)</i>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    h. Number of girls Identified this month: 
+                                </label>
+                                @Model.h
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    i. Number of girls Referred this month:</label>
+                                @Model.i
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf4" class="row">
+                            <strong>IV. Nutrition and Health Education for adolescent girls </strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    j. Number of Nutrition Health Education sessions Planned this month: 
+                                </label>
+                              @Model.j
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    k. Number of Nutrition Health Education sessions conducted this month:</label>
+                               @Model.k
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf5" class="row">
+                            <strong>IV. Adverse effects </strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    l. No. of adolescents girls who experience adverse effects following IFA consumption:
+                                    
+                                </label>
+ @Model.l
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    m. No. of adolescents girls who were referred to health facility for management
+                                    of adverse effects :</label>
+                                @Model.m
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf6" class="row">
+                            <strong>VI. Supply Details </strong>
+                        </div>
+                        <div class="form-group" style="border-top: 1px solid #d1d1d1;">
+                            <div class="row" style="font-size: 11px; text-align: center; line-height: 11px;">
+                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-1">
+                                    Opening stock
+                                </div>
+                                <div class="col-md-1">
+                                    Received
+                                </div>
+                                <div class="col-md-1">
+                                    Total
+                                </div>
+                                <div class="col-md-1">
+                                    Utilized in the month
+                                </div>
+                                <div class="col-md-1">
+                                    Balance
+                                </div>
+                            </div>
+                            <div class="row" id="div_n">
+                                <div class="col-md-6">
+                                    <label>
+                                        n. Number of IFA tablets
+                                    </label>
+                                </div>
+                                <div class="col-md-1">
+                                @Model.n_opening
+                                  </div>
+                                <div class="col-md-1">
+                               @Model.n_received
+                                 </div>
+                                <div class="col-md-1" style="text-align:center;">
+                                   @(Model.n_opening + Model.n_received)
+                                </div>
+                                <div class="col-md-1">
+                                  @Model.n_utilized
+                                  </div>
+                                <div class="col-md-1"   >
+                                   @Model.n_balance
+                                </div>
+                            </div>
+                            <div class="row"  id="div_o">
+                                <div class="col-md-6">
+                                    <label>
+                                        o. Number of Albendazole tablets
+                                    </label>
+                                </div>
+                                <div class="col-md-1">
+                                @Model.o_opening
+                                 </div>
+                                <div class="col-md-1">                                
+                                   @Model.o_received
+                                   </div>
+                                  <div class="col-md-1"  >
+                                     @(Model.o_opening + Model.o_received)
+                                </div>
+                                <div class="col-md-1">
+                                   @Model.o_utilized
+                                  </div>
+                                <div class="col-md-1" >
+                                
+                                    @Model.o_balance
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>

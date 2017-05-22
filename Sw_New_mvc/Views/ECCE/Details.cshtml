@@ -1,0 +1,404 @@
+﻿@model Sw_New_mvc.Models.EcceDays
+@{
+    ViewBag.Title = "ICDS | Monthly ECCE Day Report";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+    ViewBag.active = "e2";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<style type="text/css">
+    .new-form label
+    {
+        width: 70%;
+    }
+    .new-form .form-group
+    {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .lst
+    {
+        border-bottom: none !important;
+    }
+</style>
+<div class="row" style="color: #444444 !important;">
+    <div class="col-sm-12 col-md-12">
+        <div class="block-flat">
+            <div class="header">
+                <h3 style="font-weight: bold;">
+                    <b>Monthly ECCE Day Report</b> <span style="float: right;">@* <a  href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-danger">Back</a>*@
+                        @* @if (ViewBag.admintype != "1")*@
+                        @{
+                            if ((Model.approve_status == 0 || Model.approve_status == 3) || Model.approve_status == 6)
+                            {
+                            <a  href="@Url.Action("Edit", "ECCE", new { id = Model.id })"  class="btn btn-info">
+                                Edit</a>
+                            }
+                        }
+                        <a  href="@Url.Action("Index", "ECCE")"  class="btn btn-danger">Back</a> </span>
+                </h3>
+            </div>
+            <div class="new-form">
+                <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>
+                                Reporting Month & Year:
+                            </label>
+                            @if (Model.ReportingMonth == 1)
+                            {
+                                <span>Jan</span> 
+                            }
+                            else if (Model.ReportingMonth == 2)
+                            {
+                                <span>Feb</span> 
+                            }
+                            else if (Model.ReportingMonth == 3)
+                            {
+                                <span>Mar</span> 
+                            }
+                            else if (Model.ReportingMonth == 4)
+                            {
+                                <span>Apr</span> 
+                            }
+                            else if (Model.ReportingMonth == 5)
+                            {
+                                <span>May</span> 
+                            }
+                            else if (Model.ReportingMonth == 6)
+                            {
+                                <span>Jun</span> 
+                            }
+                            else if (Model.ReportingMonth == 7)
+                            {
+                                <span>Jul</span> 
+                            }
+                            else if (Model.ReportingMonth == 8)
+                            {
+                                <span>Aug</span> 
+                            }
+                            else if (Model.ReportingMonth == 9)
+                            {
+                                <span>Sep</span> 
+                            }
+                            else if (Model.ReportingMonth == 10)
+                            {
+                                <span>Oct</span> 
+                            }
+                            else if (Model.ReportingMonth == 11)
+                            {
+                                <span>Nov</span> 
+                            }
+                            else if (Model.ReportingMonth == 12)
+                            {
+                                <span>Dec</span> 
+                            }
+                            -
+                            @Html.DisplayFor(c => c.Reportingyear)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Reporting Date:</label>
+                            @Model.Reportingdate.Value.ToString("dd-MMM-yyyy")
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Division:</label>
+                            @Html.DisplayFor(c => c.Div_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                District:</label>
+                            @Html.DisplayFor(c => c.Dis_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Project:</label>
+                            @Html.DisplayFor(c => c.Proj_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Name of the AWC:</label>
+                            @Html.DisplayFor(c => c.Ang_Name)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Unique Code of AWC:</label>
+                            @Html.DisplayFor(c => c.Awc_code)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Date of holding ECCE Day:</label>
+                            @Model.dateofecc.Value.ToString("dd-MMM-yyyy")
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Community was informed about holding ECCE Day?:</label>
+                            @if (Model.community_was_informed == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.community_was_informed == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                AWW present on the day?:</label>
+                            @if (Model.AWW_present == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.AWW_present == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                AWH present on the day?:</label>
+                            @if (Model.AWH_present == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.AWH_present == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Total No. Of children (0-6 years) in the AWC area:</label>
+                            @Html.DisplayFor(c => c.total_no_AWC)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Total No. Of children receiving pre-school education outside AWC:</label>
+                            @Html.DisplayFor(c => c.total_no_outside)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Total No. Of children receiving pre-school education in the AWC:</label>
+                            @Html.DisplayFor(c => c.total_no_inside)
+                        </div>
+                        <label>
+                            <h5 style="font-weight: bold;">
+                                Total No. Of participants attended ECCE Day:</h5>
+                        </label>
+                    </div>
+                    <div class="form-group lst">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="col-md-7">
+                                    Children (3-6 yr) :
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.DisplayFor(c => c.Participant_children)
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-7">
+                                    Parent :
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.DisplayFor(c => c.Participant_parents)
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-7">
+                                    PRI Members :
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.DisplayFor(c => c.Participant_PRI)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="col-md-7">
+                                    AWCMC Members :
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.DisplayFor(c => c.Participant_AWCMC)
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-7">
+                                    Health Functionaries :
+                                </div>
+                                <div class="col-md-5">
+                                    @Html.DisplayFor(c => c.Participant_Health)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="border-top: 1px solid #d1d1d1;">
+                        <div class="form-group">
+                            <label>
+                                Total No. Of children provided SNP during the ECCE Day:</label>
+                            @Html.DisplayFor(c => c.total_SNP)
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Materials donated by the community for the AWC?:</label>
+                            @if (Model.Materials_donated == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.Materials_donated == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group" style="width: 100%; position: relative; float: left;">
+                            <label style="float: left; position: static;">
+                                Theme of ECCE day during this month:</label>
+                            <span style="float: left; width: 30%; position: static;">@Html.DisplayFor(c => c.Theme_of_ECCE)
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Does AWW explain Child’s Progress Card in the Parents Meeting/ECCE day?:</label>
+                            @if (Model.ExplainChild == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.ExplainChild == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                No of children identified for early detection and interventions for children at
+                                risk of developmental delay and disabilities.:</label>
+                            @if (Model.child_risk == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.child_risk == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Are AWWs maintaining separate Portfolios for each Pre School Child?:</label>
+                            @if (Model.maintain_profile == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.maintain_profile == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Maintenance of ECCE Day Records?:</label>
+                            @if (Model.maintain_dayrecord == 1)
+                            {
+                                <span>Yes</span> 
+                            }
+                            else if (Model.maintain_dayrecord == 2)
+                            {
+                                <span>No</span> 
+                            }
+                        </div>
+                        @if (ViewBag.admintype == "1")
+                        {
+                            <div style="display: none;">
+                                <div style="display: none;">
+                                    @if (Model.approve_status == 1)
+                                    {
+                                        @(ViewBag.status = 1)
+                                        @(ViewBag.Approve = "Approved by DPO")
+                                    }
+                                    else if (Model.approve_status == 2)
+                                    {
+                                        @(ViewBag.status = 1)
+                                        @(ViewBag.Approve = "Approved by CDPO")
+                                    }
+                                    else if (Model.approve_status == 3)
+                                    {
+                                        @(ViewBag.status = 2)
+                                        @(ViewBag.Approve = "Suggested to alter by DPO")
+                                    }
+                                    else if (Model.approve_status == 6)
+                                    {
+                                        @(ViewBag.status = 2)
+                                        @(ViewBag.Approve = "Suggested to alter by CDPO")
+                                    }
+                                    else if (Model.approve_status == 4)
+                                    { 
+                                        @(ViewBag.status = 3)
+                                        @(ViewBag.Approve = "Rejected by DPO")
+                                    }
+                                    else if (Model.approve_status == 5)
+                                    {
+                                        @(ViewBag.status = 3)
+                                        @(ViewBag.Approve = "Rejected by CDPO")
+                                    }
+                                </div>
+                                if (Model.approve_status == 0) { using (Html.BeginForm("Details", "ECCE", FormMethod.Get))
+                                {
+                                <div class="form-group">
+                                    <label style="vertical-align: top;">
+                                        Remarks:</label>
+                                    @Html.TextAreaFor(model => model.Remarks, new { id = "txtremarks", name = "remarks", type = "text", @class = "input-text", style = "height:90px; width:29% ! important;" })
+                                     @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.Remarks).ToHtmlString()))
+                           
+                                </div>
+                                if (ViewBag.alt == "9") {
+                                <div class="alert alert-red">
+                                    <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                                        ×</button><i class="fa fa-times-circle sign"></i><strong>Warning!</strong>
+                                    @Session["succ"]
+                                </div>
+                                }
+                                <div class="form-group" style="float: right;">
+                                    @Html.CheckBox("Isapprove")<span> Are you sure, do you want to</span>
+                                    @Html.DropDownList("finalsubmit", new List<SelectListItem> {
+                    new SelectListItem{ Text="Approve", Value="1" },
+                    new SelectListItem{ Text="Suggest to alter", Value="2" },
+                    new SelectListItem{ Text="Reject", Value="3" },
+                }, "---Select---", new { @class = "input-text cbo" })
+                                    <input type="submit" value="Submit" class="btn btn-info" name="save" />
+                                </div>
+                                } } else {
+                                <div class="form-group">
+                                    <label>
+                                        Remarks:</label>
+                                    @Model.Remarks
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Status:</label>
+                                    <span  style="@(ViewBag.status == 1 ? "color:#48c42d" : (ViewBag.status == 2 ? "color:#f48341" : "color:#f44141"))">
+                                        @ViewBag.Approve
+                                    </span>
+                                </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            if (Model.Remarks != "" || Model.Remarks != null)
+                            {
+                            <div class="form-group">
+                                <label>
+                                    Remarks:</label>
+                                @Model.Remarks
+                            </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

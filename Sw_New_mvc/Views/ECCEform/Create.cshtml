@@ -1,0 +1,329 @@
+﻿@model Sw_New_mvc.Models.icdsasMonthlyECCEDay
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>icdsasMonthlyECCEDay</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReportingMonth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReportingMonth)
+            @Html.ValidationMessageFor(model => model.ReportingMonth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reportingyear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reportingyear)
+            @Html.ValidationMessageFor(model => model.Reportingyear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reportingdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reportingdate)
+            @Html.ValidationMessageFor(model => model.Reportingdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Dist_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Dist_id)
+            @Html.ValidationMessageFor(model => model.Dist_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proj_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proj_id)
+            @Html.ValidationMessageFor(model => model.proj_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.awc_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.awc_id)
+            @Html.ValidationMessageFor(model => model.awc_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Awc_code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Awc_code)
+            @Html.ValidationMessageFor(model => model.Awc_code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dateofecc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dateofecc)
+            @Html.ValidationMessageFor(model => model.dateofecc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.community_was_informed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.community_was_informed)
+            @Html.ValidationMessageFor(model => model.community_was_informed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AWW_present)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AWW_present)
+            @Html.ValidationMessageFor(model => model.AWW_present)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AWH_present)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AWH_present)
+            @Html.ValidationMessageFor(model => model.AWH_present)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total_no_AWC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total_no_AWC)
+            @Html.ValidationMessageFor(model => model.total_no_AWC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total_no_outside)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total_no_outside)
+            @Html.ValidationMessageFor(model => model.total_no_outside)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total_no_inside)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total_no_inside)
+            @Html.ValidationMessageFor(model => model.total_no_inside)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Participant_children)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Participant_children)
+            @Html.ValidationMessageFor(model => model.Participant_children)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Participant_parents)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Participant_parents)
+            @Html.ValidationMessageFor(model => model.Participant_parents)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Participant_PRI)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Participant_PRI)
+            @Html.ValidationMessageFor(model => model.Participant_PRI)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Participant_AWCMC)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Participant_AWCMC)
+            @Html.ValidationMessageFor(model => model.Participant_AWCMC)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Participant_Health)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Participant_Health)
+            @Html.ValidationMessageFor(model => model.Participant_Health)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.total_SNP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.total_SNP)
+            @Html.ValidationMessageFor(model => model.total_SNP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Materials_donated)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Materials_donated)
+            @Html.ValidationMessageFor(model => model.Materials_donated)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Theme_of_ECCE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Theme_of_ECCE)
+            @Html.ValidationMessageFor(model => model.Theme_of_ECCE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExplainChild)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExplainChild)
+            @Html.ValidationMessageFor(model => model.ExplainChild)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.child_risk)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.child_risk)
+            @Html.ValidationMessageFor(model => model.child_risk)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maintain_profile)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maintain_profile)
+            @Html.ValidationMessageFor(model => model.maintain_profile)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maintain_dayrecord)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maintain_dayrecord)
+            @Html.ValidationMessageFor(model => model.maintain_dayrecord)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.status)
+            @Html.ValidationMessageFor(model => model.status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cby)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cby)
+            @Html.ValidationMessageFor(model => model.cby)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.con)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.con)
+            @Html.ValidationMessageFor(model => model.con)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mby)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mby)
+            @Html.ValidationMessageFor(model => model.mby)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mon)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mon)
+            @Html.ValidationMessageFor(model => model.mon)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Div_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Div_id)
+            @Html.ValidationMessageFor(model => model.Div_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.approve_status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.approve_status)
+            @Html.ValidationMessageFor(model => model.approve_status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.approve_by_cdpo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.approve_by_cdpo)
+            @Html.ValidationMessageFor(model => model.approve_by_cdpo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.approve_date_cdpo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.approve_date_cdpo)
+            @Html.ValidationMessageFor(model => model.approve_date_cdpo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.approve_by_dpo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.approve_by_dpo)
+            @Html.ValidationMessageFor(model => model.approve_by_dpo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.appove_date_dpo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.appove_date_dpo)
+            @Html.ValidationMessageFor(model => model.appove_date_dpo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Remarks)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remarks)
+            @Html.ValidationMessageFor(model => model.Remarks)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

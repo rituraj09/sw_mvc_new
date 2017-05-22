@@ -1,0 +1,396 @@
+﻿@model Sw_New_mvc.Models.icdseccePara
+@{
+    ViewBag.Title = "ICDS | Monthly ECCE Day Report";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+    ViewBag.active = "e2";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<style type="text/css">
+    .new-form label
+    {
+        width: 70%;
+    }
+</style>
+<div class="row" style="color: #444444 !important;">
+    <div class="col-sm-12 col-md-12">
+        <div class="block-flat">
+            <div class="header">
+                <h3 style="font-weight: bold;">
+                    <b>Monthly ECCE Day Enty Form</b></h3>
+            </div>
+            @if (Session["alt"] == "" || Session["alt"] == null)
+            {
+
+            }
+            else
+            {
+                if (Session["alt"] == "1")
+                {
+                <div id="divs" class="alert alert-success alert-white rounded ">
+                    <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                        ×</button><div class="icon">
+                            <i class="fa fa-check"></i>
+                        </div>
+                    <strong>Success!</strong> @Convert.ToString(Session["succ"])
+                </div>
+                }
+                if (Session["alt"] == "2")
+                {
+                <div id="divf" class="alert  alert-warning alert-white rounded">
+                    <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                        ×</button><div class="icon">
+                            <i class="fa fa-warning"></i>
+                        </div>
+                    <strong>Alert!</strong> @Convert.ToString(Session["succ"])
+                </div>
+                }
+                @(Session["alt"] = "")
+            }
+            @using (Html.BeginForm("Edit", "ECCE", FormMethod.Post, new { name = "frm", id = "frm"   }))
+            {
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            <div class="form-group">
+                                <label>
+                                    Reporting Month & Year:<span class="text-danger">*</span>
+                                </label>
+                                @Html.DropDownList("ReportingMonth", new List<SelectListItem> {
+                    new SelectListItem{ Text="Jan", Value="1" },
+                    new SelectListItem{ Text="Feb", Value="2" },
+                    new SelectListItem{ Text="Mar", Value="3" },
+                    new SelectListItem{ Text="Apr", Value="4" },
+                    new SelectListItem{ Text="May", Value="5" },
+                    new SelectListItem{ Text="Jun", Value="6" },
+                    new SelectListItem{ Text="Jul", Value="7" },
+                    new SelectListItem{ Text="Aug", Value="8" },
+                    new SelectListItem{ Text="Sep", Value="9" },
+                    new SelectListItem{ Text="Oct", Value="10" },
+                    new SelectListItem{ Text="Nov", Value="11" },
+                    new SelectListItem{ Text="Dec", Value="12" },
+                }, "---Select---", new { @class = "input-text cbo", disabled = "disabled" })
+                @Html.HiddenFor(model => model.ReportingMonth)
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.ReportingMonth).ToHtmlString()))
+                                @Html.DropDownList("ReportingYear", new SelectList(ViewBag.Years as System.Collections.IEnumerable, Model.ReportingYear), "---Select---", new { @class = "input-text  cbo", disabled = "disabled" })
+                                   @Html.HiddenFor(model => model.ReportingYear)
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.ReportingYear).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Division:<span class="text-danger">*</span></label>
+                                @ViewBag.Division
+                                @Html.HiddenFor(c => c.DivId, new { id = "divid" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    District:<span class="text-danger">*</span></label>
+                                @ViewBag.District
+                                @Html.HiddenFor(c => c.DistId, new { id = "disid" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Project:<span class="text-danger">*</span></label>
+                                       @ViewBag.Project
+                                        @Html.HiddenFor(c => c.ProjID)
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Name of the AWC:<span class="text-danger">*</span></label>
+                                @Html.DropDownListFor(c => c.AWCid, Model.awcs, "---Select---", new { id = "cboawc", onchange = "getCode()", @class = "input-text cbo-md", disabled = "disabled" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.AWCid).ToHtmlString()))
+                                   @Html.HiddenFor(c => c.AWCid)
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Unique Code of AWC:</label>
+                                @Html.HiddenFor(c => c.AWCcode, new { id = "awcchiden" })
+                                @Html.HiddenFor(c => c.AWCid, new { id = "awcidchiden" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.AWCcode).ToHtmlString()))
+                                <span id="divcode">
+                                  @ViewBag.awccode
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row" style="border-top: 1px solid #d1d1d1;">
+                            <div class="form-group">
+                                <label>
+                                    Date of holding ECCE Day:</label>
+                                @Html.TextBoxFor(model => model.ECCEDay, new { id = "txteccday", placeholder = "dd-MM-yyyy", name = "eccday", type = "text", @class = "input-text", onFocus = "this.select()", data_mask = "date" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.ECCEDay).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Community was informed about holding ECCE Day?:</label>
+                                @Html.DropDownList("iformedcomunity", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.iformedcomunity).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    AWW present on the day?:</label>
+                                @Html.DropDownList("AWW_present", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.AWW_present).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    AWH present on the day?:</label>
+                                @Html.DropDownList("AWH_present", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.AWH_present).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Total No. Of children (0-6 years) in the AWC area:</label>
+                                @Html.TextBoxFor(model => model.total_no_AWC, new { id = "txttot1", name = "tot1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.total_no_AWC).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Total No. Of children receiving pre-school education outside AWC:</label>
+                                @Html.TextBoxFor(model => model.total_no_outside, new { id = "txttoto1", name = "toto1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.total_no_outside).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Total No. Of children receiving pre-school education in the AWC:</label>
+                                @Html.TextBoxFor(model => model.total_no_inside, new { id = "txttoti1", name = "toti1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.total_no_inside).ToHtmlString()))
+                            </div>
+                        </div>
+                        <div class="row" style="border-top: 1px solid #d1d1d1">
+                            <label>
+                                <h5 style="font-weight: bold;">
+                                    Total No. Of participants attended ECCE Day:</h5>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="col-md-7">
+                                        Children (3-6 yr) :
+                                    </div>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.Participant_children, new { id = "txttotc1", name = "totp1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-7">
+                                        Parent :
+                                    </div>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.Participant_parents, new { id = "txttotp2", name = "totc1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-7">
+                                        PRI Members :
+                                    </div>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.Participant_PRI, new { id = "txttotw3", name = "totw1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="col-md-7">
+                                        AWCMC Members :
+                                    </div>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.Participant_AWCMC, new { id = "txttota1", name = "tota1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-7">
+                                        Health Functionaries :
+                                    </div>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.Participant_Health, new { id = "txttotw2", name = "totw1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="border-top: 1px solid #d1d1d1;">
+                            <div class="form-group">
+                                <label>
+                                    Total No. Of children provided SNP during the ECCE Day:</label>
+                                @Html.TextBoxFor(model => model.total_SNP, new { id = "txttots1", name = "tots1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Materials donated by the community for the AWC?:</label>
+                                @Html.DropDownList("Materials_donated", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.Materials_donated).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Theme of ECCE day during this month:</label>
+                                @Html.TextBoxFor(model => model.Theme_of_ECCE, new { id = "txttott1", name = "tott1", type = "text", @class = "input-text  md", style = "width:60%;", autocomplete = "off", maxlength="200" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.Theme_of_ECCE).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Does AWW explain Child’s Progress Card in the Parents Meeting/ECCE day?:</label>
+                                @Html.DropDownList("ExplainChild", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.ExplainChild).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    No of children identified for early detection and interventions for children at
+                                    risk of developmental delay and disabilities.:</label>
+                                @Html.DropDownList("child_risk", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.child_risk).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Are AWWs maintaining separate Portfolios for each Pre School Child?:</label>
+                                @Html.DropDownList("maintain_profile", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.maintain_profile).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Maintenance of ECCE Day Records?:</label>
+                                @Html.DropDownList("maintain_dayrecord", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.maintain_dayrecord).ToHtmlString()))
+                            </div>
+                        </div>
+                        <div class="row" style="border-top: 1px solid #d1d1d1">
+                            @if (ViewBag.ErrorMsg != "")
+                            {  
+                                <div class="alert alert-danger">
+                                    <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                                        ×</button><i class="fa fa-times-circle sign"></i><strong>Error!</strong>
+                                    @ViewBag.ErrorMsg
+                                </div>               
+                            }
+                          @*  <div id="myLoadingElement" style="display: none;">
+                                <img src="~/assets/img/loading.gif" alt="Loading..." width="40px"/>
+                            </div>*@
+                            <div class="form-group">
+                                <input type="submit" id="btnValidate" value="Save" class="btn btn-primary" />
+                                             <a  href="@Url.Action("Index", "ECCE")"   class="btn btn-danger">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//$("#frm").submit(function(e) {
+//    $("#myLoadingElement").show();
+//});
+   function getAwc()  
+    {  
+        debugger;  
+        var pId = $("#cboproject").val();  
+        $.ajax({  
+            url: '/ECCE/ProjectData',  
+            type: 'POST',  
+            datatype: 'application/json',  
+            contentType: 'application/json',  
+            data: JSON.stringify({  
+                projectid: +pId  
+            }), 
+            error: function (resp) {
+                console.log(resp);
+            }, 
+            success: function(data)  
+            {   
+           
+                $("#cboawc").html("");  
+                  $("#cboawc").append($('<option></option>').val('').html('---Select---')) 
+                    console.log(data);
+                $.each(data, function (i, city)
+                 {  
+                    $("#cboawc").append($('<option></option>').val(city.Value).html(city.Text))  
+                      
+                })  
+  
+            },  
+            error: function()  
+            {  
+                alert("Whooaaa! Something went wrong..")  
+            },  
+        });  
+    }
+     
+</script>
+<script type="text/javascript">
+    var getCode = function () {
+        var vr = '';
+        var vr1 = '';
+        $('#divcode').html("");
+        var awcid = $('#cboawc').val();
+        $.ajax({
+            type: "POST",
+            url: "/ECCE/GetCodes",
+            data: { angid: awcid },
+            error: function (resp) {
+                console.log(resp);
+            },
+            success: function (result) {
+                console.log(result);
+                if (result != "0") {
+
+                    $("#awcchiden").val(result.Ang_Code);
+                    $("#divcode").html(result.Ang_Code);
+
+                }
+                else {
+                    $('#divcode').html("");
+
+
+                }
+            }
+
+        });
+    }
+</script>
+<script type="text/javascript">
+    $(".input-text-sm").on("blur", function () {
+        if ($(this).val().trim().length == 0) {
+            $(this).val("0");
+        }
+    });
+    //trigger blur once for the initial setup:
+    $(".input-text-sm").trigger("blur");
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.4/javascript/zebra_datepicker.js"></script>
+<script>
+    $('#txteccday').Zebra_DatePicker({
+        //direction: true,
+        //pair: $('#date_to')
+        format: 'd-m-Y'
+    });
+
+   
+</script>

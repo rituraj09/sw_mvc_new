@@ -1,0 +1,558 @@
+﻿@model Sw_New_mvc.Models.wifspara
+@{
+    ViewBag.Title = "ICDS | WIFS INDICATORS ";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+    ViewBag.active = "e4";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<style type="text/css">
+    .new-form label
+    {
+        width: 70%;
+    }
+    #nf .form-group, #nf1 .form-group, #nf2 .form-group, #nf3 .form-group, #nf4 .form-group, #nf5 .form-group, #nf6 .form-group
+    {
+        padding-left: 20px;
+    }
+    #nf6 .form-group label
+    {
+        width: 34% !important;
+    }
+</style>
+<div class="row" style="color: #444444 !important;">
+    <div class="col-sm-12 col-md-12">
+        <div class="block-flat">
+            <div class="header">
+                <h3 style="font-weight: bold;">
+                    <b>WIFS INDICATORS Enty Form</b></h3>
+            </div>
+            @if (Session["alt"] == "" || Session["alt"] == null)
+            {
+
+            }
+            else
+            {
+                if (Session["alt"] == "1")
+                {
+                <div id="divs" class="alert alert-success alert-white rounded ">
+                    <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                        ×</button><div class="icon">
+                            <i class="fa fa-check"></i>
+                        </div>
+                    <strong>Success!</strong> @Convert.ToString(Session["succ"])
+                </div>
+                }
+                if (Session["alt"] == "2")
+                {
+                <div id="divf" class="alert  alert-warning alert-white rounded">
+                    <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                        ×</button><div class="icon">
+                            <i class="fa fa-warning"></i>
+                        </div>
+                    <strong>Alert!</strong> @Convert.ToString(Session["succ"])
+                </div>
+                }
+                @(Session["alt"] = "")
+            }
+            @using (Html.BeginForm("Edit", "WIFS", FormMethod.Post, new { name = "frm", id = "frm" }))
+            {
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            <div class="form-group">
+                                <label>
+                                    Reporting Month & Year:<span class="text-danger">*</span>
+                                </label>
+                                @Html.DropDownList("ReportingMonth", new List<SelectListItem> {
+                    new SelectListItem{ Text="Jan", Value="1" },
+                    new SelectListItem{ Text="Feb", Value="2" },
+                    new SelectListItem{ Text="Mar", Value="3" },
+                    new SelectListItem{ Text="Apr", Value="4" },
+                    new SelectListItem{ Text="May", Value="5" },
+                    new SelectListItem{ Text="Jun", Value="6" },
+                    new SelectListItem{ Text="Jul", Value="7" },
+                    new SelectListItem{ Text="Aug", Value="8" },
+                    new SelectListItem{ Text="Sep", Value="9" },
+                    new SelectListItem{ Text="Oct", Value="10" },
+                    new SelectListItem{ Text="Nov", Value="11" },
+                    new SelectListItem{ Text="Dec", Value="12" },
+                }, "---Select---", new { @class = "input-text cbo", disabled = "disabled" })
+                           @Html.HiddenFor(model => model.ReportingMonth)
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.ReportingMonth).ToHtmlString()))
+                            
+                               @Html.DropDownList("ReportingYear", new SelectList(ViewBag.Years as System.Collections.IEnumerable, Model.ReportingYear), "---Select---", new { @class = "input-text  cbo", disabled = "disabled" })
+                                   @Html.HiddenFor(model => model.ReportingYear)
+                                     @Html.HiddenFor(c => c.ReportingYear, new { id = "rptyr" })
+                             
+                                 @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.ReportingYear).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    District:<span class="text-danger">*</span></label>
+                                @ViewBag.District
+                                @Html.HiddenFor(c => c.DistId, new { id = "disid" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Project:<span class="text-danger">*</span></label>
+                                @ViewBag.Project
+                                @Html.HiddenFor(c => c.ProjID, new { id = "projid" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Name of the AWC:<span class="text-danger">*</span></label>
+                                @Html.DropDownListFor(c => c.AWCid, Model.awcs, "---Select---", new { id = "cboawc", onchange = "getCode()", @class = "input-text cbo-md" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.AWCid).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Unique Code of AWC:</label>
+                                <span id="divcode"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf1" class="row">
+                            <strong>I. IFA Consumption :</strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    a. No. of out of school adolescent girls (10-19 years)enrolled under WIFS Programme
+                                    in the AWC:<span class="text-danger">*</span>
+                                </label>
+                                @Html.TextBoxFor(model => model.a_par, new { id = "txttoto1", name = "toto1", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onchange = "calculate()", onblur = "calculate1()" })
+                            
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.a_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    b. No. of out of school adolescent girls (10-19 years)consuming at least 4 IFA tablets
+                                    in this month:<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.b_par, new { id = "txttoto2", name = "toto2", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onchange = "calculate()" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.b_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    c. COVERAGE % (b/a*100):<span class="text-danger">*</span></label>
+                                <span id="fldrslt">@Model.c_par</span>
+                                @Html.HiddenFor(m => m.c_par, new { id = "rslt1" })
+                                  </div>
+                            <div class="form-group">
+                                <label>
+                                    d. Did the AWW consumed at least 4 IFA tablets in this month:<span class="text-danger">*</span></label>
+                                @Html.DropDownList("d_par", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.d_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    e. Did the AWH consumed at least 4 IFA tablets in this month:</label>
+                                @Html.DropDownList("e_par", new List<SelectListItem> {
+                    new SelectListItem{ Text="Yes", Value="1" },
+                    new SelectListItem{ Text="No", Value="2" }                    
+                }, "---Select---", new { @class = "input-text cbo" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.e_par).ToHtmlString()))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf2" class="row">
+                            <strong>II. Albendazole Consumption(In February /August ) </strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    f. No. of out of school adolescent Girls (10-19 years) consuming Albendazole in
+                                    this month: <span class="text-danger">*</span>
+                                </label>
+                                @Html.TextBoxFor(model => model.f_par, new { id = "txttoto4", name = "toto4", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onchange = "calculate1()" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.f_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    g. COVERAGE % (f/a*100):<span class="text-danger">*</span></label>
+                                <span id="divg0">@Model.g_par</span>
+                                @Html.HiddenFor(c => c.g_par, new { id = "divg1" })
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf3" class="row">
+                            <strong>III. Adolescents with moderate/severe anemia </strong><i>(Based on physical
+                                checkuponly)</i>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    h. Number of girls Identified this month: <span class="text-danger">*</span>
+                                </label>
+                                @Html.TextBoxFor(model => model.h_par, new { id = "txttoto6", name = "toto6", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.h_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    i. Number of girls Referred this month:<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.i_par, new { id = "txttoto7", name = "toto7", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.i_par).ToHtmlString()))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf4" class="row">
+                            <strong>IV. Nutrition and Health Education for adolescent girls </strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    j. Number of Nutrition Health Education sessions Planned this month: <span class="text-danger">
+                                        *</span>
+                                </label>
+                                @Html.TextBoxFor(model => model.j_par, new { id = "txttoto8", name = "toto8", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.j_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    k. Number of Nutrition Health Education sessions conducted this month:<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.k_par, new { id = "txttoto9", name = "toto9", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.k_par).ToHtmlString()))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf5" class="row">
+                            <strong>IV. Adverse effects </strong>
+                            <div class="form-group" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <label>
+                                    l. No. of adolescents girls who experience adverse effects following IFA consumption:
+                                    <span class="text-danger">*</span>
+                                </label>
+                                @Html.TextBoxFor(model => model.l_par, new { id = "txttoto10", name = "toto10", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.l_par).ToHtmlString()))
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    m. No. of adolescents girls who were referred to health facility for management
+                                    of adverse effects :<span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(model => model.m_par, new { id = "txttoto11", name = "toto11", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0" })
+                                @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.m_par).ToHtmlString()))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="new-form">
+                    <div class="content" style="color: #111 !important; font-weight: 600 !important;">
+                        <div id="nf6" class="row">
+                            <strong>VI. Supply Details </strong>
+                        </div>
+                        <div class="form-group" style="border-top: 1px solid #d1d1d1;">
+                            <div class="row" style="font-size: 11px; text-align: center; line-height: 11px;">
+                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-1">
+                                    Opening stock
+                                </div>
+                                <div class="col-md-1">
+                                    Received
+                                </div>
+                                <div class="col-md-1">
+                                    Total
+                                </div>
+                                <div class="col-lg-1">
+                                    Utilized in the month
+                                </div>
+                                <div class="col-md-1">
+                                    Balance
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        n. Number of IFA tablets
+                                    </label>
+                                </div>
+                                <div class="col-md-1">
+                                    @Html.TextBoxFor(model => model.n1_par, new { id = "txttoto12", name = "toto12", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onblur="calculaten()" })
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.n1_par).ToHtmlString()))
+                                </div>
+                                <div class="col-md-1">
+                                    @Html.TextBoxFor(model => model.n2_par, new { id = "txttoto13", name = "toto13", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onblur = "calculaten()" })
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.n2_par).ToHtmlString()))
+                                </div>
+                                <div class="col-md-1" style="text-align:center;">
+                                    <span id="ntot">@(Model.n1_par + Model.n2_par)</span>
+                                </div>
+                                <div class="col-lg-1">
+                                    @Html.TextBoxFor(model => model.n3_par, new { id = "txttoto15", name = "toto15", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onblur = "calculaten()" })
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.n3_par).ToHtmlString()))
+                                </div>
+                                <div class="col-md-1"  style="text-align:center;">
+                                    <span id="nbal">@Model.n4_par</span>
+                                    @Html.HiddenFor(c => c.n4_par, new { id = "nbal1" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        o. Number of Albendazole tablets
+                                    </label>
+                                </div>
+                                <div class="col-md-1">
+                                    @Html.TextBoxFor(model => model.o1_par, new { id = "txttoto17", name = "toto17", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onblur="calculateo()" })
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.o1_par).ToHtmlString()))
+                                </div>
+                                <div class="col-md-1">
+                                    @Html.TextBoxFor(model => model.o2_par, new { id = "txttoto18", name = "toto18", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onblur = "calculateo()" })
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.o2_par).ToHtmlString()))
+                                </div>
+                                  <div class="col-md-1" style="text-align:center;">
+                                    <span id="otot">   @(Model.o1_par + Model.o2_par)</span>
+                                </div>
+                                <div class="col-lg-1">
+                                    @Html.TextBoxFor(model => model.o3_par, new { id = "txttoto20", name = "toto20", type = "number", @class = "input-text-sm", onFocus = "this.select()", min = "0", onblur = "calculateo()" })
+                                    @Html.Raw(HttpUtility.HtmlDecode(Html.ValidationMessageFor(model => model.o3_par).ToHtmlString()))
+                                </div>
+                                <div class="col-md-1"  style="text-align:center;">
+                                    <span id="obal">
+                                    @Model.o4_par 
+                                    </span>
+                                    @Html.HiddenFor(c => c.o4_par, new { id = "obal1" })
+                                </div>
+                            </div>
+                            <div class="row" style="border-top: 1px solid #d1d1d1; padding-top: 6px;">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-8">
+                                    @if (ViewBag.ErrorMsg != "")
+                                    {  
+                                        <div class="alert alert-danger">
+                                            <button type="button" data-dismiss="alert" aria-hidden="true" class="close">
+                                                ×</button><i class="fa fa-times-circle sign"></i><strong>Error!</strong>
+                                            @ViewBag.ErrorMsg
+                                        </div>               
+                                    }
+                              
+                                    <div class="form-group" style="float: right;">
+                                        <input type="submit" id="btnValidate" value="Save" class="btn btn-primary" />
+                                      
+                                             <a  href="@Url.Action("Index", "WIFS")"   class="btn btn-danger">Back</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+        function calculate() {
+
+            debugger;
+            var a1 = $("#txttoto1").val();
+            var a2 = $("#txttoto2").val();
+            var a3 = (a2 / a1) * 100;
+            a3 = a3.toFixed(2)
+            console.log(a3)
+            if (a1 > 0 && a2 > 0) {
+                if (a3 == '') {
+                    $("#fldrslt").html('0');
+                    $("#rslt1").val('0');
+                }
+                else if (a3 == 'NaN') {
+                    $("#fldrslt").html('0');
+                    $("#rslt1").val('0');
+                }
+                else {
+                    $("#fldrslt").html(a3);
+                    $("#rslt1").val(a3);
+                }
+            }
+            else {
+                $("#fldrslt").html('0');
+                $("#rslt1").val('0');
+            }
+
+
+        }
+    </script>
+    <script type="text/javascript">
+        function calculate1() {
+            debugger;
+            var a1 = $("#txttoto1").val();
+            var a2 = $("#txttoto4").val();
+            var a3 = (a2 / a1) * 100;
+            a3 = a3.toFixed(2)
+            console.log(a3)
+            if (a1 > 0 && a2 > 0) {
+                if (a3 == '') {
+                    $("#divg0").html('0');
+                    $("#divg1").val('0');
+                }
+                else if (a3 == 'NaN') {
+                    $("#divg0").html('0');
+                    $("#divg1").val('0');
+                }
+                else {
+                    $("#divg0").html(a3);
+                    $("#divg1").val(a3);
+                }
+            }
+            else {
+                $("#divg0").html('0');
+                $("#divg1").val('0');
+            }
+        }
+    </script>
+    <script type="text/javascript">
+$("#frm").submit(function(e) {
+    $("#myLoadingElement").show();
+});
+
+ 
+
+   function getAwc()  
+    {  
+        debugger;  
+        var pId = $("#cboproject").val();  
+        $.ajax({  
+            url: '/ECCE/ProjectData',  
+            type: 'POST',  
+            datatype: 'application/json',  
+            contentType: 'application/json',  
+            data: JSON.stringify({  
+                projectid: +pId  
+            }), 
+            error: function (resp) {
+                console.log(resp);
+            }, 
+            success: function(data)  
+            {   
+           
+                $("#cboawc").html("");  
+                  $("#cboawc").append($('<option></option>').val('').html('---Select---')) 
+                    console.log(data);
+                $.each(data, function (i, city)
+                 {  
+                    $("#cboawc").append($('<option></option>').val(city.Value).html(city.Text))  
+                      
+                })  
+  
+            },  
+            error: function()  
+            {  
+                alert("Whooaaa! Something went wrong..")  
+            },  
+        });  
+    }
+     
+    </script>
+    <script type="text/javascript">
+        var getCode = function () {
+            var vr = '';
+            var vr1 = '';
+            $('#divcode').html("");
+            var awcid = $('#cboawc').val();
+            $.ajax({
+                type: "POST",
+                url: "/ECCE/GetCodes",
+                data: { angid: awcid },
+                error: function (resp) {
+                    console.log(resp);
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result != "0") {
+
+                        $("#awcchiden").val(result.Ang_Code);
+                        $("#divcode").html(result.Ang_Code);
+
+                    }
+                    else {
+                        $('#divcode').html("");
+
+
+                    }
+                }
+
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        $(".input-text-sm").on("blur", function () {
+            if ($(this).val().trim().length == 0) {
+                $(this).val("0");
+            }
+        });
+        //trigger blur once for the initial setup:
+        $(".input-text-sm").trigger("blur");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.4/javascript/zebra_datepicker.js"></script>
+    <script>
+        $('#txteccday').Zebra_DatePicker({
+            //direction: true,
+            //pair: $('#date_to')
+            format: 'd-m-Y'
+        });
+
+   
+    </script>
+    <script type="text/javascript">
+        function calculaten() {
+            debugger;
+            var a1 = $("#txttoto12").val();
+            var a2 = $("#txttoto13").val();
+            var a3 = $("#txttoto15").val();
+            if (a1 == '') {
+                a1 = 0;
+            }
+            if (a2 == '') {
+                a2 = 0;
+            }
+            if (a3 == '') {
+                a3 = 0;
+            }
+            var a4 = (parseInt(a1) + parseInt(a2));
+            var a5 = (parseInt(a1) + parseInt(a2)) - a3;
+            $("#ntot").html(a4);
+            $("#nbal").html(a5);
+            $("#nbal1").val(a5);
+            console.log(a4)
+        }
+        function calculateo() {
+            var a1 = $("#txttoto17").val();
+            var a2 = $("#txttoto18").val();
+            var a3 = $("#txttoto20").val();
+            var a4 = (parseInt(a1) + parseInt(a2));
+            var a5 = (parseInt(a1) + parseInt(a2)) - a3;
+            $("#otot").html(a4);
+            $("#obal").html(a5);
+            $("#obal1").val(a5);
+            console.log(a4)
+        }
+        function yearchng() {
+
+            var a1 = $("#cboyear").val();
+            $("#rptyr").val(a1);
+            console.log(a1)
+        }
+    </script>

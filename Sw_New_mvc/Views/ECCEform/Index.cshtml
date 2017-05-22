@@ -1,0 +1,255 @@
+﻿@model IEnumerable<Sw_New_mvc.Models.icdsasMonthlyECCEDay>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportingMonth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reportingyear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reportingdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dist_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proj_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.awc_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Awc_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateofecc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.community_was_informed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWW_present)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AWH_present)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_no_AWC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_no_outside)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_no_inside)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Participant_children)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Participant_parents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Participant_PRI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Participant_AWCMC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Participant_Health)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_SNP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Materials_donated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Theme_of_ECCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExplainChild)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.child_risk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maintain_profile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maintain_dayrecord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Div_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approve_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approve_by_cdpo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approve_date_cdpo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approve_by_dpo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appove_date_dpo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportingMonth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reportingyear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reportingdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dist_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proj_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.awc_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Awc_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateofecc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.community_was_informed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AWW_present)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AWH_present)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_no_AWC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_no_outside)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_no_inside)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Participant_children)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Participant_parents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Participant_PRI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Participant_AWCMC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Participant_Health)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_SNP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Materials_donated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Theme_of_ECCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExplainChild)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.child_risk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maintain_profile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maintain_dayrecord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Div_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approve_status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approve_by_cdpo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approve_date_cdpo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approve_by_dpo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appove_date_dpo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

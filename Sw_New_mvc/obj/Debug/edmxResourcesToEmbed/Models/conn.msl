@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ECCEModelStoreContainer" CdmEntityContainer="Con">
+    <EntitySetMapping Name="icdsasMonthlyECCEDays">
+      <EntityTypeMapping TypeName="ECCEModel.icdsasMonthlyECCEDay">
+        <MappingFragment StoreEntitySet="icdsas_Monthly_ECCE_Day">
+          <ScalarProperty Name="approve_date_dpo" ColumnName="approve_date_dpo" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="approve_by_dpo" ColumnName="approve_by_dpo" />
+          <ScalarProperty Name="approve_date_cdpo" ColumnName="approve_date_cdpo" />
+          <ScalarProperty Name="approve_by_cdpo" ColumnName="approve_by_cdpo" />
+          <ScalarProperty Name="approve_status" ColumnName="approve_status" />
+          <ScalarProperty Name="Div_id" ColumnName="Div_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ReportingMonth" ColumnName="ReportingMonth" />
+          <ScalarProperty Name="Reportingyear" ColumnName="Reportingyear" />
+          <ScalarProperty Name="Reportingdate" ColumnName="Reportingdate" />
+          <ScalarProperty Name="Dist_id" ColumnName="Dist_id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="awc_id" ColumnName="awc_id" />
+          <ScalarProperty Name="Awc_code" ColumnName="Awc_code" />
+          <ScalarProperty Name="dateofecc" ColumnName="dateofecc" />
+          <ScalarProperty Name="community_was_informed" ColumnName="community_was_informed" />
+          <ScalarProperty Name="AWW_present" ColumnName="AWW_present" />
+          <ScalarProperty Name="AWH_present" ColumnName="AWH_present" />
+          <ScalarProperty Name="total_no_AWC" ColumnName="total_no_AWC" />
+          <ScalarProperty Name="total_no_outside" ColumnName="total_no_outside" />
+          <ScalarProperty Name="total_no_inside" ColumnName="total_no_inside" />
+          <ScalarProperty Name="Participant_children" ColumnName="Participant_children" />
+          <ScalarProperty Name="Participant_parents" ColumnName="Participant_parents" />
+          <ScalarProperty Name="Participant_PRI" ColumnName="Participant_PRI" />
+          <ScalarProperty Name="Participant_AWCMC" ColumnName="Participant_AWCMC" />
+          <ScalarProperty Name="Participant_Health" ColumnName="Participant_Health" />
+          <ScalarProperty Name="total_SNP" ColumnName="total_SNP" />
+          <ScalarProperty Name="Materials_donated" ColumnName="Materials_donated" />
+          <ScalarProperty Name="Theme_of_ECCE" ColumnName="Theme_of_ECCE" />
+          <ScalarProperty Name="ExplainChild" ColumnName="ExplainChild" />
+          <ScalarProperty Name="child_risk" ColumnName="child_risk" />
+          <ScalarProperty Name="maintain_profile" ColumnName="maintain_profile" />
+          <ScalarProperty Name="maintain_dayrecord" ColumnName="maintain_dayrecord" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cby" ColumnName="cby" />
+          <ScalarProperty Name="con" ColumnName="con" />
+          <ScalarProperty Name="mby" ColumnName="mby" />
+          <ScalarProperty Name="mon" ColumnName="mon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AanganwadiMsts">
+      <EntityTypeMapping TypeName="ECCEModel.AanganwadiMst">
+        <MappingFragment StoreEntitySet="AanganwadiMst">
+          <ScalarProperty Name="Ang_VHCID" ColumnName="Ang_VHCID" />
+          <ScalarProperty Name="Ang_ChokiRunning" ColumnName="Ang_ChokiRunning" />
+          <ScalarProperty Name="Ang_ChokiAvailable" ColumnName="Ang_ChokiAvailable" />
+          <ScalarProperty Name="Ang_AccountRegisterRunning" ColumnName="Ang_AccountRegisterRunning" />
+          <ScalarProperty Name="Ang_AccountRegisterAvailable" ColumnName="Ang_AccountRegisterAvailable" />
+          <ScalarProperty Name="Ang_RadioRunning" ColumnName="Ang_RadioRunning" />
+          <ScalarProperty Name="Ang_RadioAvailable" ColumnName="Ang_RadioAvailable" />
+          <ScalarProperty Name="Ang_HEalthCenterMediKitRunning" ColumnName="Ang_HEalthCenterMediKitRunning" />
+          <ScalarProperty Name="Ang_HEalthCenterMediKitAvailable" ColumnName="Ang_HEalthCenterMediKitAvailable" />
+          <ScalarProperty Name="Ang_SABLAKitRunning" ColumnName="Ang_SABLAKitRunning" />
+          <ScalarProperty Name="Ang_SABLAKitAvailable" ColumnName="Ang_SABLAKitAvailable" />
+          <ScalarProperty Name="Ang_BellRunning" ColumnName="Ang_BellRunning" />
+          <ScalarProperty Name="Ang_BellAvailable" ColumnName="Ang_BellAvailable" />
+          <ScalarProperty Name="Ang_HandwashkitRunning" ColumnName="Ang_HandwashkitRunning" />
+          <ScalarProperty Name="Ang_HandwashkitAvailable" ColumnName="Ang_HandwashkitAvailable" />
+          <ScalarProperty Name="Ang_GlassRunning" ColumnName="Ang_GlassRunning" />
+          <ScalarProperty Name="Ang_GlassAvailable" ColumnName="Ang_GlassAvailable" />
+          <ScalarProperty Name="Ang_HealthTestTableRunning" ColumnName="Ang_HealthTestTableRunning" />
+          <ScalarProperty Name="Ang_HealthTestTableAvailable" ColumnName="Ang_HealthTestTableAvailable" />
+          <ScalarProperty Name="Ang_CupboardRunning" ColumnName="Ang_CupboardRunning" />
+          <ScalarProperty Name="Ang_CupboardAvailable" ColumnName="Ang_CupboardAvailable" />
+          <ScalarProperty Name="Ang_InfantActivityBookRunning" ColumnName="Ang_InfantActivityBookRunning" />
+          <ScalarProperty Name="Ang_InfantActivityBookAvailable" ColumnName="Ang_InfantActivityBookAvailable" />
+          <ScalarProperty Name="Ang_IDCRunning" ColumnName="Ang_IDCRunning" />
+          <ScalarProperty Name="Ang_IDCAvailable" ColumnName="Ang_IDCAvailable" />
+          <ScalarProperty Name="Ang_ElectronicVeigMachineRunning" ColumnName="Ang_ElectronicVeigMachineRunning" />
+          <ScalarProperty Name="Ang_ElectronicVeigMachineAvailable" ColumnName="Ang_ElectronicVeigMachineAvailable" />
+          <ScalarProperty Name="Ang_EfiTheater" ColumnName="Ang_EfiTheater" />
+          <ScalarProperty Name="Ang_PowerPollDistance" ColumnName="Ang_PowerPollDistance" />
+          <ScalarProperty Name="Ang_Longitude" ColumnName="Ang_Longitude" />
+          <ScalarProperty Name="Ang_Latitude" ColumnName="Ang_Latitude" />
+          <ScalarProperty Name="Ang_DariMatsUsable" ColumnName="Ang_DariMatsUsable" />
+          <ScalarProperty Name="Ang_DariMats" ColumnName="Ang_DariMats" />
+          <ScalarProperty Name="Ang_TableUsable" ColumnName="Ang_TableUsable" />
+          <ScalarProperty Name="Ang_Table" ColumnName="Ang_Table" />
+          <ScalarProperty Name="Ang_ChairUsable" ColumnName="Ang_ChairUsable" />
+          <ScalarProperty Name="Ang_Chair" ColumnName="Ang_Chair" />
+          <ScalarProperty Name="Ang_WaterStorageContainerUsable" ColumnName="Ang_WaterStorageContainerUsable" />
+          <ScalarProperty Name="Ang_WaterStorageContainer" ColumnName="Ang_WaterStorageContainer" />
+          <ScalarProperty Name="Ang_FoodStorageBinsUsable" ColumnName="Ang_FoodStorageBinsUsable" />
+          <ScalarProperty Name="Ang_FoodStorageBins" ColumnName="Ang_FoodStorageBins" />
+          <ScalarProperty Name="Ang_MeasuringCupsUsable" ColumnName="Ang_MeasuringCupsUsable" />
+          <ScalarProperty Name="Ang_MeasuringCups" ColumnName="Ang_MeasuringCups" />
+          <ScalarProperty Name="Ang_TumblersUsable" ColumnName="Ang_TumblersUsable" />
+          <ScalarProperty Name="Ang_Tumblers" ColumnName="Ang_Tumblers" />
+          <ScalarProperty Name="Ang_PlatesUsable" ColumnName="Ang_PlatesUsable" />
+          <ScalarProperty Name="Ang_Plates" ColumnName="Ang_Plates" />
+          <ScalarProperty Name="Ang_ReferralSlipUsable" ColumnName="Ang_ReferralSlipUsable" />
+          <ScalarProperty Name="Ang_ReferralSlip" ColumnName="Ang_ReferralSlip" />
+          <ScalarProperty Name="Ang_NHEDKitUsable" ColumnName="Ang_NHEDKitUsable" />
+          <ScalarProperty Name="Ang_NHEDKit" ColumnName="Ang_NHEDKit" />
+          <ScalarProperty Name="Ang_IECBCCMaterialsUsable" ColumnName="Ang_IECBCCMaterialsUsable" />
+          <ScalarProperty Name="Ang_IECBCCMaterials" ColumnName="Ang_IECBCCMaterials" />
+          <ScalarProperty Name="Ang_CookingUtensilsUsable" ColumnName="Ang_CookingUtensilsUsable" />
+          <ScalarProperty Name="Ang_CookingUtensils" ColumnName="Ang_CookingUtensils" />
+          <ScalarProperty Name="Ang_AdequateSpaceForPSE" ColumnName="Ang_AdequateSpaceForPSE" />
+          <ScalarProperty Name="Ang_CookingSupplementaryFood" ColumnName="Ang_CookingSupplementaryFood" />
+          <ScalarProperty Name="Ang_TypeOfToilet" ColumnName="Ang_TypeOfToilet" />
+          <ScalarProperty Name="Ang_BarrierPhysicallyChallenged" ColumnName="Ang_BarrierPhysicallyChallenged" />
+          <ScalarProperty Name="Ang_AwcHoused" ColumnName="Ang_AwcHoused" />
+          <ScalarProperty Name="Ang_BuildingProvided" ColumnName="Ang_BuildingProvided" />
+          <ScalarProperty Name="Ang_NoOneHealthCenterDist" ColumnName="Ang_NoOneHealthCenterDist" />
+          <ScalarProperty Name="Ang_OtherHealthCenterDist" ColumnName="Ang_OtherHealthCenterDist" />
+          <ScalarProperty Name="Ang_DistrictHealthCenterDist" ColumnName="Ang_DistrictHealthCenterDist" />
+          <ScalarProperty Name="Ang_CommunityHealthCenterDist" ColumnName="Ang_CommunityHealthCenterDist" />
+          <ScalarProperty Name="Ang_SubHealthCenterDist" ColumnName="Ang_SubHealthCenterDist" />
+          <ScalarProperty Name="Ang_PrimaryHealthCenterDist" ColumnName="Ang_PrimaryHealthCenterDist" />
+          <ScalarProperty Name="Ang_NoOneHealthCenterHindi" ColumnName="Ang_NoOneHealthCenterHindi" />
+          <ScalarProperty Name="Ang_NoOneHealthCenter" ColumnName="Ang_NoOneHealthCenter" />
+          <ScalarProperty Name="Ang_OtherHealthCenterHindi" ColumnName="Ang_OtherHealthCenterHindi" />
+          <ScalarProperty Name="Ang_OtherHealthCenter" ColumnName="Ang_OtherHealthCenter" />
+          <ScalarProperty Name="Ang_DistrictHealthCenterHindi" ColumnName="Ang_DistrictHealthCenterHindi" />
+          <ScalarProperty Name="Ang_DistrictHealthCenter" ColumnName="Ang_DistrictHealthCenter" />
+          <ScalarProperty Name="Ang_CommunityHealthCenterHindi" ColumnName="Ang_CommunityHealthCenterHindi" />
+          <ScalarProperty Name="Ang_CommunityHealthCenter" ColumnName="Ang_CommunityHealthCenter" />
+          <ScalarProperty Name="Ang_SubHealthCenterHindi" ColumnName="Ang_SubHealthCenterHindi" />
+          <ScalarProperty Name="Ang_SubHealthCenter" ColumnName="Ang_SubHealthCenter" />
+          <ScalarProperty Name="Ang_PrimaryHealthCenterHindi" ColumnName="Ang_PrimaryHealthCenterHindi" />
+          <ScalarProperty Name="Ang_PrimaryHealthCenter" ColumnName="Ang_PrimaryHealthCenter" />
+          <ScalarProperty Name="Ang_PlaySpace" ColumnName="Ang_PlaySpace" />
+          <ScalarProperty Name="Ang_WallPainting" ColumnName="Ang_WallPainting" />
+          <ScalarProperty Name="Ang_FoodStorage" ColumnName="Ang_FoodStorage" />
+          <ScalarProperty Name="Ang_ChildToilet" ColumnName="Ang_ChildToilet" />
+          <ScalarProperty Name="Ang_Boundriwal" ColumnName="Ang_Boundriwal" />
+          <ScalarProperty Name="Ang_InfoWindow" ColumnName="Ang_InfoWindow" />
+          <ScalarProperty Name="Ang_LearningMaterial" ColumnName="Ang_LearningMaterial" />
+          <ScalarProperty Name="Ang_Creche" ColumnName="Ang_Creche" />
+          <ScalarProperty Name="Ang_AdolecentGirlGrp" ColumnName="Ang_AdolecentGirlGrp" />
+          <ScalarProperty Name="Ang_SelfHelpGroup" ColumnName="Ang_SelfHelpGroup" />
+          <ScalarProperty Name="Ang_MotherSupportCommitee" ColumnName="Ang_MotherSupportCommitee" />
+          <ScalarProperty Name="Ang_CoHealthCenter" ColumnName="Ang_CoHealthCenter" />
+          <ScalarProperty Name="Ang_VHNDDay" ColumnName="Ang_VHNDDay" />
+          <ScalarProperty Name="Ang_VHNDNo" ColumnName="Ang_VHNDNo" />
+          <ScalarProperty Name="Ang_VHNDWDay" ColumnName="Ang_VHNDWDay" />
+          <ScalarProperty Name="Ang_UpdatedDate" ColumnName="Ang_UpdatedDate" />
+          <ScalarProperty Name="Ang_UpdatedBy" ColumnName="Ang_UpdatedBy" />
+          <ScalarProperty Name="Ang_InsertedDate" ColumnName="Ang_InsertedDate" />
+          <ScalarProperty Name="Ang_InsertedBy" ColumnName="Ang_InsertedBy" />
+          <ScalarProperty Name="Ang_IsActive" ColumnName="Ang_IsActive" />
+          <ScalarProperty Name="Ang_FoodSupply" ColumnName="Ang_FoodSupply" />
+          <ScalarProperty Name="Ang_KitchenShedAndAanganwadiDistance" ColumnName="Ang_KitchenShedAndAanganwadiDistance" />
+          <ScalarProperty Name="Ang_KitchenShedGroupName" ColumnName="Ang_KitchenShedGroupName" />
+          <ScalarProperty Name="Ang_VisitorsRegisterAvailable" ColumnName="Ang_VisitorsRegisterAvailable" />
+          <ScalarProperty Name="Ang_StockRegisterAvailable" ColumnName="Ang_StockRegisterAvailable" />
+          <ScalarProperty Name="Ang_WHOGrowthChartsAvailable" ColumnName="Ang_WHOGrowthChartsAvailable" />
+          <ScalarProperty Name="Ang_WeightRecordsRegisterAvailable" ColumnName="Ang_WeightRecordsRegisterAvailable" />
+          <ScalarProperty Name="Ang_SummaryRegisterAvailable" ColumnName="Ang_SummaryRegisterAvailable" />
+          <ScalarProperty Name="Ang_ReferralsRegisterAvailable" ColumnName="Ang_ReferralsRegisterAvailable" />
+          <ScalarProperty Name="Ang_HomeVisitRegisterAvailable" ColumnName="Ang_HomeVisitRegisterAvailable" />
+          <ScalarProperty Name="Ang_VitaminARegisterAvailable" ColumnName="Ang_VitaminARegisterAvailable" />
+          <ScalarProperty Name="Ang_ImmunizationVHNDRegisterAvailable" ColumnName="Ang_ImmunizationVHNDRegisterAvailable" />
+          <ScalarProperty Name="Ang_PregnancyDeliveryRegisterAvailable" ColumnName="Ang_PregnancyDeliveryRegisterAvailable" />
+          <ScalarProperty Name="Ang_PreSchoolEducationRegisterAvailable" ColumnName="Ang_PreSchoolEducationRegisterAvailable" />
+          <ScalarProperty Name="Ang_SupplementaryFoodDistributionRegisterAvailable" ColumnName="Ang_SupplementaryFoodDistributionRegisterAvailable" />
+          <ScalarProperty Name="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" ColumnName="Ang_SupplementaryNutritiousFoodAndStockRegisterAvailable" />
+          <ScalarProperty Name="Ang_FamilyDetailsRegisterAvailable" ColumnName="Ang_FamilyDetailsRegisterAvailable" />
+          <ScalarProperty Name="Ang_PreSchoolEducationKitUsable" ColumnName="Ang_PreSchoolEducationKitUsable" />
+          <ScalarProperty Name="Ang_PreSchoolEducationKitAvailable" ColumnName="Ang_PreSchoolEducationKitAvailable" />
+          <ScalarProperty Name="Ang_AidKitUsable" ColumnName="Ang_AidKitUsable" />
+          <ScalarProperty Name="Ang_AidKitAvailable" ColumnName="Ang_AidKitAvailable" />
+          <ScalarProperty Name="Ang_MUACUsable" ColumnName="Ang_MUACUsable" />
+          <ScalarProperty Name="Ang_MUACAvailable" ColumnName="Ang_MUACAvailable" />
+          <ScalarProperty Name="Ang_MaternalAndChildProtectionCardAvailable" ColumnName="Ang_MaternalAndChildProtectionCardAvailable" />
+          <ScalarProperty Name="Ang_NewbornWeightMachinRunning" ColumnName="Ang_NewbornWeightMachinRunning" />
+          <ScalarProperty Name="Ang_NewbornWeightMachinAvailable" ColumnName="Ang_NewbornWeightMachinAvailable" />
+          <ScalarProperty Name="Ang_SalterVeigMachineRunning" ColumnName="Ang_SalterVeigMachineRunning" />
+          <ScalarProperty Name="Ang_SalterVeigMachineAvailable" ColumnName="Ang_SalterVeigMachineAvailable" />
+          <ScalarProperty Name="Ang_AdultVeigMachineRunning" ColumnName="Ang_AdultVeigMachineRunning" />
+          <ScalarProperty Name="Ang_AdultVeigMachineAvailable" ColumnName="Ang_AdultVeigMachineAvailable" />
+          <ScalarProperty Name="Ang_DrinkingWaterAvailable" ColumnName="Ang_DrinkingWaterAvailable" />
+          <ScalarProperty Name="Ang_ToiletRunning" ColumnName="Ang_ToiletRunning" />
+          <ScalarProperty Name="Ang_ToiletAvailable" ColumnName="Ang_ToiletAvailable" />
+          <ScalarProperty Name="Ang_BulbRunning" ColumnName="Ang_BulbRunning" />
+          <ScalarProperty Name="Ang_BulbAvailable" ColumnName="Ang_BulbAvailable" />
+          <ScalarProperty Name="Ang_FanRunning" ColumnName="Ang_FanRunning" />
+          <ScalarProperty Name="Ang_FanAvailable" ColumnName="Ang_FanAvailable" />
+          <ScalarProperty Name="Ang_PowerRunning" ColumnName="Ang_PowerRunning" />
+          <ScalarProperty Name="Ang_PowerAvailable" ColumnName="Ang_PowerAvailable" />
+          <ScalarProperty Name="Ang_MotherSahyoginiCommittee" ColumnName="Ang_MotherSahyoginiCommittee" />
+          <ScalarProperty Name="Ang_ImmunizationPlace" ColumnName="Ang_ImmunizationPlace" />
+          <ScalarProperty Name="Ang_ImmunizationNo" ColumnName="Ang_ImmunizationNo" />
+          <ScalarProperty Name="Ang_ImmunizationDay" ColumnName="Ang_ImmunizationDay" />
+          <ScalarProperty Name="Ang_NearestHealthCenterAndAnganwadiDistance" ColumnName="Ang_NearestHealthCenterAndAnganwadiDistance" />
+          <ScalarProperty Name="Ang_NearestHealthCenterVillageName" ColumnName="Ang_NearestHealthCenterVillageName" />
+          <ScalarProperty Name="Ang_NearestHealthCenter" ColumnName="Ang_NearestHealthCenter" />
+          <ScalarProperty Name="Ang_VillageHealthCenter" ColumnName="Ang_VillageHealthCenter" />
+          <ScalarProperty Name="Ang_AanganwadiBuildingPosition" ColumnName="Ang_AanganwadiBuildingPosition" />
+          <ScalarProperty Name="Ang_AanganwadiBuilding" ColumnName="Ang_AanganwadiBuilding" />
+          <ScalarProperty Name="Ang_ApprovedYear" ColumnName="Ang_ApprovedYear" />
+          <ScalarProperty Name="Ang_AddressHindi" ColumnName="Ang_AddressHindi" />
+          <ScalarProperty Name="Ang_Address" ColumnName="Ang_Address" />
+          <ScalarProperty Name="Ang_WorkerHomeAndAanganwadiDistance" ColumnName="Ang_WorkerHomeAndAanganwadiDistance" />
+          <ScalarProperty Name="Ang_WorkersLiveInVillage" ColumnName="Ang_WorkersLiveInVillage" />
+          <ScalarProperty Name="Ang_AanganwadiManagement" ColumnName="Ang_AanganwadiManagement" />
+          <ScalarProperty Name="Ang_AanganwadiPosition" ColumnName="Ang_AanganwadiPosition" />
+          <ScalarProperty Name="Ang_AnmPostPosition" ColumnName="Ang_AnmPostPosition" />
+          <ScalarProperty Name="Ang_NoOfAttachedMiniAnganwadi" ColumnName="Ang_NoOfAttachedMiniAnganwadi" />
+          <ScalarProperty Name="Ang_AashaWorkerPostStatus" ColumnName="Ang_AashaWorkerPostStatus" />
+          <ScalarProperty Name="Ang_AashaWorkerNameHindi" ColumnName="Ang_AashaWorkerNameHindi" />
+          <ScalarProperty Name="Ang_AashaWorkerName" ColumnName="Ang_AashaWorkerName" />
+          <ScalarProperty Name="Ang_ANMNameHindi" ColumnName="Ang_ANMNameHindi" />
+          <ScalarProperty Name="Ang_ANMName" ColumnName="Ang_ANMName" />
+          <ScalarProperty Name="Ang_MPWPostPosition" ColumnName="Ang_MPWPostPosition" />
+          <ScalarProperty Name="Ang_HelperUsername" ColumnName="Ang_HelperUsername" />
+          <ScalarProperty Name="Ang_AanganwadiHelperID" ColumnName="Ang_AanganwadiHelperID" />
+          <ScalarProperty Name="Ang_AanganwadiHelperPostStatus" ColumnName="Ang_AanganwadiHelperPostStatus" />
+          <ScalarProperty Name="Ang_WorkerUsername" ColumnName="Ang_WorkerUsername" />
+          <ScalarProperty Name="Ang_AanganwadiWorkerID" ColumnName="Ang_AanganwadiWorkerID" />
+          <ScalarProperty Name="Ang_WorkerPostStatus" ColumnName="Ang_WorkerPostStatus" />
+          <ScalarProperty Name="Ang_HealthSubCentreHindi" ColumnName="Ang_HealthSubCentreHindi" />
+          <ScalarProperty Name="Ang_HealthSubCentre" ColumnName="Ang_HealthSubCentre" />
+          <ScalarProperty Name="Ang_PreviousCode" ColumnName="Ang_PreviousCode" />
+          <ScalarProperty Name="Ang_Code" ColumnName="Ang_Code" />
+          <ScalarProperty Name="Ang_SlNo" ColumnName="Ang_SlNo" />
+          <ScalarProperty Name="Ang_NameHindi" ColumnName="Ang_NameHindi" />
+          <ScalarProperty Name="Ang_Name" ColumnName="Ang_Name" />
+          <ScalarProperty Name="Ang_PrivatePSchool" ColumnName="Ang_PrivatePSchool" />
+          <ScalarProperty Name="Ang_PSchool2" ColumnName="Ang_PSchool2" />
+          <ScalarProperty Name="Ang_PSchool1" ColumnName="Ang_PSchool1" />
+          <ScalarProperty Name="Ang_ViID" ColumnName="Ang_ViID" />
+          <ScalarProperty Name="Ang_GramPanchayat" ColumnName="Ang_GramPanchayat" />
+          <ScalarProperty Name="Ang_VillageName" ColumnName="Ang_VillageName" />
+          <ScalarProperty Name="Ang_NagarNigamID" ColumnName="Ang_NagarNigamID" />
+          <ScalarProperty Name="Ang_UnderAwc" ColumnName="Ang_UnderAwc" />
+          <ScalarProperty Name="Ang_CensusCode" ColumnName="Ang_CensusCode" />
+          <ScalarProperty Name="Ang_WardNo" ColumnName="Ang_WardNo" />
+          <ScalarProperty Name="Ang_MiniAanganwadiParentID" ColumnName="Ang_MiniAanganwadiParentID" />
+          <ScalarProperty Name="Ang_Type" ColumnName="Ang_Type" />
+          <ScalarProperty Name="Ang_SecID" ColumnName="Ang_SecID" />
+          <ScalarProperty Name="Ang_ID" ColumnName="Ang_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistrictMsts">
+      <EntityTypeMapping TypeName="ECCEModel.DistrictMst">
+        <MappingFragment StoreEntitySet="DistrictMst">
+          <ScalarProperty Name="Dis_AadharEnrolment" ColumnName="Dis_AadharEnrolment" />
+          <ScalarProperty Name="Dis_TargetedShivir" ColumnName="Dis_TargetedShivir" />
+          <ScalarProperty Name="Dis_Phone" ColumnName="Dis_Phone" />
+          <ScalarProperty Name="Dis_Email" ColumnName="Dis_Email" />
+          <ScalarProperty Name="Dis_AddressHindi" ColumnName="Dis_AddressHindi" />
+          <ScalarProperty Name="Dis_Address" ColumnName="Dis_Address" />
+          <ScalarProperty Name="Dis_DDOCode" ColumnName="Dis_DDOCode" />
+          <ScalarProperty Name="Dis_Cbr" ColumnName="Dis_Cbr" />
+          <ScalarProperty Name="Dis_MappedCode" ColumnName="Dis_MappedCode" />
+          <ScalarProperty Name="Dis_UpdatedDate" ColumnName="Dis_UpdatedDate" />
+          <ScalarProperty Name="Dis_UpdatedBy" ColumnName="Dis_UpdatedBy" />
+          <ScalarProperty Name="Dis_InsertedDate" ColumnName="Dis_InsertedDate" />
+          <ScalarProperty Name="Dis_InsertedBy" ColumnName="Dis_InsertedBy" />
+          <ScalarProperty Name="Dis_IsActive" ColumnName="Dis_IsActive" />
+          <ScalarProperty Name="Dis_Username" ColumnName="Dis_Username" />
+          <ScalarProperty Name="Dis_DistrictOfficerID" ColumnName="Dis_DistrictOfficerID" />
+          <ScalarProperty Name="Dis_PostPosition" ColumnName="Dis_PostPosition" />
+          <ScalarProperty Name="Dis_NameHindi" ColumnName="Dis_NameHindi" />
+          <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+          <ScalarProperty Name="Dis_DivID" ColumnName="Dis_DivID" />
+          <ScalarProperty Name="Dis_Code" ColumnName="Dis_Code" />
+          <ScalarProperty Name="Dis_ID" ColumnName="Dis_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DivisionMsts">
+      <EntityTypeMapping TypeName="ECCEModel.DivisionMst">
+        <MappingFragment StoreEntitySet="DivisionMst">
+          <ScalarProperty Name="Div_DRG" ColumnName="Div_DRG" />
+          <ScalarProperty Name="Div_Phone" ColumnName="Div_Phone" />
+          <ScalarProperty Name="Div_Email" ColumnName="Div_Email" />
+          <ScalarProperty Name="Div_AddressHindi" ColumnName="Div_AddressHindi" />
+          <ScalarProperty Name="Div_Address" ColumnName="Div_Address" />
+          <ScalarProperty Name="Div_DDOCode" ColumnName="Div_DDOCode" />
+          <ScalarProperty Name="Div_UpdatedDate" ColumnName="Div_UpdatedDate" />
+          <ScalarProperty Name="Div_UpdatedBy" ColumnName="Div_UpdatedBy" />
+          <ScalarProperty Name="Div_InsertedDate" ColumnName="Div_InsertedDate" />
+          <ScalarProperty Name="Div_InsertedBy" ColumnName="Div_InsertedBy" />
+          <ScalarProperty Name="Div_IsActive" ColumnName="Div_IsActive" />
+          <ScalarProperty Name="Div_Username" ColumnName="Div_Username" />
+          <ScalarProperty Name="Div_OfficerID" ColumnName="Div_OfficerID" />
+          <ScalarProperty Name="Div_PostPosition" ColumnName="Div_PostPosition" />
+          <ScalarProperty Name="Div_NameHindi" ColumnName="Div_NameHindi" />
+          <ScalarProperty Name="Div_Name" ColumnName="Div_Name" />
+          <ScalarProperty Name="Div_StateID" ColumnName="Div_StateID" />
+          <ScalarProperty Name="Div_ID" ColumnName="Div_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectMsts">
+      <EntityTypeMapping TypeName="ECCEModel.ProjectMst">
+        <MappingFragment StoreEntitySet="ProjectMst">
+          <ScalarProperty Name="Proj_SubDisCode" ColumnName="Proj_SubDisCode" />
+          <ScalarProperty Name="Proj_ModelAWC" ColumnName="Proj_ModelAWC" />
+          <ScalarProperty Name="Proj_ACDPONameHindi" ColumnName="Proj_ACDPONameHindi" />
+          <ScalarProperty Name="Proj_ACDPOName" ColumnName="Proj_ACDPOName" />
+          <ScalarProperty Name="Proj_PHCLinked" ColumnName="Proj_PHCLinked" />
+          <ScalarProperty Name="Proj_BlockCode" ColumnName="Proj_BlockCode" />
+          <ScalarProperty Name="Proj_PostPosition" ColumnName="Proj_PostPosition" />
+          <ScalarProperty Name="Proj_UpdatedDate" ColumnName="Proj_UpdatedDate" />
+          <ScalarProperty Name="Proj_UpdatedBy" ColumnName="Proj_UpdatedBy" />
+          <ScalarProperty Name="Proj_InsertedDate" ColumnName="Proj_InsertedDate" />
+          <ScalarProperty Name="Proj_InsertedBy" ColumnName="Proj_InsertedBy" />
+          <ScalarProperty Name="Proj_IsActive" ColumnName="Proj_IsActive" />
+          <ScalarProperty Name="Proj_DDOCode" ColumnName="Proj_DDOCode" />
+          <ScalarProperty Name="Proj_DriverInPosition" ColumnName="Proj_DriverInPosition" />
+          <ScalarProperty Name="Proj_DriverSanction" ColumnName="Proj_DriverSanction" />
+          <ScalarProperty Name="Proj_BlockLevelStaffInPosition" ColumnName="Proj_BlockLevelStaffInPosition" />
+          <ScalarProperty Name="Proj_BlockLevelStaffSanction" ColumnName="Proj_BlockLevelStaffSanction" />
+          <ScalarProperty Name="Proj_StatisticalInPosition" ColumnName="Proj_StatisticalInPosition" />
+          <ScalarProperty Name="Proj_StatisticalSanction" ColumnName="Proj_StatisticalSanction" />
+          <ScalarProperty Name="Proj_ACDPOInPosition" ColumnName="Proj_ACDPOInPosition" />
+          <ScalarProperty Name="Proj_ACDPOSanction" ColumnName="Proj_ACDPOSanction" />
+          <ScalarProperty Name="Proj_ComputerAvalibility" ColumnName="Proj_ComputerAvalibility" />
+          <ScalarProperty Name="Proj_OrderDate" ColumnName="Proj_OrderDate" />
+          <ScalarProperty Name="Proj_VehicleOrderNo" ColumnName="Proj_VehicleOrderNo" />
+          <ScalarProperty Name="Proj_Vehicle" ColumnName="Proj_Vehicle" />
+          <ScalarProperty Name="Proj_Email" ColumnName="Proj_Email" />
+          <ScalarProperty Name="Proj_Mobile" ColumnName="Proj_Mobile" />
+          <ScalarProperty Name="Proj_Phone" ColumnName="Proj_Phone" />
+          <ScalarProperty Name="Proj_AddressHindi" ColumnName="Proj_AddressHindi" />
+          <ScalarProperty Name="Proj_Address" ColumnName="Proj_Address" />
+          <ScalarProperty Name="Proj_OffeiceType" ColumnName="Proj_OffeiceType" />
+          <ScalarProperty Name="Proj_TotalMiniAnganwadi" ColumnName="Proj_TotalMiniAnganwadi" />
+          <ScalarProperty Name="Proj_TotalAnganwadi" ColumnName="Proj_TotalAnganwadi" />
+          <ScalarProperty Name="Proj_TotalSector" ColumnName="Proj_TotalSector" />
+          <ScalarProperty Name="Proj_ApprovedYear" ColumnName="Proj_ApprovedYear" />
+          <ScalarProperty Name="Proj_ProjectType" ColumnName="Proj_ProjectType" />
+          <ScalarProperty Name="Proj_Username" ColumnName="Proj_Username" />
+          <ScalarProperty Name="Proj_OfficerID" ColumnName="Proj_OfficerID" />
+          <ScalarProperty Name="Proj_NameHindi" ColumnName="Proj_NameHindi" />
+          <ScalarProperty Name="Proj_Name" ColumnName="Proj_Name" />
+          <ScalarProperty Name="Proj_Code" ColumnName="Proj_Code" />
+          <ScalarProperty Name="Proj_DisID" ColumnName="Proj_DisID" />
+          <ScalarProperty Name="Proj_ID" ColumnName="Proj_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AWCMsts">
+      <EntityTypeMapping TypeName="ECCEModel.AWCMst">
+        <MappingFragment StoreEntitySet="Vw_Aanganwadi">
+          <ScalarProperty Name="Ang_Code" ColumnName="Ang_Code" />
+          <ScalarProperty Name="Ang_addressHindi" ColumnName="Ang_addressHindi" />
+          <ScalarProperty Name="Ang_Address" ColumnName="Ang_Address" />
+          <ScalarProperty Name="Ang_AanganwadiHelperID" ColumnName="Ang_AanganwadiHelperID" />
+          <ScalarProperty Name="Ang_AanganwadiWorkerID" ColumnName="Ang_AanganwadiWorkerID" />
+          <ScalarProperty Name="Proj_ProjectType" ColumnName="Proj_ProjectType" />
+          <ScalarProperty Name="HelperNameHindi" ColumnName="HelperNameHindi" />
+          <ScalarProperty Name="HelperName" ColumnName="HelperName" />
+          <ScalarProperty Name="WorkerNameHindi" ColumnName="WorkerNameHindi" />
+          <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+          <ScalarProperty Name="SupNameHindi" ColumnName="SupNameHindi" />
+          <ScalarProperty Name="SupName" ColumnName="SupName" />
+          <ScalarProperty Name="CDPONameHindi" ColumnName="CDPONameHindi" />
+          <ScalarProperty Name="CDPOName" ColumnName="CDPOName" />
+          <ScalarProperty Name="DPONameHindi" ColumnName="DPONameHindi" />
+          <ScalarProperty Name="DPOName" ColumnName="DPOName" />
+          <ScalarProperty Name="JDNameHindi" ColumnName="JDNameHindi" />
+          <ScalarProperty Name="JDName" ColumnName="JDName" />
+          <ScalarProperty Name="Gp_Type" ColumnName="Gp_Type" />
+          <ScalarProperty Name="Gp_namehindi" ColumnName="Gp_namehindi" />
+          <ScalarProperty Name="Gp_name" ColumnName="Gp_name" />
+          <ScalarProperty Name="Gp_ID" ColumnName="Gp_ID" />
+          <ScalarProperty Name="Vil_Ward" ColumnName="Vil_Ward" />
+          <ScalarProperty Name="Vil_VillageCode" ColumnName="Vil_VillageCode" />
+          <ScalarProperty Name="Vil_NameHindi" ColumnName="Vil_NameHindi" />
+          <ScalarProperty Name="Vil_Name" ColumnName="Vil_Name" />
+          <ScalarProperty Name="Vil_ID" ColumnName="Vil_ID" />
+          <ScalarProperty Name="Ang_Type" ColumnName="Ang_Type" />
+          <ScalarProperty Name="Ang_NameHindi" ColumnName="Ang_NameHindi" />
+          <ScalarProperty Name="Ang_Name" ColumnName="Ang_Name" />
+          <ScalarProperty Name="Ang_ID" ColumnName="Ang_ID" />
+          <ScalarProperty Name="Sec_NameHindi" ColumnName="Sec_NameHindi" />
+          <ScalarProperty Name="Sec_Name" ColumnName="Sec_Name" />
+          <ScalarProperty Name="Sec_ID" ColumnName="Sec_ID" />
+          <ScalarProperty Name="Proj_NameHindi" ColumnName="Proj_NameHindi" />
+          <ScalarProperty Name="Proj_Name" ColumnName="Proj_Name" />
+          <ScalarProperty Name="Proj_ID" ColumnName="Proj_ID" />
+          <ScalarProperty Name="Dis_DDOCode" ColumnName="Dis_DDOCode" />
+          <ScalarProperty Name="dis_cbr" ColumnName="dis_cbr" />
+          <ScalarProperty Name="Dis_NameHindi" ColumnName="Dis_NameHindi" />
+          <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+          <ScalarProperty Name="Dis_ID" ColumnName="Dis_ID" />
+          <ScalarProperty Name="Div_NameHindi" ColumnName="Div_NameHindi" />
+          <ScalarProperty Name="Div_Name" ColumnName="Div_Name" />
+          <ScalarProperty Name="Div_ID" ColumnName="Div_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EcceDays">
+      <EntityTypeMapping TypeName="ECCEModel.EcceDays">
+        <MappingFragment StoreEntitySet="view_icdsas_ECCEdays">
+          <ScalarProperty Name="approve_date_dpo" ColumnName="approve_date_dpo" />
+          <ScalarProperty Name="ROW_NUM" ColumnName="ROW_NUM" />
+          <ScalarProperty Name="Proj_Name" ColumnName="Proj_Name" />
+          <ScalarProperty Name="Div_StateID" ColumnName="Div_StateID" />
+          <ScalarProperty Name="Div_Name" ColumnName="Div_Name" />
+          <ScalarProperty Name="Dis_Name" ColumnName="Dis_Name" />
+          <ScalarProperty Name="Dis_Code" ColumnName="Dis_Code" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="approve_by_dpo" ColumnName="approve_by_dpo" />
+          <ScalarProperty Name="approve_date_cdpo" ColumnName="approve_date_cdpo" />
+          <ScalarProperty Name="approve_by_cdpo" ColumnName="approve_by_cdpo" />
+          <ScalarProperty Name="approve_status" ColumnName="approve_status" />
+          <ScalarProperty Name="mon" ColumnName="mon" />
+          <ScalarProperty Name="mby" ColumnName="mby" />
+          <ScalarProperty Name="con" ColumnName="con" />
+          <ScalarProperty Name="cby" ColumnName="cby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="maintain_dayrecord" ColumnName="maintain_dayrecord" />
+          <ScalarProperty Name="maintain_profile" ColumnName="maintain_profile" />
+          <ScalarProperty Name="child_risk" ColumnName="child_risk" />
+          <ScalarProperty Name="ExplainChild" ColumnName="ExplainChild" />
+          <ScalarProperty Name="Theme_of_ECCE" ColumnName="Theme_of_ECCE" />
+          <ScalarProperty Name="Materials_donated" ColumnName="Materials_donated" />
+          <ScalarProperty Name="total_SNP" ColumnName="total_SNP" />
+          <ScalarProperty Name="Participant_Health" ColumnName="Participant_Health" />
+          <ScalarProperty Name="Participant_AWCMC" ColumnName="Participant_AWCMC" />
+          <ScalarProperty Name="Participant_PRI" ColumnName="Participant_PRI" />
+          <ScalarProperty Name="Participant_parents" ColumnName="Participant_parents" />
+          <ScalarProperty Name="Participant_children" ColumnName="Participant_children" />
+          <ScalarProperty Name="total_no_inside" ColumnName="total_no_inside" />
+          <ScalarProperty Name="total_no_outside" ColumnName="total_no_outside" />
+          <ScalarProperty Name="total_no_AWC" ColumnName="total_no_AWC" />
+          <ScalarProperty Name="AWH_present" ColumnName="AWH_present" />
+          <ScalarProperty Name="AWW_present" ColumnName="AWW_present" />
+          <ScalarProperty Name="community_was_informed" ColumnName="community_was_informed" />
+          <ScalarProperty Name="dateofecc" ColumnName="dateofecc" />
+          <ScalarProperty Name="Awc_code" ColumnName="Awc_code" />
+          <ScalarProperty Name="awc_id" ColumnName="awc_id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="Dist_id" ColumnName="Dist_id" />
+          <ScalarProperty Name="Div_id" ColumnName="Div_id" />
+          <ScalarProperty Name="Reportingdate" ColumnName="Reportingdate" />
+          <ScalarProperty Name="Reportingyear" ColumnName="Reportingyear" />
+          <ScalarProperty Name="ReportingMonth" ColumnName="ReportingMonth" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ang_Name" ColumnName="Ang_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WIFS">
+      <EntityTypeMapping TypeName="ECCEModel.WIFS">
+        <MappingFragment StoreEntitySet="icdsas_WIFS">
+          <ScalarProperty Name="approve_date_CDPO" ColumnName="approve_date_CDPO" />
+          <ScalarProperty Name="approve_by_CDPO" ColumnName="approve_by_CDPO" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="approve_date_DPO" ColumnName="approve_date_DPO" />
+          <ScalarProperty Name="approve_by_DPO" ColumnName="approve_by_DPO" />
+          <ScalarProperty Name="approve_status" ColumnName="approve_status" />
+          <ScalarProperty Name="mon" ColumnName="mon" />
+          <ScalarProperty Name="mby" ColumnName="mby" />
+          <ScalarProperty Name="con" ColumnName="con" />
+          <ScalarProperty Name="cby" ColumnName="cby" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="o_balance" ColumnName="o_balance" />
+          <ScalarProperty Name="o_utilized" ColumnName="o_utilized" />
+          <ScalarProperty Name="o_received" ColumnName="o_received" />
+          <ScalarProperty Name="o_opening" ColumnName="o_opening" />
+          <ScalarProperty Name="n_balance" ColumnName="n_balance" />
+          <ScalarProperty Name="n_utilized" ColumnName="n_utilized" />
+          <ScalarProperty Name="n_received" ColumnName="n_received" />
+          <ScalarProperty Name="n_opening" ColumnName="n_opening" />
+          <ScalarProperty Name="m" ColumnName="m" />
+          <ScalarProperty Name="l" ColumnName="l" />
+          <ScalarProperty Name="k" ColumnName="k" />
+          <ScalarProperty Name="j" ColumnName="j" />
+          <ScalarProperty Name="i" ColumnName="i" />
+          <ScalarProperty Name="h" ColumnName="h" />
+          <ScalarProperty Name="g" ColumnName="g" />
+          <ScalarProperty Name="f" ColumnName="f" />
+          <ScalarProperty Name="e" ColumnName="e" />
+          <ScalarProperty Name="d" ColumnName="d" />
+          <ScalarProperty Name="c" ColumnName="c" />
+          <ScalarProperty Name="b" ColumnName="b" />
+          <ScalarProperty Name="a" ColumnName="a" />
+          <ScalarProperty Name="Reportingdate" ColumnName="Reportingdate" />
+          <ScalarProperty Name="Reportingyear" ColumnName="Reportingyear" />
+          <ScalarProperty Name="ReportingMonth" ColumnName="ReportingMonth" />
+          <ScalarProperty Name="AWC_id" ColumnName="AWC_id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="dist_id" ColumnName="dist_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
